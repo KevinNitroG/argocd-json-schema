@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "duration": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "manualSync": {
+      "type": "boolean"
+    },
+    "schedule": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}

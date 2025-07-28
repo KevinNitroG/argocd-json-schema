@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "destination": {
+      "type": "object",
+      "properties": {
+        "namespace": {
+          "type": "string",
+          "title": "Namespace is the namespace of the Kubernetes server that targets should be deployed to"
+        },
+        "server": {
+          "description": "Server is the Kubernetes server that the cluster is running on.",
+          "type": "string"
+        }
+      }
+    },
+    "k8sVersion": {
+      "description": "KubernetesVersion is the kubernetes version the targeted cluster is running on.",
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "title": "Name is the user defined name of an environment"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "title": "RevisionMetadata contains metadata for a specific revision in a Git repository",
+  "properties": {
+    "author": {
+      "type": "string",
+      "title": "who authored this revision,\ntypically their name and email, e.g. \"John Doe <john_doe@my-company.com>\",\nbut might not match this example"
+    },
+    "date": {
+      "description": "Time is a wrapper around time.Time which supports correct\nmarshaling to YAML and JSON.  Wrappers are provided for many\nof the factory methods that the time package offers.\n\n+protobuf.options.marshal=false\n+protobuf.as=Timestamp\n+protobuf.options.(gogoproto.goproto_stringer)=false",
+      "type": "object",
+      "properties": {
+        "nanos": {
+          "description": "Non-negative fractions of a second at nanosecond resolution. Negative\nsecond values with fractions must still have non-negative nanos values\nthat count forward in time. Must be from 0 to 999,999,999\ninclusive. This field may be limited in precision depending on context.",
+          "type": "integer",
+          "format": "int32"
+        },
+        "seconds": {
+          "description": "Represents seconds of UTC time since Unix epoch\n1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z to\n9999-12-31T23:59:59Z inclusive.",
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "message": {
+      "type": "string",
+      "title": "Message contains the message associated with the revision, most likely the commit message.\nThe message is truncated to the first newline or 64 characters (which ever comes first)"
+    },
+    "signatureInfo": {
+      "description": "SignatureInfo contains a hint on the signer if the revision was signed with GPG, and signature verification is enabled.",
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "title": "Tags specifies any tags currently attached to the revision\nFloating tags can move from one revision to another",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

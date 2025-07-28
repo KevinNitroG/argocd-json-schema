@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "title": "ApplicationSourcePlugin holds options specific to config management plugins",
+  "properties": {
+    "env": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "title": "EnvEntry represents an entry in the application's environment",
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name is the name of the variable, usually expressed in uppercase"
+          },
+          "value": {
+            "type": "string",
+            "title": "Value is the value of the variable"
+          }
+        }
+      }
+    },
+    "name": {
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

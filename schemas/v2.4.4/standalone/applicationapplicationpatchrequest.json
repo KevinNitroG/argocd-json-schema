@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "title": "ApplicationPatchRequest is a request to patch an application",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "patch": {
+      "type": "string"
+    },
+    "patchType": {
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

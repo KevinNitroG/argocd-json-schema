@@ -1,0 +1,97 @@
+{
+  "description": "ClusterConfig is the configuration attributes. This structure is subset of the go-client\nrest.Config with annotations added for marshalling.",
+  "type": "object",
+  "properties": {
+    "awsAuthConfig": {
+      "type": "object",
+      "title": "AWSAuthConfig is an AWS IAM authentication configuration",
+      "properties": {
+        "clusterName": {
+          "type": "string",
+          "title": "ClusterName contains AWS cluster name"
+        },
+        "roleARN": {
+          "description": "RoleARN contains optional role ARN. If set then AWS IAM Authenticator assume a role to perform cluster operations instead of the default AWS credential provider chain.",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "bearerToken": {
+      "description": "Server requires Bearer authentication. This client will not attempt to use\nrefresh tokens for an OAuth2 flow.\nTODO: demonstrate an OAuth2 compatible client.",
+      "type": "string"
+    },
+    "execProviderConfig": {
+      "type": "object",
+      "title": "ExecProviderConfig is config used to call an external command to perform cluster authentication\nSee: https://godoc.org/k8s.io/client-go/tools/clientcmd/api#ExecConfig",
+      "properties": {
+        "apiVersion": {
+          "type": "string",
+          "title": "Preferred input version of the ExecInfo"
+        },
+        "args": {
+          "type": "array",
+          "title": "Arguments to pass to the command when executing it",
+          "items": {
+            "type": "string"
+          }
+        },
+        "command": {
+          "type": "string",
+          "title": "Command to execute"
+        },
+        "env": {
+          "type": "object",
+          "title": "Env defines additional environment variables to expose to the process",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "installHint": {
+          "type": "string",
+          "title": "This text is shown to the user when the executable doesn't seem to be present"
+        }
+      },
+      "additionalProperties": false
+    },
+    "password": {
+      "type": "string"
+    },
+    "tlsClientConfig": {
+      "type": "object",
+      "title": "TLSClientConfig contains settings to enable transport layer security",
+      "properties": {
+        "caData": {
+          "type": "string",
+          "format": "byte",
+          "title": "CAData holds PEM-encoded bytes (typically read from a root certificates bundle).\nCAData takes precedence over CAFile"
+        },
+        "certData": {
+          "type": "string",
+          "format": "byte",
+          "title": "CertData holds PEM-encoded bytes (typically read from a client certificate file).\nCertData takes precedence over CertFile"
+        },
+        "insecure": {
+          "description": "Insecure specifies that the server should be accessed without verifying the TLS certificate. For testing only.",
+          "type": "boolean"
+        },
+        "keyData": {
+          "type": "string",
+          "format": "byte",
+          "title": "KeyData holds PEM-encoded bytes (typically read from a client certificate key file).\nKeyData takes precedence over KeyFile"
+        },
+        "serverName": {
+          "description": "ServerName is passed to the server for SNI and is used in the client to check server\ncertificates against. If ServerName is empty, the hostname used to contact the\nserver is used.",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "username": {
+      "type": "string",
+      "title": "Server requires Basic authentication"
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}

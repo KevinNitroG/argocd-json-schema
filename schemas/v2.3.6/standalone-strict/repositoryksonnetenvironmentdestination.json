@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "namespace": {
+      "type": "string",
+      "title": "Namespace is the namespace of the Kubernetes server that targets should be deployed to"
+    },
+    "server": {
+      "description": "Server is the Kubernetes server that the cluster is running on.",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}

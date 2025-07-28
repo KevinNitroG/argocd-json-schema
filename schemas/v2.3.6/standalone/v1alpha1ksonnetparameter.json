@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "title": "KsonnetParameter is a ksonnet component parameter",
+  "properties": {
+    "component": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "title": "KnownTypeField contains mapping between CRD field and known Kubernetes type.\nThis is mainly used for unit conversion in unknown resources (e.g. 0.1 == 100mi)\nTODO: Describe the members of this type",
+  "properties": {
+    "field": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

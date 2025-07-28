@@ -1,0 +1,44 @@
+{
+  "type": "object",
+  "properties": {
+    "cliClientID": {
+      "type": "string"
+    },
+    "clientID": {
+      "type": "string"
+    },
+    "idTokenClaims": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "essential": {
+            "type": "boolean"
+          },
+          "value": {
+            "type": "string"
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "issuer": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "scopes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

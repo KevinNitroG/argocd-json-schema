@@ -1,0 +1,12 @@
+{
+  "description": "ApplicationSetSyncPolicy configures how generated Applications will relate to their\nApplicationSet.",
+  "type": "object",
+  "properties": {
+    "preserveResourcesOnDeletion": {
+      "description": "PreserveResourcesOnDeletion will preserve resources on deletion. If PreserveResourcesOnDeletion is set to true, these Applications will not be deleted.",
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}
