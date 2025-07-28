@@ -11,7 +11,7 @@ bin="docker run -i --rm -v ${out}:/out/schemas ghcr.io/yannh/openapi2jsonschema:
 
 for tag in master $tags; do
   url=https://raw.githubusercontent.com/argoproj/argo-cd/${tag}/assets/swagger.json
-  printf '---\n'
+  printf -- '---\n'
   echo "Generating for tag: $tag..."
   # prefix=https://raw.githubusercontent.com/KevinNitroG/argocd-json-schema/main/${out}/${tag}/_definitions.json
 
