@@ -22,10 +22,14 @@ Replace `{version}`, `{type}`, and `{resource}` as follows:
   - `standalone-strict`: Like `standalone`, but does not allow additional properties.
 - `{resource}`: The resource name (e.g., `deployment`).
 
+[!WARNING]
+>
+> The `standalone-strict` one doesn't allow `apiVersion` and `kind`. Consider using `standalone` instead.
+
 **Example:**
 
 ```yaml
-# yaml-language-server: $schema=https://raw.githubusercontent.com/KevinNitroG/argocd-json-schema/refs/heads/main/schemas/v3.0.9/standalone-strict/deployment.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/KevinNitroG/argocd-json-schema/refs/heads/main/schemas/v3.0.9/standalone/v1alpha1applicationset.json
 ```
 
 ---
