@@ -1,0 +1,307 @@
+{
+  "description": "ClusterList is a collection of Clusters.",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "title": "Cluster is the definition of a cluster resource",
+        "properties": {
+          "annotations": {
+            "type": "object",
+            "title": "Annotations for cluster secret metadata",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "clusterResources": {
+            "description": "Indicates if cluster level resources should be managed. This setting is used only if cluster is connected in a namespaced mode.",
+            "type": "boolean"
+          },
+          "config": {
+            "description": "ClusterConfig is the configuration attributes. This structure is subset of the go-client\nrest.Config with annotations added for marshalling.",
+            "type": "object",
+            "properties": {
+              "awsAuthConfig": {
+                "type": "object",
+                "title": "AWSAuthConfig is an AWS IAM authentication configuration",
+                "properties": {
+                  "clusterName": {
+                    "type": "string",
+                    "title": "ClusterName contains AWS cluster name"
+                  },
+                  "roleARN": {
+                    "description": "RoleARN contains optional role ARN. If set then AWS IAM Authenticator assume a role to perform cluster operations instead of the default AWS credential provider chain.",
+                    "type": "string"
+                  }
+                }
+              },
+              "bearerToken": {
+                "description": "Server requires Bearer authentication. This client will not attempt to use\nrefresh tokens for an OAuth2 flow.\nTODO: demonstrate an OAuth2 compatible client.",
+                "type": "string"
+              },
+              "execProviderConfig": {
+                "type": "object",
+                "title": "ExecProviderConfig is config used to call an external command to perform cluster authentication\nSee: https://godoc.org/k8s.io/client-go/tools/clientcmd/api#ExecConfig",
+                "properties": {
+                  "apiVersion": {
+                    "type": "string",
+                    "title": "Preferred input version of the ExecInfo"
+                  },
+                  "args": {
+                    "type": "array",
+                    "title": "Arguments to pass to the command when executing it",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "command": {
+                    "type": "string",
+                    "title": "Command to execute"
+                  },
+                  "env": {
+                    "type": "object",
+                    "title": "Env defines additional environment variables to expose to the process",
+                    "additionalProperties": {
+                      "type": "string"
+                    }
+                  },
+                  "installHint": {
+                    "type": "string",
+                    "title": "This text is shown to the user when the executable doesn't seem to be present"
+                  }
+                }
+              },
+              "password": {
+                "type": "string"
+              },
+              "tlsClientConfig": {
+                "type": "object",
+                "title": "TLSClientConfig contains settings to enable transport layer security",
+                "properties": {
+                  "caData": {
+                    "type": "string",
+                    "format": "byte",
+                    "title": "CAData holds PEM-encoded bytes (typically read from a root certificates bundle).\nCAData takes precedence over CAFile"
+                  },
+                  "certData": {
+                    "type": "string",
+                    "format": "byte",
+                    "title": "CertData holds PEM-encoded bytes (typically read from a client certificate file).\nCertData takes precedence over CertFile"
+                  },
+                  "insecure": {
+                    "description": "Insecure specifies that the server should be accessed without verifying the TLS certificate. For testing only.",
+                    "type": "boolean"
+                  },
+                  "keyData": {
+                    "type": "string",
+                    "format": "byte",
+                    "title": "KeyData holds PEM-encoded bytes (typically read from a client certificate key file).\nKeyData takes precedence over KeyFile"
+                  },
+                  "serverName": {
+                    "description": "ServerName is passed to the server for SNI and is used in the client to check server\ncertificates against. If ServerName is empty, the hostname used to contact the\nserver is used.",
+                    "type": "string"
+                  }
+                }
+              },
+              "username": {
+                "type": "string",
+                "title": "Server requires Basic authentication"
+              }
+            }
+          },
+          "connectionState": {
+            "type": "object",
+            "title": "ConnectionState contains information about remote resource connection state, currently used for clusters and repositories",
+            "properties": {
+              "attemptedAt": {
+                "description": "Time is a wrapper around time.Time which supports correct\nmarshaling to YAML and JSON.  Wrappers are provided for many\nof the factory methods that the time package offers.\n\n+protobuf.options.marshal=false\n+protobuf.as=Timestamp\n+protobuf.options.(gogoproto.goproto_stringer)=false",
+                "type": "object",
+                "properties": {
+                  "nanos": {
+                    "description": "Non-negative fractions of a second at nanosecond resolution. Negative\nsecond values with fractions must still have non-negative nanos values\nthat count forward in time. Must be from 0 to 999,999,999\ninclusive. This field may be limited in precision depending on context.",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "seconds": {
+                    "description": "Represents seconds of UTC time since Unix epoch\n1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z to\n9999-12-31T23:59:59Z inclusive.",
+                    "type": "string",
+                    "format": "int64"
+                  }
+                }
+              },
+              "message": {
+                "type": "string",
+                "title": "Message contains human readable information about the connection status"
+              },
+              "status": {
+                "type": "string",
+                "title": "Status contains the current status indicator for the connection"
+              }
+            }
+          },
+          "info": {
+            "type": "object",
+            "title": "ClusterInfo contains information about the cluster",
+            "properties": {
+              "apiVersions": {
+                "type": "array",
+                "title": "APIVersions contains list of API versions supported by the cluster",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "applicationsCount": {
+                "type": "string",
+                "format": "int64",
+                "title": "ApplicationsCount is the number of applications managed by Argo CD on the cluster"
+              },
+              "cacheInfo": {
+                "type": "object",
+                "title": "ClusterCacheInfo contains information about the cluster cache",
+                "properties": {
+                  "apisCount": {
+                    "type": "string",
+                    "format": "int64",
+                    "title": "APIsCount holds number of observed Kubernetes API count"
+                  },
+                  "lastCacheSyncTime": {
+                    "description": "Time is a wrapper around time.Time which supports correct\nmarshaling to YAML and JSON.  Wrappers are provided for many\nof the factory methods that the time package offers.\n\n+protobuf.options.marshal=false\n+protobuf.as=Timestamp\n+protobuf.options.(gogoproto.goproto_stringer)=false",
+                    "type": "object",
+                    "properties": {
+                      "nanos": {
+                        "description": "Non-negative fractions of a second at nanosecond resolution. Negative\nsecond values with fractions must still have non-negative nanos values\nthat count forward in time. Must be from 0 to 999,999,999\ninclusive. This field may be limited in precision depending on context.",
+                        "type": "integer",
+                        "format": "int32"
+                      },
+                      "seconds": {
+                        "description": "Represents seconds of UTC time since Unix epoch\n1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z to\n9999-12-31T23:59:59Z inclusive.",
+                        "type": "string",
+                        "format": "int64"
+                      }
+                    }
+                  },
+                  "resourcesCount": {
+                    "type": "string",
+                    "format": "int64",
+                    "title": "ResourcesCount holds number of observed Kubernetes resources"
+                  }
+                }
+              },
+              "connectionState": {
+                "type": "object",
+                "title": "ConnectionState contains information about remote resource connection state, currently used for clusters and repositories",
+                "properties": {
+                  "attemptedAt": {
+                    "description": "Time is a wrapper around time.Time which supports correct\nmarshaling to YAML and JSON.  Wrappers are provided for many\nof the factory methods that the time package offers.\n\n+protobuf.options.marshal=false\n+protobuf.as=Timestamp\n+protobuf.options.(gogoproto.goproto_stringer)=false",
+                    "type": "object",
+                    "properties": {
+                      "nanos": {
+                        "description": "Non-negative fractions of a second at nanosecond resolution. Negative\nsecond values with fractions must still have non-negative nanos values\nthat count forward in time. Must be from 0 to 999,999,999\ninclusive. This field may be limited in precision depending on context.",
+                        "type": "integer",
+                        "format": "int32"
+                      },
+                      "seconds": {
+                        "description": "Represents seconds of UTC time since Unix epoch\n1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z to\n9999-12-31T23:59:59Z inclusive.",
+                        "type": "string",
+                        "format": "int64"
+                      }
+                    }
+                  },
+                  "message": {
+                    "type": "string",
+                    "title": "Message contains human readable information about the connection status"
+                  },
+                  "status": {
+                    "type": "string",
+                    "title": "Status contains the current status indicator for the connection"
+                  }
+                }
+              },
+              "serverVersion": {
+                "type": "string",
+                "title": "ServerVersion contains information about the Kubernetes version of the cluster"
+              }
+            }
+          },
+          "labels": {
+            "type": "object",
+            "title": "Labels for cluster secret metadata",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "name": {
+            "type": "string",
+            "title": "Name of the cluster. If omitted, will use the server address"
+          },
+          "namespaces": {
+            "description": "Holds list of namespaces which are accessible in that cluster. Cluster level resources will be ignored if namespace list is not empty.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "project": {
+            "type": "string",
+            "title": "Reference between project and cluster that allow you automatically to be added as item inside Destinations project entity"
+          },
+          "refreshRequestedAt": {
+            "description": "Time is a wrapper around time.Time which supports correct\nmarshaling to YAML and JSON.  Wrappers are provided for many\nof the factory methods that the time package offers.\n\n+protobuf.options.marshal=false\n+protobuf.as=Timestamp\n+protobuf.options.(gogoproto.goproto_stringer)=false",
+            "type": "object",
+            "properties": {
+              "nanos": {
+                "description": "Non-negative fractions of a second at nanosecond resolution. Negative\nsecond values with fractions must still have non-negative nanos values\nthat count forward in time. Must be from 0 to 999,999,999\ninclusive. This field may be limited in precision depending on context.",
+                "type": "integer",
+                "format": "int32"
+              },
+              "seconds": {
+                "description": "Represents seconds of UTC time since Unix epoch\n1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z to\n9999-12-31T23:59:59Z inclusive.",
+                "type": "string",
+                "format": "int64"
+              }
+            }
+          },
+          "server": {
+            "type": "string",
+            "title": "Server is the API server URL of the Kubernetes cluster"
+          },
+          "serverVersion": {
+            "type": "string",
+            "title": "DEPRECATED: use Info.ServerVersion field instead.\nThe server version"
+          },
+          "shard": {
+            "description": "Shard contains optional shard number. Calculated on the fly by the application controller if not specified.",
+            "type": "string",
+            "format": "int64"
+          }
+        }
+      }
+    },
+    "metadata": {
+      "description": "ListMeta describes metadata that synthetic resources must have, including lists and\nvarious status objects. A resource may have only one of {ObjectMeta, ListMeta}.",
+      "type": "object",
+      "properties": {
+        "continue": {
+          "description": "continue may be set if the user set a limit on the number of items returned, and indicates that\nthe server has more data available. The value is opaque and may be used to issue another request\nto the endpoint that served this list to retrieve the next set of available objects. Continuing a\nconsistent list may not be possible if the server configuration has changed or more than a few\nminutes have passed. The resourceVersion field returned when using this continue value will be\nidentical to the value in the first response, unless you have received this token from an error\nmessage.",
+          "type": "string"
+        },
+        "remainingItemCount": {
+          "type": "string",
+          "format": "int64",
+          "title": "remainingItemCount is the number of subsequent items in the list which are not included in this\nlist response. If the list request contained label or field selectors, then the number of\nremaining items is unknown and the field will be left unset and omitted during serialization.\nIf the list is complete (either because it is not chunking or because this is the last chunk),\nthen there are no more remaining items and this field will be left unset and omitted during\nserialization.\nServers older than v1.15 do not set this field.\nThe intended use of the remainingItemCount is *estimating* the size of a collection. Clients\nshould not rely on the remainingItemCount to be set or to be exact.\n+optional"
+        },
+        "resourceVersion": {
+          "type": "string",
+          "title": "String that identifies the server's internal version of this object that\ncan be used by clients to determine when objects have changed.\nValue must be treated as opaque by clients and passed unmodified back to the server.\nPopulated by the system.\nRead-only.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency\n+optional"
+        },
+        "selfLink": {
+          "type": "string",
+          "title": "Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.\n+optional"
+        }
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

@@ -1,0 +1,57 @@
+{
+  "type": "object",
+  "title": "ApplicationSourcePlugin holds options specific to config management plugins",
+  "properties": {
+    "env": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "title": "EnvEntry represents an entry in the application's environment",
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name is the name of the variable, usually expressed in uppercase"
+          },
+          "value": {
+            "type": "string",
+            "title": "Value is the value of the variable"
+          }
+        }
+      }
+    },
+    "name": {
+      "type": "string"
+    },
+    "parameters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "array": {
+            "description": "Array is the value of an array type parameter.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "map": {
+            "description": "Map is the value of a map type parameter.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "name": {
+            "description": "Name is the name identifying a parameter.",
+            "type": "string"
+          },
+          "string": {
+            "description": "String_ is the value of a string type parameter.",
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

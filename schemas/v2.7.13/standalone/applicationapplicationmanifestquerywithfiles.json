@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "appNamespace": {
+      "type": "string"
+    },
+    "checksum": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

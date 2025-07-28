@@ -1,0 +1,557 @@
+{
+  "description": "ApplicationTree represents the hierarchical structure of resources associated with an Argo CD application.",
+  "type": "object",
+  "properties": {
+    "hosts": {
+      "description": "Hosts provides a list of Kubernetes nodes that are running pods related to the application.",
+      "type": "array",
+      "items": {
+        "description": "HostInfo holds metadata and resource usage metrics for a specific host in the cluster.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "Name is the hostname or node name in the Kubernetes cluster.",
+            "type": "string"
+          },
+          "resourcesInfo": {
+            "description": "ResourcesInfo provides a list of resource usage details for different resource types on this host.",
+            "type": "array",
+            "items": {
+              "description": "HostResourceInfo represents resource usage details for a specific resource type on a host.",
+              "type": "object",
+              "properties": {
+                "capacity": {
+                  "description": "Capacity represents the total available capacity of this resource on the host.",
+                  "type": "integer",
+                  "format": "int64"
+                },
+                "requestedByApp": {
+                  "description": "RequestedByApp indicates the total amount of this resource requested by the application running on the host.",
+                  "type": "integer",
+                  "format": "int64"
+                },
+                "requestedByNeighbors": {
+                  "description": "RequestedByNeighbors indicates the total amount of this resource requested by other workloads on the same host.",
+                  "type": "integer",
+                  "format": "int64"
+                },
+                "resourceName": {
+                  "description": "ResourceName specifies the type of resource (e.g., CPU, memory, storage).",
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "systemInfo": {
+            "description": "NodeSystemInfo is a set of ids/uuids to uniquely identify the node.",
+            "type": "object",
+            "properties": {
+              "architecture": {
+                "type": "string",
+                "title": "The Architecture reported by the node"
+              },
+              "bootID": {
+                "description": "Boot ID reported by the node.",
+                "type": "string"
+              },
+              "containerRuntimeVersion": {
+                "description": "ContainerRuntime Version reported by the node through runtime remote API (e.g. containerd://1.4.2).",
+                "type": "string"
+              },
+              "kernelVersion": {
+                "description": "Kernel Version reported by the node from 'uname -r' (e.g. 3.16.0-0.bpo.4-amd64).",
+                "type": "string"
+              },
+              "kubeProxyVersion": {
+                "description": "Deprecated: KubeProxy Version reported by the node.",
+                "type": "string"
+              },
+              "kubeletVersion": {
+                "description": "Kubelet Version reported by the node.",
+                "type": "string"
+              },
+              "machineID": {
+                "type": "string",
+                "title": "MachineID reported by the node. For unique machine identification\nin the cluster this field is preferred. Learn more from man(5)\nmachine-id: http://man7.org/linux/man-pages/man5/machine-id.5.html"
+              },
+              "operatingSystem": {
+                "type": "string",
+                "title": "The Operating System reported by the node"
+              },
+              "osImage": {
+                "description": "OS Image reported by the node from /etc/os-release (e.g. Debian GNU/Linux 7 (wheezy)).",
+                "type": "string"
+              },
+              "systemUUID": {
+                "type": "string",
+                "title": "SystemUUID reported by the node. For unique machine identification\nMachineID is preferred. This field is specific to Red Hat hosts\nhttps://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/rhsm/uuid"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "nodes": {
+      "description": "Nodes contains a list of resources that are either directly managed by the application\nor are children of directly managed resources.",
+      "type": "array",
+      "items": {
+        "description": "ResourceNode contains information about a live Kubernetes resource and its relationships with other resources.",
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "description": "Time is a wrapper around time.Time which supports correct\nmarshaling to YAML and JSON.  Wrappers are provided for many\nof the factory methods that the time package offers.\n\n+protobuf.options.marshal=false\n+protobuf.as=Timestamp\n+protobuf.options.(gogoproto.goproto_stringer)=false",
+            "type": "string",
+            "format": "date-time"
+          },
+          "health": {
+            "type": "object",
+            "title": "HealthStatus contains information about the currently observed health state of an application or resource",
+            "properties": {
+              "lastTransitionTime": {
+                "description": "Time is a wrapper around time.Time which supports correct\nmarshaling to YAML and JSON.  Wrappers are provided for many\nof the factory methods that the time package offers.\n\n+protobuf.options.marshal=false\n+protobuf.as=Timestamp\n+protobuf.options.(gogoproto.goproto_stringer)=false",
+                "type": "string",
+                "format": "date-time"
+              },
+              "message": {
+                "type": "string",
+                "title": "Message is a human-readable informational message describing the health status"
+              },
+              "status": {
+                "type": "string",
+                "title": "Status holds the status code of the application or resource"
+              }
+            },
+            "additionalProperties": false
+          },
+          "images": {
+            "description": "Images lists container images associated with the resource.\nThis is primarily useful for pods and other workload resources.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "info": {
+            "description": "Info provides additional metadata or annotations about the resource.",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "title": "InfoItem contains arbitrary, human readable information about an application",
+              "properties": {
+                "name": {
+                  "description": "Name is a human readable title for this piece of information.",
+                  "type": "string"
+                },
+                "value": {
+                  "description": "Value is human readable content.",
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "networkingInfo": {
+            "description": "ResourceNetworkingInfo holds networking-related information for a resource.",
+            "type": "object",
+            "properties": {
+              "externalURLs": {
+                "description": "ExternalURLs holds a list of URLs that should be accessible externally.\nThis field is typically populated for Ingress resources based on their hostname rules.",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "ingress": {
+                "description": "Ingress provides information about external access points (e.g., load balancer ingress) for this resource.",
+                "type": "array",
+                "items": {
+                  "description": "LoadBalancerIngress represents the status of a load-balancer ingress point:\ntraffic intended for the service should be sent to an ingress point.",
+                  "type": "object",
+                  "properties": {
+                    "hostname": {
+                      "type": "string",
+                      "title": "Hostname is set for load-balancer ingress points that are DNS based\n(typically AWS load-balancers)\n+optional"
+                    },
+                    "ip": {
+                      "type": "string",
+                      "title": "IP is set for load-balancer ingress points that are IP based\n(typically GCE or OpenStack load-balancers)\n+optional"
+                    },
+                    "ipMode": {
+                      "type": "string",
+                      "title": "IPMode specifies how the load-balancer IP behaves, and may only be specified when the ip field is specified.\nSetting this to \"VIP\" indicates that traffic is delivered to the node with\nthe destination set to the load-balancer's IP and port.\nSetting this to \"Proxy\" indicates that traffic is delivered to the node or pod with\nthe destination set to the node's IP and node port or the pod's IP and port.\nService implementations may use this information to adjust traffic routing.\n+optional"
+                    },
+                    "ports": {
+                      "type": "array",
+                      "title": "Ports is a list of records of service ports\nIf used, every port defined in the service should have an entry in it\n+listType=atomic\n+optional",
+                      "items": {
+                        "type": "object",
+                        "title": "PortStatus represents the error condition of a service port",
+                        "properties": {
+                          "error": {
+                            "type": "string",
+                            "title": "Error is to record the problem with the service port\nThe format of the error shall comply with the following rules:\n- built-in error values shall be specified in this file and those shall use\n  CamelCase names\n- cloud provider specific error values must have names that comply with the\n  format foo.example.com/CamelCase.\n---\nThe regex it matches is (dns1123SubdomainFmt/)?(qualifiedNameFmt)\n+optional\n+kubebuilder:validation:Required\n+kubebuilder:validation:Pattern=`^([a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*/)?(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])$`\n+kubebuilder:validation:MaxLength=316"
+                          },
+                          "port": {
+                            "type": "integer",
+                            "format": "int32",
+                            "title": "Port is the port number of the service port of which status is recorded here"
+                          },
+                          "protocol": {
+                            "type": "string",
+                            "title": "Protocol is the protocol of the service port of which status is recorded here\nThe supported values are: \"TCP\", \"UDP\", \"SCTP\""
+                          }
+                        },
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "labels": {
+                "description": "Labels holds the labels associated with this networking resource.",
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "targetLabels": {
+                "description": "TargetLabels represents labels associated with the target resources that this resource communicates with.",
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "targetRefs": {
+                "description": "TargetRefs contains references to other resources that this resource interacts with, such as Services or Pods.",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "title": "ResourceRef includes fields which uniquely identify a resource",
+                  "properties": {
+                    "group": {
+                      "type": "string"
+                    },
+                    "kind": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "type": "string"
+                    },
+                    "uid": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            },
+            "additionalProperties": false
+          },
+          "parentRefs": {
+            "description": "ParentRefs lists the parent resources that reference this resource.\nThis helps in understanding ownership and hierarchical relationships.",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "title": "ResourceRef includes fields which uniquely identify a resource",
+              "properties": {
+                "group": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "namespace": {
+                  "type": "string"
+                },
+                "uid": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "resourceVersion": {
+            "description": "ResourceVersion indicates the version of the resource, used to track changes.",
+            "type": "string"
+          }
+        },
+        "allOf": [
+          {
+            "type": "object",
+            "title": "ResourceRef includes fields which uniquely identify a resource",
+            "properties": {
+              "group": {
+                "type": "string"
+              },
+              "kind": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "namespace": {
+                "type": "string"
+              },
+              "uid": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        ],
+        "additionalProperties": false
+      }
+    },
+    "orphanedNodes": {
+      "description": "OrphanedNodes contains resources that exist in the same namespace as the application\nbut are not managed by it. This list is populated only if orphaned resource tracking\nis enabled in the application's project settings.",
+      "type": "array",
+      "items": {
+        "description": "ResourceNode contains information about a live Kubernetes resource and its relationships with other resources.",
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "description": "Time is a wrapper around time.Time which supports correct\nmarshaling to YAML and JSON.  Wrappers are provided for many\nof the factory methods that the time package offers.\n\n+protobuf.options.marshal=false\n+protobuf.as=Timestamp\n+protobuf.options.(gogoproto.goproto_stringer)=false",
+            "type": "string",
+            "format": "date-time"
+          },
+          "health": {
+            "type": "object",
+            "title": "HealthStatus contains information about the currently observed health state of an application or resource",
+            "properties": {
+              "lastTransitionTime": {
+                "description": "Time is a wrapper around time.Time which supports correct\nmarshaling to YAML and JSON.  Wrappers are provided for many\nof the factory methods that the time package offers.\n\n+protobuf.options.marshal=false\n+protobuf.as=Timestamp\n+protobuf.options.(gogoproto.goproto_stringer)=false",
+                "type": "string",
+                "format": "date-time"
+              },
+              "message": {
+                "type": "string",
+                "title": "Message is a human-readable informational message describing the health status"
+              },
+              "status": {
+                "type": "string",
+                "title": "Status holds the status code of the application or resource"
+              }
+            },
+            "additionalProperties": false
+          },
+          "images": {
+            "description": "Images lists container images associated with the resource.\nThis is primarily useful for pods and other workload resources.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "info": {
+            "description": "Info provides additional metadata or annotations about the resource.",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "title": "InfoItem contains arbitrary, human readable information about an application",
+              "properties": {
+                "name": {
+                  "description": "Name is a human readable title for this piece of information.",
+                  "type": "string"
+                },
+                "value": {
+                  "description": "Value is human readable content.",
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "networkingInfo": {
+            "description": "ResourceNetworkingInfo holds networking-related information for a resource.",
+            "type": "object",
+            "properties": {
+              "externalURLs": {
+                "description": "ExternalURLs holds a list of URLs that should be accessible externally.\nThis field is typically populated for Ingress resources based on their hostname rules.",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "ingress": {
+                "description": "Ingress provides information about external access points (e.g., load balancer ingress) for this resource.",
+                "type": "array",
+                "items": {
+                  "description": "LoadBalancerIngress represents the status of a load-balancer ingress point:\ntraffic intended for the service should be sent to an ingress point.",
+                  "type": "object",
+                  "properties": {
+                    "hostname": {
+                      "type": "string",
+                      "title": "Hostname is set for load-balancer ingress points that are DNS based\n(typically AWS load-balancers)\n+optional"
+                    },
+                    "ip": {
+                      "type": "string",
+                      "title": "IP is set for load-balancer ingress points that are IP based\n(typically GCE or OpenStack load-balancers)\n+optional"
+                    },
+                    "ipMode": {
+                      "type": "string",
+                      "title": "IPMode specifies how the load-balancer IP behaves, and may only be specified when the ip field is specified.\nSetting this to \"VIP\" indicates that traffic is delivered to the node with\nthe destination set to the load-balancer's IP and port.\nSetting this to \"Proxy\" indicates that traffic is delivered to the node or pod with\nthe destination set to the node's IP and node port or the pod's IP and port.\nService implementations may use this information to adjust traffic routing.\n+optional"
+                    },
+                    "ports": {
+                      "type": "array",
+                      "title": "Ports is a list of records of service ports\nIf used, every port defined in the service should have an entry in it\n+listType=atomic\n+optional",
+                      "items": {
+                        "type": "object",
+                        "title": "PortStatus represents the error condition of a service port",
+                        "properties": {
+                          "error": {
+                            "type": "string",
+                            "title": "Error is to record the problem with the service port\nThe format of the error shall comply with the following rules:\n- built-in error values shall be specified in this file and those shall use\n  CamelCase names\n- cloud provider specific error values must have names that comply with the\n  format foo.example.com/CamelCase.\n---\nThe regex it matches is (dns1123SubdomainFmt/)?(qualifiedNameFmt)\n+optional\n+kubebuilder:validation:Required\n+kubebuilder:validation:Pattern=`^([a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*/)?(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])$`\n+kubebuilder:validation:MaxLength=316"
+                          },
+                          "port": {
+                            "type": "integer",
+                            "format": "int32",
+                            "title": "Port is the port number of the service port of which status is recorded here"
+                          },
+                          "protocol": {
+                            "type": "string",
+                            "title": "Protocol is the protocol of the service port of which status is recorded here\nThe supported values are: \"TCP\", \"UDP\", \"SCTP\""
+                          }
+                        },
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "labels": {
+                "description": "Labels holds the labels associated with this networking resource.",
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "targetLabels": {
+                "description": "TargetLabels represents labels associated with the target resources that this resource communicates with.",
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "targetRefs": {
+                "description": "TargetRefs contains references to other resources that this resource interacts with, such as Services or Pods.",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "title": "ResourceRef includes fields which uniquely identify a resource",
+                  "properties": {
+                    "group": {
+                      "type": "string"
+                    },
+                    "kind": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "type": "string"
+                    },
+                    "uid": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            },
+            "additionalProperties": false
+          },
+          "parentRefs": {
+            "description": "ParentRefs lists the parent resources that reference this resource.\nThis helps in understanding ownership and hierarchical relationships.",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "title": "ResourceRef includes fields which uniquely identify a resource",
+              "properties": {
+                "group": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "namespace": {
+                  "type": "string"
+                },
+                "uid": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "resourceVersion": {
+            "description": "ResourceVersion indicates the version of the resource, used to track changes.",
+            "type": "string"
+          }
+        },
+        "allOf": [
+          {
+            "type": "object",
+            "title": "ResourceRef includes fields which uniquely identify a resource",
+            "properties": {
+              "group": {
+                "type": "string"
+              },
+              "kind": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "namespace": {
+                "type": "string"
+              },
+              "uid": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        ],
+        "additionalProperties": false
+      }
+    },
+    "shardsCount": {
+      "description": "ShardsCount represents the total number of shards the application tree is split into.\nThis is used to distribute resource processing across multiple shards.",
+      "type": "integer",
+      "format": "int64"
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}

@@ -1,0 +1,41 @@
+{
+  "description": "PullRequestGeneratorBitbucketServer defines connection info specific to BitbucketServer.",
+  "type": "object",
+  "properties": {
+    "api": {
+      "description": "The Bitbucket REST API URL to talk to e.g. https://bitbucket.org/rest Required.",
+      "type": "string"
+    },
+    "basicAuth": {
+      "description": "BasicAuthBitbucketServer defines the username/(password or personal access token) for Basic auth.",
+      "type": "object",
+      "properties": {
+        "passwordRef": {
+          "description": "Utility struct for a reference to a secret key.",
+          "type": "object",
+          "properties": {
+            "key": {
+              "type": "string"
+            },
+            "secretName": {
+              "type": "string"
+            }
+          }
+        },
+        "username": {
+          "type": "string",
+          "title": "Username for Basic auth"
+        }
+      }
+    },
+    "project": {
+      "description": "Project to scan. Required.",
+      "type": "string"
+    },
+    "repo": {
+      "description": "Repo name to scan. Required.",
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

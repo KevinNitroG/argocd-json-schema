@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "title": "TODO: describe this type",
+  "properties": {
+    "capacity": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "requestedByApp": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "requestedByNeighbors": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "resourceName": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}

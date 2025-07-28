@@ -1,0 +1,51 @@
+{
+  "type": "object",
+  "title": "ResourceStatus holds the current sync and health status of a resource\nTODO: describe members of this type",
+  "properties": {
+    "group": {
+      "type": "string"
+    },
+    "health": {
+      "type": "object",
+      "title": "HealthStatus contains information about the currently observed health state of an application or resource",
+      "properties": {
+        "message": {
+          "type": "string",
+          "title": "Message is a human-readable informational message describing the health status"
+        },
+        "status": {
+          "type": "string",
+          "title": "Status holds the status code of the application or resource"
+        }
+      },
+      "additionalProperties": false
+    },
+    "hook": {
+      "type": "boolean"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "namespace": {
+      "type": "string"
+    },
+    "requiresPruning": {
+      "type": "boolean"
+    },
+    "status": {
+      "type": "string"
+    },
+    "syncWave": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "version": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}

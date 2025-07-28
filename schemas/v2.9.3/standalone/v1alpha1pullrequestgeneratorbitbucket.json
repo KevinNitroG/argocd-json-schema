@@ -1,0 +1,59 @@
+{
+  "description": "PullRequestGeneratorBitbucket defines connection info specific to Bitbucket.",
+  "type": "object",
+  "properties": {
+    "api": {
+      "description": "The Bitbucket REST API URL to talk to. If blank, uses https://api.bitbucket.org/2.0.",
+      "type": "string"
+    },
+    "basicAuth": {
+      "description": "BasicAuthBitbucketServer defines the username/(password or personal access token) for Basic auth.",
+      "type": "object",
+      "properties": {
+        "passwordRef": {
+          "description": "Utility struct for a reference to a secret key.",
+          "type": "object",
+          "properties": {
+            "key": {
+              "type": "string"
+            },
+            "secretName": {
+              "type": "string"
+            }
+          }
+        },
+        "username": {
+          "type": "string",
+          "title": "Username for Basic auth"
+        }
+      }
+    },
+    "bearerToken": {
+      "description": "BearerTokenBitbucketCloud defines the Bearer token for BitBucket AppToken auth.",
+      "type": "object",
+      "properties": {
+        "tokenRef": {
+          "description": "Utility struct for a reference to a secret key.",
+          "type": "object",
+          "properties": {
+            "key": {
+              "type": "string"
+            },
+            "secretName": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "owner": {
+      "description": "Workspace to scan. Required.",
+      "type": "string"
+    },
+    "repo": {
+      "description": "Repo name to scan. Required.",
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

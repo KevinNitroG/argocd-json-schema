@@ -1,0 +1,908 @@
+{
+  "type": "object",
+  "properties": {
+    "directories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "exclude": {
+            "type": "boolean"
+          },
+          "path": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "pathParamPrefix": {
+      "type": "string"
+    },
+    "repoURL": {
+      "type": "string"
+    },
+    "requeueAfterSeconds": {
+      "type": "string",
+      "format": "int64"
+    },
+    "revision": {
+      "type": "string"
+    },
+    "template": {
+      "type": "object",
+      "title": "ApplicationSetTemplate represents argocd ApplicationSpec",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "title": "ApplicationSetTemplateMeta represents the Argo CD application fields that may\nbe used for Applications generated from the ApplicationSet (based on metav1.ObjectMeta)",
+          "properties": {
+            "annotations": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "finalizers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "labels": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "name": {
+              "type": "string"
+            },
+            "namespace": {
+              "type": "string"
+            }
+          }
+        },
+        "spec": {
+          "description": "ApplicationSpec represents desired application state. Contains link to repository with application definition and additional parameters link definition revision.",
+          "type": "object",
+          "properties": {
+            "destination": {
+              "type": "object",
+              "title": "ApplicationDestination holds information about the application's destination",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "title": "Name is an alternate way of specifying the target cluster by its symbolic name"
+                },
+                "namespace": {
+                  "type": "string",
+                  "title": "Namespace specifies the target namespace for the application's resources.\nThe namespace will only be set for namespace-scoped resources that have not set a value for .metadata.namespace"
+                },
+                "server": {
+                  "type": "string",
+                  "title": "Server specifies the URL of the target cluster and must be set to the Kubernetes control plane API"
+                }
+              }
+            },
+            "ignoreDifferences": {
+              "type": "array",
+              "title": "IgnoreDifferences is a list of resources and their fields which should be ignored during comparison",
+              "items": {
+                "description": "ResourceIgnoreDifferences contains resource filter and list of json paths which should be ignored during comparison with live state.",
+                "type": "object",
+                "properties": {
+                  "group": {
+                    "type": "string"
+                  },
+                  "jqPathExpressions": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "jsonPointers": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "kind": {
+                    "type": "string"
+                  },
+                  "managedFieldsManagers": {
+                    "type": "array",
+                    "title": "ManagedFieldsManagers is a list of trusted managers. Fields mutated by those managers will take precedence over the\ndesired state defined in the SCM and won't be displayed in diffs",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "namespace": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "info": {
+              "type": "array",
+              "title": "Info contains a list of information (URLs, email addresses, and plain text) that relates to the application",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "project": {
+              "description": "Project is a reference to the project this application belongs to.\nThe empty string means that application belongs to the 'default' project.",
+              "type": "string"
+            },
+            "revisionHistoryLimit": {
+              "description": "RevisionHistoryLimit limits the number of items kept in the application's revision history, which is used for informational purposes as well as for rollbacks to previous versions.\nThis should only be changed in exceptional circumstances.\nSetting to zero will store no history. This will reduce storage used.\nIncreasing will increase the space used to store the history, so we do not recommend increasing it.\nDefault is 10.",
+              "type": "string",
+              "format": "int64"
+            },
+            "source": {
+              "type": "object",
+              "title": "ApplicationSource contains all required information about the source of an application",
+              "properties": {
+                "chart": {
+                  "description": "Chart is a Helm chart name, and must be specified for applications sourced from a Helm repo.",
+                  "type": "string"
+                },
+                "directory": {
+                  "type": "object",
+                  "title": "ApplicationSourceDirectory holds options for applications of type plain YAML or Jsonnet",
+                  "properties": {
+                    "exclude": {
+                      "type": "string",
+                      "title": "Exclude contains a glob pattern to match paths against that should be explicitly excluded from being used during manifest generation"
+                    },
+                    "include": {
+                      "type": "string",
+                      "title": "Include contains a glob pattern to match paths against that should be explicitly included during manifest generation"
+                    },
+                    "jsonnet": {
+                      "type": "object",
+                      "title": "ApplicationSourceJsonnet holds options specific to applications of type Jsonnet",
+                      "properties": {
+                        "extVars": {
+                          "type": "array",
+                          "title": "ExtVars is a list of Jsonnet External Variables",
+                          "items": {
+                            "type": "object",
+                            "title": "JsonnetVar represents a variable to be passed to jsonnet during manifest generation",
+                            "properties": {
+                              "code": {
+                                "type": "boolean"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "value": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        },
+                        "libs": {
+                          "type": "array",
+                          "title": "Additional library search dirs",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "tlas": {
+                          "type": "array",
+                          "title": "TLAS is a list of Jsonnet Top-level Arguments",
+                          "items": {
+                            "type": "object",
+                            "title": "JsonnetVar represents a variable to be passed to jsonnet during manifest generation",
+                            "properties": {
+                              "code": {
+                                "type": "boolean"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "value": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "recurse": {
+                      "type": "boolean",
+                      "title": "Recurse specifies whether to scan a directory recursively for manifests"
+                    }
+                  }
+                },
+                "helm": {
+                  "type": "object",
+                  "title": "ApplicationSourceHelm holds helm specific options",
+                  "properties": {
+                    "fileParameters": {
+                      "type": "array",
+                      "title": "FileParameters are file parameters to the helm template",
+                      "items": {
+                        "type": "object",
+                        "title": "HelmFileParameter is a file parameter that's passed to helm template during manifest generation",
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "title": "Name is the name of the Helm parameter"
+                          },
+                          "path": {
+                            "type": "string",
+                            "title": "Path is the path to the file containing the values for the Helm parameter"
+                          }
+                        }
+                      }
+                    },
+                    "ignoreMissingValueFiles": {
+                      "type": "boolean",
+                      "title": "IgnoreMissingValueFiles prevents helm template from failing when valueFiles do not exist locally by not appending them to helm template --values"
+                    },
+                    "parameters": {
+                      "type": "array",
+                      "title": "Parameters is a list of Helm parameters which are passed to the helm template command upon manifest generation",
+                      "items": {
+                        "type": "object",
+                        "title": "HelmParameter is a parameter that's passed to helm template during manifest generation",
+                        "properties": {
+                          "forceString": {
+                            "type": "boolean",
+                            "title": "ForceString determines whether to tell Helm to interpret booleans and numbers as strings"
+                          },
+                          "name": {
+                            "type": "string",
+                            "title": "Name is the name of the Helm parameter"
+                          },
+                          "value": {
+                            "type": "string",
+                            "title": "Value is the value for the Helm parameter"
+                          }
+                        }
+                      }
+                    },
+                    "passCredentials": {
+                      "type": "boolean",
+                      "title": "PassCredentials pass credentials to all domains (Helm's --pass-credentials)"
+                    },
+                    "releaseName": {
+                      "type": "string",
+                      "title": "ReleaseName is the Helm release name to use. If omitted it will use the application name"
+                    },
+                    "skipCrds": {
+                      "type": "boolean",
+                      "title": "SkipCrds skips custom resource definition installation step (Helm's --skip-crds)"
+                    },
+                    "valueFiles": {
+                      "type": "array",
+                      "title": "ValuesFiles is a list of Helm value files to use when generating a template",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "values": {
+                      "type": "string",
+                      "title": "Values specifies Helm values to be passed to helm template, typically defined as a block. ValuesObject takes precedence over Values, so use one or the other.\n+patchStrategy=replace"
+                    },
+                    "valuesObject": {
+                      "description": "RawExtension is used to hold extensions in external versions.\n\nTo use this, make a field which has RawExtension as its type in your external, versioned\nstruct, and Object in your internal struct. You also need to register your\nvarious plugin types.\n\n// Internal package:\ntype MyAPIObject struct {\n\truntime.TypeMeta `json:\",inline\"`\n\tMyPlugin runtime.Object `json:\"myPlugin\"`\n}\ntype PluginA struct {\n\tAOption string `json:\"aOption\"`\n}\n\n// External package:\ntype MyAPIObject struct {\n\truntime.TypeMeta `json:\",inline\"`\n\tMyPlugin runtime.RawExtension `json:\"myPlugin\"`\n}\ntype PluginA struct {\n\tAOption string `json:\"aOption\"`\n}\n\n// On the wire, the JSON will look something like this:\n{\n\t\"kind\":\"MyAPIObject\",\n\t\"apiVersion\":\"v1\",\n\t\"myPlugin\": {\n\t\t\"kind\":\"PluginA\",\n\t\t\"aOption\":\"foo\",\n\t},\n}\n\nSo what happens? Decode first uses json or yaml to unmarshal the serialized data into\nyour external MyAPIObject. That causes the raw JSON to be stored, but not unpacked.\nThe next step is to copy (using pkg/conversion) into the internal struct. The runtime\npackage's DefaultScheme has conversion functions installed which will unpack the\nJSON stored in RawExtension, turning it into the correct object type, and storing it\nin the Object. (TODO: In the case where the object is of an unknown type, a\nruntime.Unknown object will be created and stored.)\n\n+k8s:deepcopy-gen=true\n+protobuf=true\n+k8s:openapi-gen=true",
+                      "type": "object",
+                      "properties": {
+                        "raw": {
+                          "description": "Raw is the underlying serialization of this object.\n\nTODO: Determine how to detect ContentType and ContentEncoding of 'Raw' data.",
+                          "type": "string",
+                          "format": "byte"
+                        }
+                      }
+                    },
+                    "version": {
+                      "type": "string",
+                      "title": "Version is the Helm version to use for templating (\"3\")"
+                    }
+                  }
+                },
+                "kustomize": {
+                  "type": "object",
+                  "title": "ApplicationSourceKustomize holds options specific to an Application source specific to Kustomize",
+                  "properties": {
+                    "commonAnnotations": {
+                      "type": "object",
+                      "title": "CommonAnnotations is a list of additional annotations to add to rendered manifests",
+                      "additionalProperties": {
+                        "type": "string"
+                      }
+                    },
+                    "commonAnnotationsEnvsubst": {
+                      "type": "boolean",
+                      "title": "CommonAnnotationsEnvsubst specifies whether to apply env variables substitution for annotation values"
+                    },
+                    "commonLabels": {
+                      "type": "object",
+                      "title": "CommonLabels is a list of additional labels to add to rendered manifests",
+                      "additionalProperties": {
+                        "type": "string"
+                      }
+                    },
+                    "forceCommonAnnotations": {
+                      "type": "boolean",
+                      "title": "ForceCommonAnnotations specifies whether to force applying common annotations to resources for Kustomize apps"
+                    },
+                    "forceCommonLabels": {
+                      "type": "boolean",
+                      "title": "ForceCommonLabels specifies whether to force applying common labels to resources for Kustomize apps"
+                    },
+                    "images": {
+                      "type": "array",
+                      "title": "Images is a list of Kustomize image override specifications",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "namePrefix": {
+                      "type": "string",
+                      "title": "NamePrefix is a prefix appended to resources for Kustomize apps"
+                    },
+                    "nameSuffix": {
+                      "type": "string",
+                      "title": "NameSuffix is a suffix appended to resources for Kustomize apps"
+                    },
+                    "namespace": {
+                      "type": "string",
+                      "title": "Namespace sets the namespace that Kustomize adds to all resources"
+                    },
+                    "replicas": {
+                      "type": "array",
+                      "title": "Replicas is a list of Kustomize Replicas override specifications",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "count": {
+                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                            "type": "object",
+                            "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
+                            "properties": {
+                              "intVal": {
+                                "type": "integer",
+                                "format": "int32"
+                              },
+                              "strVal": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string",
+                                "format": "int64"
+                              }
+                            }
+                          },
+                          "name": {
+                            "type": "string",
+                            "title": "Name of Deployment or StatefulSet"
+                          }
+                        }
+                      }
+                    },
+                    "version": {
+                      "type": "string",
+                      "title": "Version controls which version of Kustomize to use for rendering manifests"
+                    }
+                  }
+                },
+                "path": {
+                  "description": "Path is a directory path within the Git repository, and is only valid for applications sourced from Git.",
+                  "type": "string"
+                },
+                "plugin": {
+                  "type": "object",
+                  "title": "ApplicationSourcePlugin holds options specific to config management plugins",
+                  "properties": {
+                    "env": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "title": "EnvEntry represents an entry in the application's environment",
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "title": "Name is the name of the variable, usually expressed in uppercase"
+                          },
+                          "value": {
+                            "type": "string",
+                            "title": "Value is the value of the variable"
+                          }
+                        }
+                      }
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "parameters": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "array": {
+                            "description": "Array is the value of an array type parameter.",
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "map": {
+                            "description": "Map is the value of a map type parameter.",
+                            "type": "object",
+                            "additionalProperties": {
+                              "type": "string"
+                            }
+                          },
+                          "name": {
+                            "description": "Name is the name identifying a parameter.",
+                            "type": "string"
+                          },
+                          "string": {
+                            "description": "String_ is the value of a string type parameter.",
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "ref": {
+                  "description": "Ref is reference to another source within sources field. This field will not be used if used with a `source` tag.",
+                  "type": "string"
+                },
+                "repoURL": {
+                  "type": "string",
+                  "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                },
+                "targetRevision": {
+                  "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
+                  "type": "string"
+                }
+              }
+            },
+            "sources": {
+              "type": "array",
+              "title": "Sources is a reference to the location of the application's manifests or chart",
+              "items": {
+                "type": "object",
+                "title": "ApplicationSource contains all required information about the source of an application",
+                "properties": {
+                  "chart": {
+                    "description": "Chart is a Helm chart name, and must be specified for applications sourced from a Helm repo.",
+                    "type": "string"
+                  },
+                  "directory": {
+                    "type": "object",
+                    "title": "ApplicationSourceDirectory holds options for applications of type plain YAML or Jsonnet",
+                    "properties": {
+                      "exclude": {
+                        "type": "string",
+                        "title": "Exclude contains a glob pattern to match paths against that should be explicitly excluded from being used during manifest generation"
+                      },
+                      "include": {
+                        "type": "string",
+                        "title": "Include contains a glob pattern to match paths against that should be explicitly included during manifest generation"
+                      },
+                      "jsonnet": {
+                        "type": "object",
+                        "title": "ApplicationSourceJsonnet holds options specific to applications of type Jsonnet",
+                        "properties": {
+                          "extVars": {
+                            "type": "array",
+                            "title": "ExtVars is a list of Jsonnet External Variables",
+                            "items": {
+                              "type": "object",
+                              "title": "JsonnetVar represents a variable to be passed to jsonnet during manifest generation",
+                              "properties": {
+                                "code": {
+                                  "type": "boolean"
+                                },
+                                "name": {
+                                  "type": "string"
+                                },
+                                "value": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
+                          "libs": {
+                            "type": "array",
+                            "title": "Additional library search dirs",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "tlas": {
+                            "type": "array",
+                            "title": "TLAS is a list of Jsonnet Top-level Arguments",
+                            "items": {
+                              "type": "object",
+                              "title": "JsonnetVar represents a variable to be passed to jsonnet during manifest generation",
+                              "properties": {
+                                "code": {
+                                  "type": "boolean"
+                                },
+                                "name": {
+                                  "type": "string"
+                                },
+                                "value": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "recurse": {
+                        "type": "boolean",
+                        "title": "Recurse specifies whether to scan a directory recursively for manifests"
+                      }
+                    }
+                  },
+                  "helm": {
+                    "type": "object",
+                    "title": "ApplicationSourceHelm holds helm specific options",
+                    "properties": {
+                      "fileParameters": {
+                        "type": "array",
+                        "title": "FileParameters are file parameters to the helm template",
+                        "items": {
+                          "type": "object",
+                          "title": "HelmFileParameter is a file parameter that's passed to helm template during manifest generation",
+                          "properties": {
+                            "name": {
+                              "type": "string",
+                              "title": "Name is the name of the Helm parameter"
+                            },
+                            "path": {
+                              "type": "string",
+                              "title": "Path is the path to the file containing the values for the Helm parameter"
+                            }
+                          }
+                        }
+                      },
+                      "ignoreMissingValueFiles": {
+                        "type": "boolean",
+                        "title": "IgnoreMissingValueFiles prevents helm template from failing when valueFiles do not exist locally by not appending them to helm template --values"
+                      },
+                      "parameters": {
+                        "type": "array",
+                        "title": "Parameters is a list of Helm parameters which are passed to the helm template command upon manifest generation",
+                        "items": {
+                          "type": "object",
+                          "title": "HelmParameter is a parameter that's passed to helm template during manifest generation",
+                          "properties": {
+                            "forceString": {
+                              "type": "boolean",
+                              "title": "ForceString determines whether to tell Helm to interpret booleans and numbers as strings"
+                            },
+                            "name": {
+                              "type": "string",
+                              "title": "Name is the name of the Helm parameter"
+                            },
+                            "value": {
+                              "type": "string",
+                              "title": "Value is the value for the Helm parameter"
+                            }
+                          }
+                        }
+                      },
+                      "passCredentials": {
+                        "type": "boolean",
+                        "title": "PassCredentials pass credentials to all domains (Helm's --pass-credentials)"
+                      },
+                      "releaseName": {
+                        "type": "string",
+                        "title": "ReleaseName is the Helm release name to use. If omitted it will use the application name"
+                      },
+                      "skipCrds": {
+                        "type": "boolean",
+                        "title": "SkipCrds skips custom resource definition installation step (Helm's --skip-crds)"
+                      },
+                      "valueFiles": {
+                        "type": "array",
+                        "title": "ValuesFiles is a list of Helm value files to use when generating a template",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "values": {
+                        "type": "string",
+                        "title": "Values specifies Helm values to be passed to helm template, typically defined as a block. ValuesObject takes precedence over Values, so use one or the other.\n+patchStrategy=replace"
+                      },
+                      "valuesObject": {
+                        "description": "RawExtension is used to hold extensions in external versions.\n\nTo use this, make a field which has RawExtension as its type in your external, versioned\nstruct, and Object in your internal struct. You also need to register your\nvarious plugin types.\n\n// Internal package:\ntype MyAPIObject struct {\n\truntime.TypeMeta `json:\",inline\"`\n\tMyPlugin runtime.Object `json:\"myPlugin\"`\n}\ntype PluginA struct {\n\tAOption string `json:\"aOption\"`\n}\n\n// External package:\ntype MyAPIObject struct {\n\truntime.TypeMeta `json:\",inline\"`\n\tMyPlugin runtime.RawExtension `json:\"myPlugin\"`\n}\ntype PluginA struct {\n\tAOption string `json:\"aOption\"`\n}\n\n// On the wire, the JSON will look something like this:\n{\n\t\"kind\":\"MyAPIObject\",\n\t\"apiVersion\":\"v1\",\n\t\"myPlugin\": {\n\t\t\"kind\":\"PluginA\",\n\t\t\"aOption\":\"foo\",\n\t},\n}\n\nSo what happens? Decode first uses json or yaml to unmarshal the serialized data into\nyour external MyAPIObject. That causes the raw JSON to be stored, but not unpacked.\nThe next step is to copy (using pkg/conversion) into the internal struct. The runtime\npackage's DefaultScheme has conversion functions installed which will unpack the\nJSON stored in RawExtension, turning it into the correct object type, and storing it\nin the Object. (TODO: In the case where the object is of an unknown type, a\nruntime.Unknown object will be created and stored.)\n\n+k8s:deepcopy-gen=true\n+protobuf=true\n+k8s:openapi-gen=true",
+                        "type": "object",
+                        "properties": {
+                          "raw": {
+                            "description": "Raw is the underlying serialization of this object.\n\nTODO: Determine how to detect ContentType and ContentEncoding of 'Raw' data.",
+                            "type": "string",
+                            "format": "byte"
+                          }
+                        }
+                      },
+                      "version": {
+                        "type": "string",
+                        "title": "Version is the Helm version to use for templating (\"3\")"
+                      }
+                    }
+                  },
+                  "kustomize": {
+                    "type": "object",
+                    "title": "ApplicationSourceKustomize holds options specific to an Application source specific to Kustomize",
+                    "properties": {
+                      "commonAnnotations": {
+                        "type": "object",
+                        "title": "CommonAnnotations is a list of additional annotations to add to rendered manifests",
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      },
+                      "commonAnnotationsEnvsubst": {
+                        "type": "boolean",
+                        "title": "CommonAnnotationsEnvsubst specifies whether to apply env variables substitution for annotation values"
+                      },
+                      "commonLabels": {
+                        "type": "object",
+                        "title": "CommonLabels is a list of additional labels to add to rendered manifests",
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      },
+                      "forceCommonAnnotations": {
+                        "type": "boolean",
+                        "title": "ForceCommonAnnotations specifies whether to force applying common annotations to resources for Kustomize apps"
+                      },
+                      "forceCommonLabels": {
+                        "type": "boolean",
+                        "title": "ForceCommonLabels specifies whether to force applying common labels to resources for Kustomize apps"
+                      },
+                      "images": {
+                        "type": "array",
+                        "title": "Images is a list of Kustomize image override specifications",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "namePrefix": {
+                        "type": "string",
+                        "title": "NamePrefix is a prefix appended to resources for Kustomize apps"
+                      },
+                      "nameSuffix": {
+                        "type": "string",
+                        "title": "NameSuffix is a suffix appended to resources for Kustomize apps"
+                      },
+                      "namespace": {
+                        "type": "string",
+                        "title": "Namespace sets the namespace that Kustomize adds to all resources"
+                      },
+                      "replicas": {
+                        "type": "array",
+                        "title": "Replicas is a list of Kustomize Replicas override specifications",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "count": {
+                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                              "type": "object",
+                              "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
+                              "properties": {
+                                "intVal": {
+                                  "type": "integer",
+                                  "format": "int32"
+                                },
+                                "strVal": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string",
+                                  "format": "int64"
+                                }
+                              }
+                            },
+                            "name": {
+                              "type": "string",
+                              "title": "Name of Deployment or StatefulSet"
+                            }
+                          }
+                        }
+                      },
+                      "version": {
+                        "type": "string",
+                        "title": "Version controls which version of Kustomize to use for rendering manifests"
+                      }
+                    }
+                  },
+                  "path": {
+                    "description": "Path is a directory path within the Git repository, and is only valid for applications sourced from Git.",
+                    "type": "string"
+                  },
+                  "plugin": {
+                    "type": "object",
+                    "title": "ApplicationSourcePlugin holds options specific to config management plugins",
+                    "properties": {
+                      "env": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "title": "EnvEntry represents an entry in the application's environment",
+                          "properties": {
+                            "name": {
+                              "type": "string",
+                              "title": "Name is the name of the variable, usually expressed in uppercase"
+                            },
+                            "value": {
+                              "type": "string",
+                              "title": "Value is the value of the variable"
+                            }
+                          }
+                        }
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "parameters": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "array": {
+                              "description": "Array is the value of an array type parameter.",
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
+                            "map": {
+                              "description": "Map is the value of a map type parameter.",
+                              "type": "object",
+                              "additionalProperties": {
+                                "type": "string"
+                              }
+                            },
+                            "name": {
+                              "description": "Name is the name identifying a parameter.",
+                              "type": "string"
+                            },
+                            "string": {
+                              "description": "String_ is the value of a string type parameter.",
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "ref": {
+                    "description": "Ref is reference to another source within sources field. This field will not be used if used with a `source` tag.",
+                    "type": "string"
+                  },
+                  "repoURL": {
+                    "type": "string",
+                    "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                  },
+                  "targetRevision": {
+                    "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "syncPolicy": {
+              "type": "object",
+              "title": "SyncPolicy controls when a sync will be performed in response to updates in git",
+              "properties": {
+                "automated": {
+                  "type": "object",
+                  "title": "SyncPolicyAutomated controls the behavior of an automated sync",
+                  "properties": {
+                    "allowEmpty": {
+                      "type": "boolean",
+                      "title": "AllowEmpty allows apps have zero live resources (default: false)"
+                    },
+                    "prune": {
+                      "type": "boolean",
+                      "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of automated sync (default: false)"
+                    },
+                    "selfHeal": {
+                      "type": "boolean",
+                      "title": "SelfHeal specifies whether to revert resources back to their desired state upon modification in the cluster (default: false)"
+                    }
+                  }
+                },
+                "managedNamespaceMetadata": {
+                  "type": "object",
+                  "properties": {
+                    "annotations": {
+                      "type": "object",
+                      "additionalProperties": {
+                        "type": "string"
+                      }
+                    },
+                    "labels": {
+                      "type": "object",
+                      "additionalProperties": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "retry": {
+                  "type": "object",
+                  "title": "RetryStrategy contains information about the strategy to apply when a sync failed",
+                  "properties": {
+                    "backoff": {
+                      "type": "object",
+                      "title": "Backoff is the backoff strategy to use on subsequent retries for failing syncs",
+                      "properties": {
+                        "duration": {
+                          "type": "string",
+                          "title": "Duration is the amount to back off. Default unit is seconds, but could also be a duration (e.g. \"2m\", \"1h\")"
+                        },
+                        "factor": {
+                          "type": "string",
+                          "format": "int64",
+                          "title": "Factor is a factor to multiply the base duration after each failed retry"
+                        },
+                        "maxDuration": {
+                          "type": "string",
+                          "title": "MaxDuration is the maximum amount of time allowed for the backoff strategy"
+                        }
+                      }
+                    },
+                    "limit": {
+                      "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
+                      "type": "string",
+                      "format": "int64"
+                    }
+                  }
+                },
+                "syncOptions": {
+                  "type": "array",
+                  "title": "Options allow you to specify whole app sync-options",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "values": {
+      "type": "object",
+      "title": "Values contains key/value pairs which are passed directly as parameters to the template",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

@@ -1,0 +1,79 @@
+{
+  "type": "object",
+  "title": "SyncPolicy controls when a sync will be performed in response to updates in git",
+  "properties": {
+    "automated": {
+      "type": "object",
+      "title": "SyncPolicyAutomated controls the behavior of an automated sync",
+      "properties": {
+        "allowEmpty": {
+          "type": "boolean",
+          "title": "AllowEmpty allows apps have zero live resources (default: false)"
+        },
+        "prune": {
+          "type": "boolean",
+          "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of automated sync (default: false)"
+        },
+        "selfHeal": {
+          "type": "boolean",
+          "title": "SelfHeal specifies whether to revert resources back to their desired state upon modification in the cluster (default: false)"
+        }
+      }
+    },
+    "managedNamespaceMetadata": {
+      "type": "object",
+      "properties": {
+        "annotations": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "labels": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "retry": {
+      "type": "object",
+      "title": "RetryStrategy contains information about the strategy to apply when a sync failed",
+      "properties": {
+        "backoff": {
+          "type": "object",
+          "title": "Backoff is the backoff strategy to use on subsequent retries for failing syncs",
+          "properties": {
+            "duration": {
+              "type": "string",
+              "title": "Duration is the amount to back off. Default unit is seconds, but could also be a duration (e.g. \"2m\", \"1h\")"
+            },
+            "factor": {
+              "type": "string",
+              "format": "int64",
+              "title": "Factor is a factor to multiply the base duration after each failed retry"
+            },
+            "maxDuration": {
+              "type": "string",
+              "title": "MaxDuration is the maximum amount of time allowed for the backoff strategy"
+            }
+          }
+        },
+        "limit": {
+          "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "syncOptions": {
+      "type": "array",
+      "title": "Options allow you to specify whole app sync-options",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

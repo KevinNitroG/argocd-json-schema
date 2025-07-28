@@ -1,0 +1,90 @@
+{
+  "type": "object",
+  "title": "ApplicationSourceKustomize holds options specific to an Application source specific to Kustomize",
+  "properties": {
+    "commonAnnotations": {
+      "type": "object",
+      "title": "CommonAnnotations is a list of additional annotations to add to rendered manifests",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "commonAnnotationsEnvsubst": {
+      "type": "boolean",
+      "title": "CommonAnnotationsEnvsubst specifies whether to apply env variables substitution for annotation values"
+    },
+    "commonLabels": {
+      "type": "object",
+      "title": "CommonLabels is a list of additional labels to add to rendered manifests",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "forceCommonAnnotations": {
+      "type": "boolean",
+      "title": "ForceCommonAnnotations specifies whether to force applying common annotations to resources for Kustomize apps"
+    },
+    "forceCommonLabels": {
+      "type": "boolean",
+      "title": "ForceCommonLabels specifies whether to force applying common labels to resources for Kustomize apps"
+    },
+    "images": {
+      "type": "array",
+      "title": "Images is a list of Kustomize image override specifications",
+      "items": {
+        "type": "string"
+      }
+    },
+    "namePrefix": {
+      "type": "string",
+      "title": "NamePrefix is a prefix appended to resources for Kustomize apps"
+    },
+    "nameSuffix": {
+      "type": "string",
+      "title": "NameSuffix is a suffix appended to resources for Kustomize apps"
+    },
+    "namespace": {
+      "type": "string",
+      "title": "Namespace sets the namespace that Kustomize adds to all resources"
+    },
+    "replicas": {
+      "type": "array",
+      "title": "Replicas is a list of Kustomize Replicas override specifications",
+      "items": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+            "type": "object",
+            "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
+            "properties": {
+              "intVal": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "strVal": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "format": "int64"
+              }
+            },
+            "additionalProperties": false
+          },
+          "name": {
+            "type": "string",
+            "title": "Name of Deployment or StatefulSet"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "version": {
+      "type": "string",
+      "title": "Version controls which version of Kustomize to use for rendering manifests"
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}
