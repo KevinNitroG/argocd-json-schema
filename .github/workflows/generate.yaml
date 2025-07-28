@@ -1,0 +1,25 @@
+name: Generate
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "10 10 */2 * *"
+jobs:
+  gen:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: generate
+        run: make
+
+      - uses: EndBug/add-and-commit@v9
+        with:
+          add: ./schemas/
+          message: "feat(autogen): update versions and resources"
+          committer_name: GitHub Actions
+          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
