@@ -1,27 +1,28 @@
-# Argocd JSON Schema
+# ArgoCD JSON Schema
 
-This repository generates JSON schemas for ArgoCD resources. These schemas can be used with the [YAML Language Server](https://github.com/redhat-developer/yaml-language-server) to enable validation and autocompletion in your editor.
+This repository provides JSON schemas for ArgoCD resources. These schemas can be used with the [YAML Language Server](https://github.com/redhat-developer/yaml-language-server) to enable validation and autocompletion in your editor.
 
 ---
 
 ## Usage
 
-### yaml language server
+### YAML Language Server
 
-Add the following comment to the top of your YAML files to reference the schema:
+To use a schema, add the following comment at the top of your YAML file:
 
 ```yaml
 # yaml-language-server: $schema=https://raw.githubusercontent.com/KevinNitroG/argocd-json-schema/refs/heads/main/schemas/{version}/{type}/{resource}.json
 ```
 
-Replace `{version}`, `{type}`, and `{resource}` with the appropriate values:
+Replace `{version}`, `{type}`, and `{resource}` as follows:
 
-- `{version}`: Use `main` or a tag from the [argoproj/argo-cd](https://github.com/argoproj/argo-cd) repository.
+- `{version}`: Use `main` or a release tag from the [argoproj/argo-cd](https://github.com/argoproj/argo-cd) repository.
 - `{type}`:
   - `standalone`: No references to external resources.
   - `standalone-strict`: Like `standalone`, but does not allow additional properties.
+- `{resource}`: The resource name (e.g., `deployment`).
 
-Example:
+**Example:**
 
 ```yaml
 # yaml-language-server: $schema=https://raw.githubusercontent.com/KevinNitroG/argocd-json-schema/refs/heads/main/schemas/v3.0.9/standalone-strict/deployment.json
@@ -29,14 +30,14 @@ Example:
 
 ---
 
-## Others
+## Additional Information
 
 ### Notes
 
-- Snippets for kubernetes and argocd in neovim with [kubernetes-schema-snippets.nvim](https://github.com/KevinNitroG/kubernetes-schema-snippets.nvim)
+- For Kubernetes and ArgoCD snippets in Neovim, see [kubernetes-schema-snippets.nvim](https://github.com/KevinNitroG/kubernetes-schema-snippets.nvim).
 - The tool [yannh/openapi2jsonschema](https://github.com/yannh/openapi2jsonschema) does not work with the `--kubernetes` argument. As a result, resource names include the version before the resource name.
 
-### Acknowledgement
+### Acknowledgements
 
 - <https://github.com/argoproj/argo-cd>
 - <https://github.com/yannh/kubernetes-json-schema>
