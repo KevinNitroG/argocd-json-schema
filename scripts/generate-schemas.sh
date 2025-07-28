@@ -5,18 +5,20 @@ set -euo pipefail
 out="${1:-schemas/}"
 mkdir -p "$out"
 
-# TODO: When it fully generated, no need to sort
 tags=$(git ls-remote --refs --tags https://github.com/argoproj/argo-cd.git | cut -d/ -f3 | sort --general-numeric-sort --reverse | sed -n '1,100p')
 bin="docker run -i --rm -v ${out}:/out/schemas ghcr.io/yannh/openapi2jsonschema:latest"
 
+counter=0
+
 for tag in master $tags; do
+  counter=$((counter + 1))
   if [ -d "${out}/${tags}" ]; then
     continue
   fi
 
   url=https://raw.githubusercontent.com/argoproj/argo-cd/${tag}/assets/swagger.json
   printf -- '---\n'
-  echo "Generating for tag: $tag..."
+  echo "Order: $counter: Generating for $tag..."
   # prefix=https://raw.githubusercontent.com/KevinNitroG/argocd-json-schema/main/${out}/${tag}/_definitions.json
 
   {
