@@ -6,7 +6,7 @@ out="${1:-schemas/}"
 mkdir -p "$out"
 
 # TODO: When it fully generated, no need to sort
-tags=$(git ls-remote --refs --tags https://github.com/argoproj/argo-cd.git | cut -d/ -f3 | sort --general-numeric-sort --reverse | sed -n '1,10p')
+tags=$(git ls-remote --refs --tags https://github.com/argoproj/argo-cd.git | cut -d/ -f3 | sort --general-numeric-sort --reverse | sed -n '11,80p')
 bin="docker run -i --rm -v ${out}:/out/schemas ghcr.io/yannh/openapi2jsonschema:latest"
 
 for tag in master $tags; do
