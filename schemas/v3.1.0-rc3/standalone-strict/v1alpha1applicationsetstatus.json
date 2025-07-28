@@ -1,0 +1,150 @@
+{
+  "type": "object",
+  "title": "ApplicationSetStatus defines the observed state of ApplicationSet",
+  "properties": {
+    "applicationStatus": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "title": "ApplicationSetApplicationStatus contains details about each Application managed by the ApplicationSet",
+        "properties": {
+          "application": {
+            "type": "string",
+            "title": "Application contains the name of the Application resource"
+          },
+          "lastTransitionTime": {
+            "description": "Time is a wrapper around time.Time which supports correct\nmarshaling to YAML and JSON.  Wrappers are provided for many\nof the factory methods that the time package offers.\n\n+protobuf.options.marshal=false\n+protobuf.as=Timestamp\n+protobuf.options.(gogoproto.goproto_stringer)=false",
+            "type": "string",
+            "format": "date-time"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message contains human-readable message indicating details about the status"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status contains the AppSet's perceived status of the managed Application resource: (Waiting, Pending, Progressing, Healthy)"
+          },
+          "step": {
+            "type": "string",
+            "title": "Step tracks which step this Application should be updated in"
+          },
+          "targetrevisions": {
+            "description": "TargetRevision tracks the desired revisions the Application should be synced to.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "conditions": {
+      "type": "array",
+      "title": "INSERT ADDITIONAL STATUS FIELD - define observed state of cluster\nImportant: Run \"make\" to regenerate code after modifying this file",
+      "items": {
+        "type": "object",
+        "title": "ApplicationSetCondition contains details about an applicationset condition, which is usually an error or warning",
+        "properties": {
+          "lastTransitionTime": {
+            "description": "Time is a wrapper around time.Time which supports correct\nmarshaling to YAML and JSON.  Wrappers are provided for many\nof the factory methods that the time package offers.\n\n+protobuf.options.marshal=false\n+protobuf.as=Timestamp\n+protobuf.options.(gogoproto.goproto_stringer)=false",
+            "type": "string",
+            "format": "date-time"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message contains human-readable message indicating details about condition"
+          },
+          "reason": {
+            "type": "string",
+            "title": "Single word camelcase representing the reason for the status eg ErrorOccurred"
+          },
+          "status": {
+            "type": "string",
+            "title": "True/False/Unknown"
+          },
+          "type": {
+            "type": "string",
+            "title": "Type is an applicationset condition type"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "resources": {
+      "description": "Resources is a list of Applications resources managed by this application set.",
+      "type": "array",
+      "items": {
+        "description": "ResourceStatus holds the current synchronization and health status of a Kubernetes resource.",
+        "type": "object",
+        "properties": {
+          "group": {
+            "description": "Group represents the API group of the resource (e.g., \"apps\" for Deployments).",
+            "type": "string"
+          },
+          "health": {
+            "type": "object",
+            "title": "HealthStatus contains information about the currently observed health state of a resource",
+            "properties": {
+              "lastTransitionTime": {
+                "description": "Time is a wrapper around time.Time which supports correct\nmarshaling to YAML and JSON.  Wrappers are provided for many\nof the factory methods that the time package offers.\n\n+protobuf.options.marshal=false\n+protobuf.as=Timestamp\n+protobuf.options.(gogoproto.goproto_stringer)=false",
+                "type": "string",
+                "format": "date-time"
+              },
+              "message": {
+                "type": "string",
+                "title": "Message is a human-readable informational message describing the health status"
+              },
+              "status": {
+                "type": "string",
+                "title": "Status holds the status code of the resource"
+              }
+            },
+            "additionalProperties": false
+          },
+          "hook": {
+            "description": "Hook is true if the resource is used as a lifecycle hook in an Argo CD application.",
+            "type": "boolean"
+          },
+          "kind": {
+            "description": "Kind specifies the type of the resource (e.g., \"Deployment\", \"Service\").",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name is the unique name of the resource within the namespace.",
+            "type": "string"
+          },
+          "namespace": {
+            "description": "Namespace defines the Kubernetes namespace where the resource is located.",
+            "type": "string"
+          },
+          "requiresDeletionConfirmation": {
+            "description": "RequiresDeletionConfirmation is true if the resource requires explicit user confirmation before deletion.",
+            "type": "boolean"
+          },
+          "requiresPruning": {
+            "description": "RequiresPruning is true if the resource needs to be pruned (deleted) as part of synchronization.",
+            "type": "boolean"
+          },
+          "status": {
+            "description": "Status represents the synchronization state of the resource (e.g., Synced, OutOfSync).",
+            "type": "string"
+          },
+          "syncWave": {
+            "description": "SyncWave determines the order in which resources are applied during a sync operation.\nLower values are applied first.",
+            "type": "integer",
+            "format": "int64"
+          },
+          "version": {
+            "description": "Version indicates the API version of the resource (e.g., \"v1\", \"v1beta1\").",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}
