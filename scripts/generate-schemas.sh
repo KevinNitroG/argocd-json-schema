@@ -7,7 +7,7 @@ mkdir -p "$out"
 
 tags=$(git ls-remote --refs --tags https://github.com/argoproj/argo-cd.git | cut -d/ -f3 | sort --general-numeric-sort --reverse | sed -n '1,200p')
 
-special_tags=$('main' 'stable')
+special_tags=$('master' 'stable')
 
 container_id=$(docker run -d -v "${out}:/out/schemas" ghcr.io/yannh/openapi2jsonschema:latest sleep infinity)
 
