@@ -2,7 +2,7 @@ name: Generate
 on:
   workflow_dispatch:
   schedule:
-    - cron: "10 10 */2 * *"
+    - cron: "0 0 * * 1"
 jobs:
   gen:
     runs-on: ubuntu-latest
