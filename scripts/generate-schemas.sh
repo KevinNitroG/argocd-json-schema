@@ -9,7 +9,7 @@ tags=$(git ls-remote --refs --tags https://github.com/argoproj/argo-cd.git | cut
 
 special_tags=('master' 'stable')
 
-container_id=$(docker run -d -v "${out}:/out/schemas" ghcr.io/yannh/openapi2jsonschema:latest sleep infinity)
+container_id=$(docker run -d -v "${out}:/out/schemas" --entrypoint sh ghcr.io/yannh/openapi2jsonschema:latest sleep infinity)
 
 function cleanup() {
   docker stop "$container_id" >/dev/null 2>&1 || true
