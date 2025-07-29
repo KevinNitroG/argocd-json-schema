@@ -15,6 +15,7 @@ readarray -t tags < <(
 special_tags=('master' 'stable')
 
 container_id=$(docker run -d -v "${out}:/out/schemas" --entrypoint sleep ghcr.io/yannh/openapi2jsonschema:latest infinity)
+bin="docker exec ${container_id} openapi2jsonschema -i"
 
 function cleanup() {
   docker stop "$container_id" >/dev/null 2>&1 || true
@@ -28,24 +29,24 @@ function generate() {
   url=https://raw.githubusercontent.com/argoproj/argo-cd/${tag}/assets/swagger.json
   # prefix=https://raw.githubusercontent.com/KevinNitroG/argocd-json-schema/main/${out}/${tag}/_definitions.json
 
-  docker exec "$container_id" openapi2jsonschema -o "schemas/${tag}/standalone-strict" --expanded --stand-alone --strict "${url}" >/dev/null &
-  docker exec "$container_id" openapi2jsonschema -o "schemas/${tag}/standalone-strict" --stand-alone --strict "${url}" >/dev/null &
-  docker exec "$container_id" openapi2jsonschema -o "schemas/${tag}/standalone" --expanded --stand-alone "${url}" >/dev/null &
-  docker exec "$container_id" openapi2jsonschema -o "schemas/${tag}/standalone" --stand-alone "${url}" >/dev/null &
+  $bin -o "schemas/${tag}/standalone-strict" --expanded --stand-alone --strict "${url}" >/dev/null &
+  $bin -o "schemas/${tag}/standalone-strict" --stand-alone --strict "${url}" >/dev/null &
+  $bin -o "schemas/${tag}/standalone" --expanded --stand-alone "${url}" >/dev/null &
+  $bin -o "schemas/${tag}/standalone" --stand-alone "${url}" >/dev/null &
 
-  wait "$(jobs -p)"
+  wait
 
   # NOTE: Who needs local huh?
   #
-  # docker exec "$container_id" openapi2jsonschema -o "schemas/${tag}/local" --expanded "${url}" >/dev/null &
-  # docker exec "$container_id" openapi2jsonschema -o "schemas/${tag}/local" "${url}" >/dev/null &
+  # $bin -o "schemas/${tag}/local" --expanded "${url}" >/dev/null &
+  # $bin -o "schemas/${tag}/local" "${url}" >/dev/null &
 
   # TODO: I don't know what to name this. But it just... doesn't neccessary
   #
-  # docker exec "$container_id" openapi2jsonschema -o "schemas/${tag}" --expanded --kubernetes --prefix "${prefix}" "${url}" >/dev/null &
-  # docker exec "$container_id" openapi2jsonschema -o "schemas/${tag}" --kubernetes --prefix "${prefix}" "${url}" >/dev/null &
+  # $bin -o "schemas/${tag}" --expanded --kubernetes --prefix "${prefix}" "${url}" >/dev/null &
+  # $bin -o "schemas/${tag}" --kubernetes --prefix "${prefix}" "${url}" >/dev/null &
 
-  # wait "$(jobs -p)"
+  # wait
 }
 
 for tag in "${special_tags[@]}" "${tags[@]}"; do
