@@ -14,16 +14,7 @@ readarray -t tags < <(
 
 special_tags=('master' 'stable')
 
-container_id=$(docker run -d -v "${out}:/out/schemas" --entrypoint sleep ghcr.io/yannh/openapi2jsonschema:latest infinity)
-bin="docker exec ${container_id} openapi2jsonschema -i"
-
-function cleanup() {
-  docker stop "$container_id" >/dev/null 2>&1 || true
-  docker rm "$container_id" >/dev/null 2>&1 || true
-}
-trap cleanup EXIT
-
-counter=0
+bin="docker run -i --rm -v ${out}:/out/schemas ghcr.io/yannh/openapi2jsonschema:latest"
 
 function generate() {
   url=https://raw.githubusercontent.com/argoproj/argo-cd/${tag}/assets/swagger.json
@@ -48,6 +39,8 @@ function generate() {
 
   # wait
 }
+
+counter=0
 
 for tag in "${special_tags[@]}" "${tags[@]}"; do
   counter=$((counter + 1))
