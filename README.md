@@ -2,6 +2,8 @@
 
 This repository provides JSON schemas for ArgoCD resources. These schemas can be used with the [YAML Language Server](https://github.com/redhat-developer/yaml-language-server) to enable validation and autocompletion in your editor.
 
+![Repo size](https://img.shields.io/github/repo-size/KevinNitroG/argocd-json-schema?style=for-the-badge&color=b4befe&labelColor=363a4f)
+
 ---
 
 ## Usage
