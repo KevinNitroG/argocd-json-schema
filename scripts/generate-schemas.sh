@@ -7,7 +7,7 @@ mkdir -p "$out"
 
 tags=$(git ls-remote --refs --tags https://github.com/argoproj/argo-cd.git | cut -d/ -f3 | sort --general-numeric-sort --reverse | sed -n '1,200p')
 
-special_tags=$('master' 'stable')
+special_tags=('master' 'stable')
 
 container_id=$(docker run -d -v "${out}:/out/schemas" ghcr.io/yannh/openapi2jsonschema:latest sleep infinity)
 
@@ -22,6 +22,7 @@ counter=0
 function generate() {
   url=https://raw.githubusercontent.com/argoproj/argo-cd/${tag}/assets/swagger.json
   # prefix=https://raw.githubusercontent.com/KevinNitroG/argocd-json-schema/main/${out}/${tag}/_definitions.json
+
   docker exec "$container_id" openapi2jsonschema -o "schemas/${tag}/standalone-strict" --expanded --stand-alone --strict "${url}" >/dev/null &
   docker exec "$container_id" openapi2jsonschema -o "schemas/${tag}/standalone-strict" --stand-alone --strict "${url}" >/dev/null &
   docker exec "$container_id" openapi2jsonschema -o "schemas/${tag}/standalone" --expanded --stand-alone "${url}" >/dev/null &
@@ -31,13 +32,13 @@ function generate() {
 
   # NOTE: Who needs local huh?
   #
-  # docker exec "$container_id" openapi2jsonschema -o "schemas/${tag}/local" --expanded "${url}" &
-  # docker exec "$container_id" openapi2jsonschema -o "schemas/${tag}/local" "${url}" &
+  # docker exec "$container_id" openapi2jsonschema -o "schemas/${tag}/local" --expanded "${url}" >/dev/null &
+  # docker exec "$container_id" openapi2jsonschema -o "schemas/${tag}/local" "${url}" >/dev/null &
 
   # TODO: I don't know what to name this. But it just... doesn't neccessary
   #
-  # docker exec "$container_id" openapi2jsonschema -o "schemas/${tag}" --expanded --kubernetes --prefix "${prefix}" "${url}" &
-  # docker exec "$container_id" openapi2jsonschema -o "schemas/${tag}" --kubernetes --prefix "${prefix}" "${url}" &
+  # docker exec "$container_id" openapi2jsonschema -o "schemas/${tag}" --expanded --kubernetes --prefix "${prefix}" "${url}" >/dev/null &
+  # docker exec "$container_id" openapi2jsonschema -o "schemas/${tag}" --kubernetes --prefix "${prefix}" "${url}" >/dev/null &
 
   #wait
 }
