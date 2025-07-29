@@ -24,7 +24,7 @@ Replace `{version}`, `{type}`, and `{resource}` as follows:
   - `standalone-strict`: Like `standalone`, but does not allow additional properties.
 - `{resource}`: The resource name (e.g., `deployment`).
 
-[!WARNING]
+> [!WARNING]
 >
 > The `standalone-strict` one doesn't allow `apiVersion` and `kind`. Consider using `standalone` instead.
 
