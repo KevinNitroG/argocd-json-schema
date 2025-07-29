@@ -9,7 +9,7 @@ tags=$(git ls-remote --refs --tags https://github.com/argoproj/argo-cd.git | cut
 
 special_tags=('master' 'stable')
 
-container_id=$(docker run -d -v "${out}:/out/schemas" --entrypoint sh ghcr.io/yannh/openapi2jsonschema:latest sleep infinity)
+container_id=$(docker run -d -v "${out}:/out/schemas" --entrypoint sleep ghcr.io/yannh/openapi2jsonschema:latest infinity)
 
 function cleanup() {
   docker stop "$container_id" >/dev/null 2>&1 || true
@@ -46,7 +46,7 @@ function generate() {
 for tag in "${special_tags[@]}" "${tags[@]}"; do
   counter=$((counter + 1))
   printf -- '---\n'
-  if echo "${special_tags[*]}" | grep -q -F -w "${tag}" && [[ -d "${out}/${tag}" ]]; then
+  if ! echo "${special_tags[*]}" | grep -q -F -w "${tag}" && [[ -d "${out}/${tag}" ]]; then
     echo "Order: $counter: Skip generating for $tag"
     continue
   fi
