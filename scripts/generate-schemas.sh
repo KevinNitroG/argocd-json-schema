@@ -33,7 +33,7 @@ function generate() {
   docker exec "$container_id" openapi2jsonschema -o "schemas/${tag}/standalone" --expanded --stand-alone "${url}" >/dev/null &
   docker exec "$container_id" openapi2jsonschema -o "schemas/${tag}/standalone" --stand-alone "${url}" >/dev/null &
 
-  wait
+  wait "$(jobs -p)"
 
   # NOTE: Who needs local huh?
   #
@@ -45,7 +45,7 @@ function generate() {
   # docker exec "$container_id" openapi2jsonschema -o "schemas/${tag}" --expanded --kubernetes --prefix "${prefix}" "${url}" >/dev/null &
   # docker exec "$container_id" openapi2jsonschema -o "schemas/${tag}" --kubernetes --prefix "${prefix}" "${url}" >/dev/null &
 
-  # wait
+  # wait "$(jobs -p)"
 }
 
 for tag in "${special_tags[@]}" "${tags[@]}"; do
