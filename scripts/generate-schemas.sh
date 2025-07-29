@@ -5,7 +5,12 @@ set -euo pipefail
 out="${1:-schemas/}"
 mkdir -p "$out"
 
-tags=$(git ls-remote --refs --tags https://github.com/argoproj/argo-cd.git | cut -d/ -f3 | sort --general-numeric-sort --reverse | sed -n '1,200p')
+readarray -t tags < <(
+  git ls-remote --refs --tags https://github.com/argoproj/argo-cd.git |
+    cut -d/ -f3 |
+    sort --general-numeric-sort --reverse |
+    sed -n '1,200p'
+)
 
 special_tags=('master' 'stable')
 
