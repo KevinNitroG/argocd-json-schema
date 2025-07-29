@@ -38,7 +38,8 @@ function generate() {
   #
   # docker exec "$container_id" openapi2jsonschema -o "schemas/${tag}" --expanded --kubernetes --prefix "${prefix}" "${url}" &
   # docker exec "$container_id" openapi2jsonschema -o "schemas/${tag}" --kubernetes --prefix "${prefix}" "${url}" &
-  wait
+
+  #wait
 }
 
 for tag in "${special_tags[@]}" "${tags[@]}"; do
