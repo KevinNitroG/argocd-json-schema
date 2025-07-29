@@ -40,16 +40,16 @@ function generate() {
   # docker exec "$container_id" openapi2jsonschema -o "schemas/${tag}" --expanded --kubernetes --prefix "${prefix}" "${url}" >/dev/null &
   # docker exec "$container_id" openapi2jsonschema -o "schemas/${tag}" --kubernetes --prefix "${prefix}" "${url}" >/dev/null &
 
-  #wait
+  # wait
 }
 
 for tag in "${special_tags[@]}" "${tags[@]}"; do
   counter=$((counter + 1))
-  if [[ ${special_tags[*]} =~ $tag && -d "${out}/${tag}" ]]; then
+  printf -- '---\n'
+  if echo "${special_tags[*]}" | grep -q -F -w "${tag}" && [[ -d "${out}/${tag}" ]]; then
     echo "Order: $counter: Skip generating for $tag"
     continue
   fi
-  printf -- '---\n'
   echo "Order: $counter: Generating for $tag..."
   generate
 done
