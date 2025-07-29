@@ -14,6 +14,7 @@ readarray -t tags < <(
 
 special_tags=('master' 'stable')
 
+docker image pull ghcr.io/yannh/openapi2jsonschema:latest
 bin="docker run -i --rm -v ${out}:/out/schemas ghcr.io/yannh/openapi2jsonschema:latest"
 
 function generate() {
