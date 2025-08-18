@@ -73,6 +73,12 @@
       "$ref": "_definitions.json#/definitions/applicationOperationTerminateResponse"
     },
     {
+      "$ref": "_definitions.json#/definitions/applicationResourceActionParameters"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/applicationResourceActionRunRequestV2"
+    },
+    {
       "$ref": "_definitions.json#/definitions/applicationResourceActionsListResponse"
     },
     {
@@ -283,6 +289,9 @@
       "$ref": "_definitions.json#/definitions/v1MicroTime"
     },
     {
+      "$ref": "_definitions.json#/definitions/v1NodeSwapStatus"
+    },
+    {
       "$ref": "_definitions.json#/definitions/v1NodeSystemInfo"
     },
     {
@@ -302,6 +311,9 @@
     },
     {
       "$ref": "_definitions.json#/definitions/v1alpha1AWSAuthConfig"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/v1alpha1AppHealthStatus"
     },
     {
       "$ref": "_definitions.json#/definitions/v1alpha1AppProject"
@@ -457,6 +469,9 @@
       "$ref": "_definitions.json#/definitions/v1alpha1Command"
     },
     {
+      "$ref": "_definitions.json#/definitions/v1alpha1CommitMetadata"
+    },
+    {
       "$ref": "_definitions.json#/definitions/v1alpha1ComparedTo"
     },
     {
@@ -560,6 +575,9 @@
     },
     {
       "$ref": "_definitions.json#/definitions/v1alpha1MergeGenerator"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/v1alpha1OCIMetadata"
     },
     {
       "$ref": "_definitions.json#/definitions/v1alpha1Operation"
@@ -668,6 +686,9 @@
     },
     {
       "$ref": "_definitions.json#/definitions/v1alpha1RevisionMetadata"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/v1alpha1RevisionReference"
     },
     {
       "$ref": "_definitions.json#/definitions/v1alpha1SCMProviderGenerator"

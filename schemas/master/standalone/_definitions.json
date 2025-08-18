@@ -186,6 +186,20 @@
         }
       }
     },
+    "applicationApplicationServerSideDiffResponse": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1alpha1ResourceDiff"
+          }
+        },
+        "modified": {
+          "type": "boolean"
+        }
+      }
+    },
     "applicationApplicationSyncRequest": {
       "type": "object",
       "title": "ApplicationSyncRequest is a request to apply the config state to live state",

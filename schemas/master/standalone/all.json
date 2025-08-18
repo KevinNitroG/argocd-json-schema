@@ -46,6 +46,9 @@
       "$ref": "_definitions.json#/definitions/applicationApplicationRollbackRequest"
     },
     {
+      "$ref": "_definitions.json#/definitions/applicationApplicationServerSideDiffResponse"
+    },
+    {
       "$ref": "_definitions.json#/definitions/applicationApplicationSyncRequest"
     },
     {
