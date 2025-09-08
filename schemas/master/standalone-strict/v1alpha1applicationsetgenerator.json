@@ -1166,7 +1166,7 @@
                           "type": "boolean",
                           "title": "AllowEmpty allows apps have zero live resources (default: false)"
                         },
-                        "enable": {
+                        "enabled": {
                           "type": "boolean",
                           "title": "Enable allows apps to explicitly control automated sync"
                         },
@@ -2414,7 +2414,7 @@
                           "type": "boolean",
                           "title": "AllowEmpty allows apps have zero live resources (default: false)"
                         },
-                        "enable": {
+                        "enabled": {
                           "type": "boolean",
                           "title": "Enable allows apps to explicitly control automated sync"
                         },
@@ -3660,7 +3660,7 @@
                           "type": "boolean",
                           "title": "AllowEmpty allows apps have zero live resources (default: false)"
                         },
-                        "enable": {
+                        "enabled": {
                           "type": "boolean",
                           "title": "Enable allows apps to explicitly control automated sync"
                         },
@@ -4882,7 +4882,7 @@
                           "type": "boolean",
                           "title": "AllowEmpty allows apps have zero live resources (default: false)"
                         },
-                        "enable": {
+                        "enabled": {
                           "type": "boolean",
                           "title": "Enable allows apps to explicitly control automated sync"
                         },
@@ -6140,7 +6140,7 @@
                                     "type": "boolean",
                                     "title": "AllowEmpty allows apps have zero live resources (default: false)"
                                   },
-                                  "enable": {
+                                  "enabled": {
                                     "type": "boolean",
                                     "title": "Enable allows apps to explicitly control automated sync"
                                   },
@@ -7388,7 +7388,7 @@
                                     "type": "boolean",
                                     "title": "AllowEmpty allows apps have zero live resources (default: false)"
                                   },
-                                  "enable": {
+                                  "enabled": {
                                     "type": "boolean",
                                     "title": "Enable allows apps to explicitly control automated sync"
                                   },
@@ -8634,7 +8634,7 @@
                                     "type": "boolean",
                                     "title": "AllowEmpty allows apps have zero live resources (default: false)"
                                   },
-                                  "enable": {
+                                  "enabled": {
                                     "type": "boolean",
                                     "title": "Enable allows apps to explicitly control automated sync"
                                   },
@@ -9856,7 +9856,7 @@
                                     "type": "boolean",
                                     "title": "AllowEmpty allows apps have zero live resources (default: false)"
                                   },
-                                  "enable": {
+                                  "enabled": {
                                     "type": "boolean",
                                     "title": "Enable allows apps to explicitly control automated sync"
                                   },
@@ -11111,7 +11111,7 @@
                                     "type": "boolean",
                                     "title": "AllowEmpty allows apps have zero live resources (default: false)"
                                   },
-                                  "enable": {
+                                  "enabled": {
                                     "type": "boolean",
                                     "title": "Enable allows apps to explicitly control automated sync"
                                   },
@@ -12672,7 +12672,7 @@
                                     "type": "boolean",
                                     "title": "AllowEmpty allows apps have zero live resources (default: false)"
                                   },
-                                  "enable": {
+                                  "enabled": {
                                     "type": "boolean",
                                     "title": "Enable allows apps to explicitly control automated sync"
                                   },
@@ -14238,7 +14238,7 @@
                                     "type": "boolean",
                                     "title": "AllowEmpty allows apps have zero live resources (default: false)"
                                   },
-                                  "enable": {
+                                  "enabled": {
                                     "type": "boolean",
                                     "title": "Enable allows apps to explicitly control automated sync"
                                   },
@@ -15482,7 +15482,7 @@
                           "type": "boolean",
                           "title": "AllowEmpty allows apps have zero live resources (default: false)"
                         },
-                        "enable": {
+                        "enabled": {
                           "type": "boolean",
                           "title": "Enable allows apps to explicitly control automated sync"
                         },
@@ -16740,7 +16740,7 @@
                                     "type": "boolean",
                                     "title": "AllowEmpty allows apps have zero live resources (default: false)"
                                   },
-                                  "enable": {
+                                  "enabled": {
                                     "type": "boolean",
                                     "title": "Enable allows apps to explicitly control automated sync"
                                   },
@@ -17988,7 +17988,7 @@
                                     "type": "boolean",
                                     "title": "AllowEmpty allows apps have zero live resources (default: false)"
                                   },
-                                  "enable": {
+                                  "enabled": {
                                     "type": "boolean",
                                     "title": "Enable allows apps to explicitly control automated sync"
                                   },
@@ -19234,7 +19234,7 @@
                                     "type": "boolean",
                                     "title": "AllowEmpty allows apps have zero live resources (default: false)"
                                   },
-                                  "enable": {
+                                  "enabled": {
                                     "type": "boolean",
                                     "title": "Enable allows apps to explicitly control automated sync"
                                   },
@@ -20456,7 +20456,7 @@
                                     "type": "boolean",
                                     "title": "AllowEmpty allows apps have zero live resources (default: false)"
                                   },
-                                  "enable": {
+                                  "enabled": {
                                     "type": "boolean",
                                     "title": "Enable allows apps to explicitly control automated sync"
                                   },
@@ -21711,7 +21711,7 @@
                                     "type": "boolean",
                                     "title": "AllowEmpty allows apps have zero live resources (default: false)"
                                   },
-                                  "enable": {
+                                  "enabled": {
                                     "type": "boolean",
                                     "title": "Enable allows apps to explicitly control automated sync"
                                   },
@@ -23272,7 +23272,7 @@
                                     "type": "boolean",
                                     "title": "AllowEmpty allows apps have zero live resources (default: false)"
                                   },
-                                  "enable": {
+                                  "enabled": {
                                     "type": "boolean",
                                     "title": "Enable allows apps to explicitly control automated sync"
                                   },
@@ -24838,7 +24838,7 @@
                                     "type": "boolean",
                                     "title": "AllowEmpty allows apps have zero live resources (default: false)"
                                   },
-                                  "enable": {
+                                  "enabled": {
                                     "type": "boolean",
                                     "title": "Enable allows apps to explicitly control automated sync"
                                   },
@@ -26088,7 +26088,7 @@
                           "type": "boolean",
                           "title": "AllowEmpty allows apps have zero live resources (default: false)"
                         },
-                        "enable": {
+                        "enabled": {
                           "type": "boolean",
                           "title": "Enable allows apps to explicitly control automated sync"
                         },
@@ -27321,7 +27321,7 @@
                           "type": "boolean",
                           "title": "AllowEmpty allows apps have zero live resources (default: false)"
                         },
-                        "enable": {
+                        "enabled": {
                           "type": "boolean",
                           "title": "Enable allows apps to explicitly control automated sync"
                         },
@@ -28882,7 +28882,7 @@
                           "type": "boolean",
                           "title": "AllowEmpty allows apps have zero live resources (default: false)"
                         },
-                        "enable": {
+                        "enabled": {
                           "type": "boolean",
                           "title": "Enable allows apps to explicitly control automated sync"
                         },
@@ -30448,7 +30448,7 @@
                           "type": "boolean",
                           "title": "AllowEmpty allows apps have zero live resources (default: false)"
                         },
-                        "enable": {
+                        "enabled": {
                           "type": "boolean",
                           "title": "Enable allows apps to explicitly control automated sync"
                         },
