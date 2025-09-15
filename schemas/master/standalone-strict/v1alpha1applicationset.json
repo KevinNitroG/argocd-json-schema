@@ -848,7 +848,7 @@
                                 "type": "object",
                                 "properties": {
                                   "path": {
-                                    "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. If hydrateTo is set, this is just the path from which hydrated manifests will be synced.",
+                                    "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
                                     "type": "string"
                                   },
                                   "targetBranch": {
@@ -1396,6 +1396,10 @@
                                     "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
                                     "type": "integer",
                                     "format": "int64"
+                                  },
+                                  "refresh": {
+                                    "type": "boolean",
+                                    "title": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)"
                                   }
                                 },
                                 "additionalProperties": false
@@ -2096,7 +2100,7 @@
                                 "type": "object",
                                 "properties": {
                                   "path": {
-                                    "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. If hydrateTo is set, this is just the path from which hydrated manifests will be synced.",
+                                    "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
                                     "type": "string"
                                   },
                                   "targetBranch": {
@@ -2644,6 +2648,10 @@
                                     "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
                                     "type": "integer",
                                     "format": "int64"
+                                  },
+                                  "refresh": {
+                                    "type": "boolean",
+                                    "title": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)"
                                   }
                                 },
                                 "additionalProperties": false
@@ -3342,7 +3350,7 @@
                                 "type": "object",
                                 "properties": {
                                   "path": {
-                                    "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. If hydrateTo is set, this is just the path from which hydrated manifests will be synced.",
+                                    "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
                                     "type": "string"
                                   },
                                   "targetBranch": {
@@ -3890,6 +3898,10 @@
                                     "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
                                     "type": "integer",
                                     "format": "int64"
+                                  },
+                                  "refresh": {
+                                    "type": "boolean",
+                                    "title": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)"
                                   }
                                 },
                                 "additionalProperties": false
@@ -4564,7 +4576,7 @@
                                 "type": "object",
                                 "properties": {
                                   "path": {
-                                    "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. If hydrateTo is set, this is just the path from which hydrated manifests will be synced.",
+                                    "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
                                     "type": "string"
                                   },
                                   "targetBranch": {
@@ -5112,6 +5124,10 @@
                                     "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
                                     "type": "integer",
                                     "format": "int64"
+                                  },
+                                  "refresh": {
+                                    "type": "boolean",
+                                    "title": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)"
                                   }
                                 },
                                 "additionalProperties": false
@@ -5822,7 +5838,7 @@
                                           "type": "object",
                                           "properties": {
                                             "path": {
-                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. If hydrateTo is set, this is just the path from which hydrated manifests will be synced.",
+                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -6370,6 +6386,10 @@
                                               "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
                                               "type": "integer",
                                               "format": "int64"
+                                            },
+                                            "refresh": {
+                                              "type": "boolean",
+                                              "title": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)"
                                             }
                                           },
                                           "additionalProperties": false
@@ -7070,7 +7090,7 @@
                                           "type": "object",
                                           "properties": {
                                             "path": {
-                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. If hydrateTo is set, this is just the path from which hydrated manifests will be synced.",
+                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -7618,6 +7638,10 @@
                                               "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
                                               "type": "integer",
                                               "format": "int64"
+                                            },
+                                            "refresh": {
+                                              "type": "boolean",
+                                              "title": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)"
                                             }
                                           },
                                           "additionalProperties": false
@@ -8316,7 +8340,7 @@
                                           "type": "object",
                                           "properties": {
                                             "path": {
-                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. If hydrateTo is set, this is just the path from which hydrated manifests will be synced.",
+                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -8864,6 +8888,10 @@
                                               "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
                                               "type": "integer",
                                               "format": "int64"
+                                            },
+                                            "refresh": {
+                                              "type": "boolean",
+                                              "title": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)"
                                             }
                                           },
                                           "additionalProperties": false
@@ -9538,7 +9566,7 @@
                                           "type": "object",
                                           "properties": {
                                             "path": {
-                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. If hydrateTo is set, this is just the path from which hydrated manifests will be synced.",
+                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -10086,6 +10114,10 @@
                                               "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
                                               "type": "integer",
                                               "format": "int64"
+                                            },
+                                            "refresh": {
+                                              "type": "boolean",
+                                              "title": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)"
                                             }
                                           },
                                           "additionalProperties": false
@@ -10793,7 +10825,7 @@
                                           "type": "object",
                                           "properties": {
                                             "path": {
-                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. If hydrateTo is set, this is just the path from which hydrated manifests will be synced.",
+                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -11341,6 +11373,10 @@
                                               "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
                                               "type": "integer",
                                               "format": "int64"
+                                            },
+                                            "refresh": {
+                                              "type": "boolean",
+                                              "title": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)"
                                             }
                                           },
                                           "additionalProperties": false
@@ -12354,7 +12390,7 @@
                                           "type": "object",
                                           "properties": {
                                             "path": {
-                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. If hydrateTo is set, this is just the path from which hydrated manifests will be synced.",
+                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -12902,6 +12938,10 @@
                                               "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
                                               "type": "integer",
                                               "format": "int64"
+                                            },
+                                            "refresh": {
+                                              "type": "boolean",
+                                              "title": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)"
                                             }
                                           },
                                           "additionalProperties": false
@@ -13920,7 +13960,7 @@
                                           "type": "object",
                                           "properties": {
                                             "path": {
-                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. If hydrateTo is set, this is just the path from which hydrated manifests will be synced.",
+                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -14468,6 +14508,10 @@
                                               "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
                                               "type": "integer",
                                               "format": "int64"
+                                            },
+                                            "refresh": {
+                                              "type": "boolean",
+                                              "title": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)"
                                             }
                                           },
                                           "additionalProperties": false
@@ -15164,7 +15208,7 @@
                                 "type": "object",
                                 "properties": {
                                   "path": {
-                                    "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. If hydrateTo is set, this is just the path from which hydrated manifests will be synced.",
+                                    "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
                                     "type": "string"
                                   },
                                   "targetBranch": {
@@ -15712,6 +15756,10 @@
                                     "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
                                     "type": "integer",
                                     "format": "int64"
+                                  },
+                                  "refresh": {
+                                    "type": "boolean",
+                                    "title": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)"
                                   }
                                 },
                                 "additionalProperties": false
@@ -16422,7 +16470,7 @@
                                           "type": "object",
                                           "properties": {
                                             "path": {
-                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. If hydrateTo is set, this is just the path from which hydrated manifests will be synced.",
+                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -16970,6 +17018,10 @@
                                               "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
                                               "type": "integer",
                                               "format": "int64"
+                                            },
+                                            "refresh": {
+                                              "type": "boolean",
+                                              "title": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)"
                                             }
                                           },
                                           "additionalProperties": false
@@ -17670,7 +17722,7 @@
                                           "type": "object",
                                           "properties": {
                                             "path": {
-                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. If hydrateTo is set, this is just the path from which hydrated manifests will be synced.",
+                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -18218,6 +18270,10 @@
                                               "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
                                               "type": "integer",
                                               "format": "int64"
+                                            },
+                                            "refresh": {
+                                              "type": "boolean",
+                                              "title": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)"
                                             }
                                           },
                                           "additionalProperties": false
@@ -18916,7 +18972,7 @@
                                           "type": "object",
                                           "properties": {
                                             "path": {
-                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. If hydrateTo is set, this is just the path from which hydrated manifests will be synced.",
+                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -19464,6 +19520,10 @@
                                               "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
                                               "type": "integer",
                                               "format": "int64"
+                                            },
+                                            "refresh": {
+                                              "type": "boolean",
+                                              "title": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)"
                                             }
                                           },
                                           "additionalProperties": false
@@ -20138,7 +20198,7 @@
                                           "type": "object",
                                           "properties": {
                                             "path": {
-                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. If hydrateTo is set, this is just the path from which hydrated manifests will be synced.",
+                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -20686,6 +20746,10 @@
                                               "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
                                               "type": "integer",
                                               "format": "int64"
+                                            },
+                                            "refresh": {
+                                              "type": "boolean",
+                                              "title": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)"
                                             }
                                           },
                                           "additionalProperties": false
@@ -21393,7 +21457,7 @@
                                           "type": "object",
                                           "properties": {
                                             "path": {
-                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. If hydrateTo is set, this is just the path from which hydrated manifests will be synced.",
+                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -21941,6 +22005,10 @@
                                               "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
                                               "type": "integer",
                                               "format": "int64"
+                                            },
+                                            "refresh": {
+                                              "type": "boolean",
+                                              "title": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)"
                                             }
                                           },
                                           "additionalProperties": false
@@ -22954,7 +23022,7 @@
                                           "type": "object",
                                           "properties": {
                                             "path": {
-                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. If hydrateTo is set, this is just the path from which hydrated manifests will be synced.",
+                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -23502,6 +23570,10 @@
                                               "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
                                               "type": "integer",
                                               "format": "int64"
+                                            },
+                                            "refresh": {
+                                              "type": "boolean",
+                                              "title": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)"
                                             }
                                           },
                                           "additionalProperties": false
@@ -24520,7 +24592,7 @@
                                           "type": "object",
                                           "properties": {
                                             "path": {
-                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. If hydrateTo is set, this is just the path from which hydrated manifests will be synced.",
+                                              "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -25068,6 +25140,10 @@
                                               "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
                                               "type": "integer",
                                               "format": "int64"
+                                            },
+                                            "refresh": {
+                                              "type": "boolean",
+                                              "title": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)"
                                             }
                                           },
                                           "additionalProperties": false
@@ -25770,7 +25846,7 @@
                                 "type": "object",
                                 "properties": {
                                   "path": {
-                                    "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. If hydrateTo is set, this is just the path from which hydrated manifests will be synced.",
+                                    "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
                                     "type": "string"
                                   },
                                   "targetBranch": {
@@ -26318,6 +26394,10 @@
                                     "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
                                     "type": "integer",
                                     "format": "int64"
+                                  },
+                                  "refresh": {
+                                    "type": "boolean",
+                                    "title": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)"
                                   }
                                 },
                                 "additionalProperties": false
@@ -27003,7 +27083,7 @@
                                 "type": "object",
                                 "properties": {
                                   "path": {
-                                    "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. If hydrateTo is set, this is just the path from which hydrated manifests will be synced.",
+                                    "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
                                     "type": "string"
                                   },
                                   "targetBranch": {
@@ -27551,6 +27631,10 @@
                                     "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
                                     "type": "integer",
                                     "format": "int64"
+                                  },
+                                  "refresh": {
+                                    "type": "boolean",
+                                    "title": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)"
                                   }
                                 },
                                 "additionalProperties": false
@@ -28564,7 +28648,7 @@
                                 "type": "object",
                                 "properties": {
                                   "path": {
-                                    "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. If hydrateTo is set, this is just the path from which hydrated manifests will be synced.",
+                                    "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
                                     "type": "string"
                                   },
                                   "targetBranch": {
@@ -29112,6 +29196,10 @@
                                     "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
                                     "type": "integer",
                                     "format": "int64"
+                                  },
+                                  "refresh": {
+                                    "type": "boolean",
+                                    "title": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)"
                                   }
                                 },
                                 "additionalProperties": false
@@ -30130,7 +30218,7 @@
                                 "type": "object",
                                 "properties": {
                                   "path": {
-                                    "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. If hydrateTo is set, this is just the path from which hydrated manifests will be synced.",
+                                    "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
                                     "type": "string"
                                   },
                                   "targetBranch": {
@@ -30678,6 +30766,10 @@
                                     "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
                                     "type": "integer",
                                     "format": "int64"
+                                  },
+                                  "refresh": {
+                                    "type": "boolean",
+                                    "title": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)"
                                   }
                                 },
                                 "additionalProperties": false
@@ -31513,7 +31605,7 @@
                       "type": "object",
                       "properties": {
                         "path": {
-                          "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. If hydrateTo is set, this is just the path from which hydrated manifests will be synced.",
+                          "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
                           "type": "string"
                         },
                         "targetBranch": {
@@ -32061,6 +32153,10 @@
                           "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
                           "type": "integer",
                           "format": "int64"
+                        },
+                        "refresh": {
+                          "type": "boolean",
+                          "title": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)"
                         }
                       },
                       "additionalProperties": false
