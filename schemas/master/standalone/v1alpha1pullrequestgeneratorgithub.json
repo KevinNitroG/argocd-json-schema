@@ -1,5 +1,5 @@
 {
-  "description": "PullRequestGenerator defines connection info specific to GitHub.",
+  "description": "PullRequestGeneratorGithub defines connection info specific to GitHub.",
   "type": "object",
   "properties": {
     "api": {
@@ -26,7 +26,7 @@
       "type": "string"
     },
     "tokenRef": {
-      "description": "Utility struct for a reference to a secret key.",
+      "description": "SecretRef struct for a reference to a secret key.",
       "type": "object",
       "properties": {
         "key": {

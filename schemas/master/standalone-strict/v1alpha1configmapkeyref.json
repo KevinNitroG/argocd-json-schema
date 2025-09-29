@@ -1,5 +1,5 @@
 {
-  "description": "Utility struct for a reference to a configmap key.",
+  "description": "ConfigMapKeyRef struct for a reference to a configmap key.",
   "type": "object",
   "properties": {
     "configMapName": {

@@ -3,7 +3,7 @@
   "type": "object",
   "properties": {
     "accessTokenRef": {
-      "description": "Utility struct for a reference to a secret key.",
+      "description": "SecretRef struct for a reference to a secret key.",
       "type": "object",
       "properties": {
         "key": {

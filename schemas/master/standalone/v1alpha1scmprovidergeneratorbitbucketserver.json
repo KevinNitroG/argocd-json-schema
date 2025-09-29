@@ -15,7 +15,7 @@
       "type": "object",
       "properties": {
         "passwordRef": {
-          "description": "Utility struct for a reference to a secret key.",
+          "description": "SecretRef struct for a reference to a secret key.",
           "type": "object",
           "properties": {
             "key": {
@@ -37,7 +37,7 @@
       "type": "object",
       "properties": {
         "tokenRef": {
-          "description": "Utility struct for a reference to a secret key.",
+          "description": "SecretRef struct for a reference to a secret key.",
           "type": "object",
           "properties": {
             "key": {
@@ -51,7 +51,7 @@
       }
     },
     "caRef": {
-      "description": "Utility struct for a reference to a configmap key.",
+      "description": "ConfigMapKeyRef struct for a reference to a configmap key.",
       "type": "object",
       "properties": {
         "configMapName": {

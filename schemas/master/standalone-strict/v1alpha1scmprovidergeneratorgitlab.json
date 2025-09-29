@@ -11,7 +11,7 @@
       "type": "string"
     },
     "caRef": {
-      "description": "Utility struct for a reference to a configmap key.",
+      "description": "ConfigMapKeyRef struct for a reference to a configmap key.",
       "type": "object",
       "properties": {
         "configMapName": {
@@ -40,7 +40,7 @@
       "title": "Skips validating the SCM provider's TLS certificate - useful for self-signed certificates.; default: false"
     },
     "tokenRef": {
-      "description": "Utility struct for a reference to a secret key.",
+      "description": "SecretRef struct for a reference to a secret key.",
       "type": "object",
       "properties": {
         "key": {

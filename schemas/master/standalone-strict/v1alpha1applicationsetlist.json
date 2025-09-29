@@ -11445,7 +11445,7 @@
                                         "type": "string"
                                       },
                                       "tokenRef": {
-                                        "description": "Utility struct for a reference to a secret key.",
+                                        "description": "SecretRef struct for a reference to a secret key.",
                                         "type": "object",
                                         "properties": {
                                           "key": {
@@ -11473,7 +11473,7 @@
                                         "type": "object",
                                         "properties": {
                                           "passwordRef": {
-                                            "description": "Utility struct for a reference to a secret key.",
+                                            "description": "SecretRef struct for a reference to a secret key.",
                                             "type": "object",
                                             "properties": {
                                               "key": {
@@ -11497,7 +11497,7 @@
                                         "type": "object",
                                         "properties": {
                                           "tokenRef": {
-                                            "description": "Utility struct for a reference to a secret key.",
+                                            "description": "SecretRef struct for a reference to a secret key.",
                                             "type": "object",
                                             "properties": {
                                               "key": {
@@ -11536,7 +11536,7 @@
                                         "type": "object",
                                         "properties": {
                                           "passwordRef": {
-                                            "description": "Utility struct for a reference to a secret key.",
+                                            "description": "SecretRef struct for a reference to a secret key.",
                                             "type": "object",
                                             "properties": {
                                               "key": {
@@ -11560,7 +11560,7 @@
                                         "type": "object",
                                         "properties": {
                                           "tokenRef": {
-                                            "description": "Utility struct for a reference to a secret key.",
+                                            "description": "SecretRef struct for a reference to a secret key.",
                                             "type": "object",
                                             "properties": {
                                               "key": {
@@ -11576,7 +11576,7 @@
                                         "additionalProperties": false
                                       },
                                       "caRef": {
-                                        "description": "Utility struct for a reference to a configmap key.",
+                                        "description": "ConfigMapKeyRef struct for a reference to a configmap key.",
                                         "type": "object",
                                         "properties": {
                                           "configMapName": {
@@ -11655,7 +11655,7 @@
                                         "type": "string"
                                       },
                                       "tokenRef": {
-                                        "description": "Utility struct for a reference to a secret key.",
+                                        "description": "SecretRef struct for a reference to a secret key.",
                                         "type": "object",
                                         "properties": {
                                           "key": {
@@ -11671,7 +11671,7 @@
                                     "additionalProperties": false
                                   },
                                   "github": {
-                                    "description": "PullRequestGenerator defines connection info specific to GitHub.",
+                                    "description": "PullRequestGeneratorGithub defines connection info specific to GitHub.",
                                     "type": "object",
                                     "properties": {
                                       "api": {
@@ -11698,7 +11698,7 @@
                                         "type": "string"
                                       },
                                       "tokenRef": {
-                                        "description": "Utility struct for a reference to a secret key.",
+                                        "description": "SecretRef struct for a reference to a secret key.",
                                         "type": "object",
                                         "properties": {
                                           "key": {
@@ -11722,7 +11722,7 @@
                                         "type": "string"
                                       },
                                       "caRef": {
-                                        "description": "Utility struct for a reference to a configmap key.",
+                                        "description": "ConfigMapKeyRef struct for a reference to a configmap key.",
                                         "type": "object",
                                         "properties": {
                                           "configMapName": {
@@ -11754,7 +11754,7 @@
                                         "type": "string"
                                       },
                                       "tokenRef": {
-                                        "description": "Utility struct for a reference to a secret key.",
+                                        "description": "SecretRef struct for a reference to a secret key.",
                                         "type": "object",
                                         "properties": {
                                           "key": {
@@ -13022,7 +13022,7 @@
                                     "type": "object",
                                     "properties": {
                                       "accessTokenRef": {
-                                        "description": "Utility struct for a reference to a secret key.",
+                                        "description": "SecretRef struct for a reference to a secret key.",
                                         "type": "object",
                                         "properties": {
                                           "key": {
@@ -13062,7 +13062,7 @@
                                         "type": "boolean"
                                       },
                                       "appPasswordRef": {
-                                        "description": "Utility struct for a reference to a secret key.",
+                                        "description": "SecretRef struct for a reference to a secret key.",
                                         "type": "object",
                                         "properties": {
                                           "key": {
@@ -13102,7 +13102,7 @@
                                         "type": "object",
                                         "properties": {
                                           "passwordRef": {
-                                            "description": "Utility struct for a reference to a secret key.",
+                                            "description": "SecretRef struct for a reference to a secret key.",
                                             "type": "object",
                                             "properties": {
                                               "key": {
@@ -13126,7 +13126,7 @@
                                         "type": "object",
                                         "properties": {
                                           "tokenRef": {
-                                            "description": "Utility struct for a reference to a secret key.",
+                                            "description": "SecretRef struct for a reference to a secret key.",
                                             "type": "object",
                                             "properties": {
                                               "key": {
@@ -13142,7 +13142,7 @@
                                         "additionalProperties": false
                                       },
                                       "caRef": {
-                                        "description": "Utility struct for a reference to a configmap key.",
+                                        "description": "ConfigMapKeyRef struct for a reference to a configmap key.",
                                         "type": "object",
                                         "properties": {
                                           "configMapName": {
@@ -13227,7 +13227,7 @@
                                         "type": "string"
                                       },
                                       "tokenRef": {
-                                        "description": "Utility struct for a reference to a secret key.",
+                                        "description": "SecretRef struct for a reference to a secret key.",
                                         "type": "object",
                                         "properties": {
                                           "key": {
@@ -13263,7 +13263,7 @@
                                         "type": "string"
                                       },
                                       "tokenRef": {
-                                        "description": "Utility struct for a reference to a secret key.",
+                                        "description": "SecretRef struct for a reference to a secret key.",
                                         "type": "object",
                                         "properties": {
                                           "key": {
@@ -13291,7 +13291,7 @@
                                         "type": "string"
                                       },
                                       "caRef": {
-                                        "description": "Utility struct for a reference to a configmap key.",
+                                        "description": "ConfigMapKeyRef struct for a reference to a configmap key.",
                                         "type": "object",
                                         "properties": {
                                           "configMapName": {
@@ -13320,7 +13320,7 @@
                                         "title": "Skips validating the SCM provider's TLS certificate - useful for self-signed certificates.; default: false"
                                       },
                                       "tokenRef": {
-                                        "description": "Utility struct for a reference to a secret key.",
+                                        "description": "SecretRef struct for a reference to a secret key.",
                                         "type": "object",
                                         "properties": {
                                           "key": {
@@ -22077,7 +22077,7 @@
                                         "type": "string"
                                       },
                                       "tokenRef": {
-                                        "description": "Utility struct for a reference to a secret key.",
+                                        "description": "SecretRef struct for a reference to a secret key.",
                                         "type": "object",
                                         "properties": {
                                           "key": {
@@ -22105,7 +22105,7 @@
                                         "type": "object",
                                         "properties": {
                                           "passwordRef": {
-                                            "description": "Utility struct for a reference to a secret key.",
+                                            "description": "SecretRef struct for a reference to a secret key.",
                                             "type": "object",
                                             "properties": {
                                               "key": {
@@ -22129,7 +22129,7 @@
                                         "type": "object",
                                         "properties": {
                                           "tokenRef": {
-                                            "description": "Utility struct for a reference to a secret key.",
+                                            "description": "SecretRef struct for a reference to a secret key.",
                                             "type": "object",
                                             "properties": {
                                               "key": {
@@ -22168,7 +22168,7 @@
                                         "type": "object",
                                         "properties": {
                                           "passwordRef": {
-                                            "description": "Utility struct for a reference to a secret key.",
+                                            "description": "SecretRef struct for a reference to a secret key.",
                                             "type": "object",
                                             "properties": {
                                               "key": {
@@ -22192,7 +22192,7 @@
                                         "type": "object",
                                         "properties": {
                                           "tokenRef": {
-                                            "description": "Utility struct for a reference to a secret key.",
+                                            "description": "SecretRef struct for a reference to a secret key.",
                                             "type": "object",
                                             "properties": {
                                               "key": {
@@ -22208,7 +22208,7 @@
                                         "additionalProperties": false
                                       },
                                       "caRef": {
-                                        "description": "Utility struct for a reference to a configmap key.",
+                                        "description": "ConfigMapKeyRef struct for a reference to a configmap key.",
                                         "type": "object",
                                         "properties": {
                                           "configMapName": {
@@ -22287,7 +22287,7 @@
                                         "type": "string"
                                       },
                                       "tokenRef": {
-                                        "description": "Utility struct for a reference to a secret key.",
+                                        "description": "SecretRef struct for a reference to a secret key.",
                                         "type": "object",
                                         "properties": {
                                           "key": {
@@ -22303,7 +22303,7 @@
                                     "additionalProperties": false
                                   },
                                   "github": {
-                                    "description": "PullRequestGenerator defines connection info specific to GitHub.",
+                                    "description": "PullRequestGeneratorGithub defines connection info specific to GitHub.",
                                     "type": "object",
                                     "properties": {
                                       "api": {
@@ -22330,7 +22330,7 @@
                                         "type": "string"
                                       },
                                       "tokenRef": {
-                                        "description": "Utility struct for a reference to a secret key.",
+                                        "description": "SecretRef struct for a reference to a secret key.",
                                         "type": "object",
                                         "properties": {
                                           "key": {
@@ -22354,7 +22354,7 @@
                                         "type": "string"
                                       },
                                       "caRef": {
-                                        "description": "Utility struct for a reference to a configmap key.",
+                                        "description": "ConfigMapKeyRef struct for a reference to a configmap key.",
                                         "type": "object",
                                         "properties": {
                                           "configMapName": {
@@ -22386,7 +22386,7 @@
                                         "type": "string"
                                       },
                                       "tokenRef": {
-                                        "description": "Utility struct for a reference to a secret key.",
+                                        "description": "SecretRef struct for a reference to a secret key.",
                                         "type": "object",
                                         "properties": {
                                           "key": {
@@ -23654,7 +23654,7 @@
                                     "type": "object",
                                     "properties": {
                                       "accessTokenRef": {
-                                        "description": "Utility struct for a reference to a secret key.",
+                                        "description": "SecretRef struct for a reference to a secret key.",
                                         "type": "object",
                                         "properties": {
                                           "key": {
@@ -23694,7 +23694,7 @@
                                         "type": "boolean"
                                       },
                                       "appPasswordRef": {
-                                        "description": "Utility struct for a reference to a secret key.",
+                                        "description": "SecretRef struct for a reference to a secret key.",
                                         "type": "object",
                                         "properties": {
                                           "key": {
@@ -23734,7 +23734,7 @@
                                         "type": "object",
                                         "properties": {
                                           "passwordRef": {
-                                            "description": "Utility struct for a reference to a secret key.",
+                                            "description": "SecretRef struct for a reference to a secret key.",
                                             "type": "object",
                                             "properties": {
                                               "key": {
@@ -23758,7 +23758,7 @@
                                         "type": "object",
                                         "properties": {
                                           "tokenRef": {
-                                            "description": "Utility struct for a reference to a secret key.",
+                                            "description": "SecretRef struct for a reference to a secret key.",
                                             "type": "object",
                                             "properties": {
                                               "key": {
@@ -23774,7 +23774,7 @@
                                         "additionalProperties": false
                                       },
                                       "caRef": {
-                                        "description": "Utility struct for a reference to a configmap key.",
+                                        "description": "ConfigMapKeyRef struct for a reference to a configmap key.",
                                         "type": "object",
                                         "properties": {
                                           "configMapName": {
@@ -23859,7 +23859,7 @@
                                         "type": "string"
                                       },
                                       "tokenRef": {
-                                        "description": "Utility struct for a reference to a secret key.",
+                                        "description": "SecretRef struct for a reference to a secret key.",
                                         "type": "object",
                                         "properties": {
                                           "key": {
@@ -23895,7 +23895,7 @@
                                         "type": "string"
                                       },
                                       "tokenRef": {
-                                        "description": "Utility struct for a reference to a secret key.",
+                                        "description": "SecretRef struct for a reference to a secret key.",
                                         "type": "object",
                                         "properties": {
                                           "key": {
@@ -23923,7 +23923,7 @@
                                         "type": "string"
                                       },
                                       "caRef": {
-                                        "description": "Utility struct for a reference to a configmap key.",
+                                        "description": "ConfigMapKeyRef struct for a reference to a configmap key.",
                                         "type": "object",
                                         "properties": {
                                           "configMapName": {
@@ -23952,7 +23952,7 @@
                                         "title": "Skips validating the SCM provider's TLS certificate - useful for self-signed certificates.; default: false"
                                       },
                                       "tokenRef": {
-                                        "description": "Utility struct for a reference to a secret key.",
+                                        "description": "SecretRef struct for a reference to a secret key.",
                                         "type": "object",
                                         "properties": {
                                           "key": {
@@ -27703,7 +27703,7 @@
                               "type": "string"
                             },
                             "tokenRef": {
-                              "description": "Utility struct for a reference to a secret key.",
+                              "description": "SecretRef struct for a reference to a secret key.",
                               "type": "object",
                               "properties": {
                                 "key": {
@@ -27731,7 +27731,7 @@
                               "type": "object",
                               "properties": {
                                 "passwordRef": {
-                                  "description": "Utility struct for a reference to a secret key.",
+                                  "description": "SecretRef struct for a reference to a secret key.",
                                   "type": "object",
                                   "properties": {
                                     "key": {
@@ -27755,7 +27755,7 @@
                               "type": "object",
                               "properties": {
                                 "tokenRef": {
-                                  "description": "Utility struct for a reference to a secret key.",
+                                  "description": "SecretRef struct for a reference to a secret key.",
                                   "type": "object",
                                   "properties": {
                                     "key": {
@@ -27794,7 +27794,7 @@
                               "type": "object",
                               "properties": {
                                 "passwordRef": {
-                                  "description": "Utility struct for a reference to a secret key.",
+                                  "description": "SecretRef struct for a reference to a secret key.",
                                   "type": "object",
                                   "properties": {
                                     "key": {
@@ -27818,7 +27818,7 @@
                               "type": "object",
                               "properties": {
                                 "tokenRef": {
-                                  "description": "Utility struct for a reference to a secret key.",
+                                  "description": "SecretRef struct for a reference to a secret key.",
                                   "type": "object",
                                   "properties": {
                                     "key": {
@@ -27834,7 +27834,7 @@
                               "additionalProperties": false
                             },
                             "caRef": {
-                              "description": "Utility struct for a reference to a configmap key.",
+                              "description": "ConfigMapKeyRef struct for a reference to a configmap key.",
                               "type": "object",
                               "properties": {
                                 "configMapName": {
@@ -27913,7 +27913,7 @@
                               "type": "string"
                             },
                             "tokenRef": {
-                              "description": "Utility struct for a reference to a secret key.",
+                              "description": "SecretRef struct for a reference to a secret key.",
                               "type": "object",
                               "properties": {
                                 "key": {
@@ -27929,7 +27929,7 @@
                           "additionalProperties": false
                         },
                         "github": {
-                          "description": "PullRequestGenerator defines connection info specific to GitHub.",
+                          "description": "PullRequestGeneratorGithub defines connection info specific to GitHub.",
                           "type": "object",
                           "properties": {
                             "api": {
@@ -27956,7 +27956,7 @@
                               "type": "string"
                             },
                             "tokenRef": {
-                              "description": "Utility struct for a reference to a secret key.",
+                              "description": "SecretRef struct for a reference to a secret key.",
                               "type": "object",
                               "properties": {
                                 "key": {
@@ -27980,7 +27980,7 @@
                               "type": "string"
                             },
                             "caRef": {
-                              "description": "Utility struct for a reference to a configmap key.",
+                              "description": "ConfigMapKeyRef struct for a reference to a configmap key.",
                               "type": "object",
                               "properties": {
                                 "configMapName": {
@@ -28012,7 +28012,7 @@
                               "type": "string"
                             },
                             "tokenRef": {
-                              "description": "Utility struct for a reference to a secret key.",
+                              "description": "SecretRef struct for a reference to a secret key.",
                               "type": "object",
                               "properties": {
                                 "key": {
@@ -29280,7 +29280,7 @@
                           "type": "object",
                           "properties": {
                             "accessTokenRef": {
-                              "description": "Utility struct for a reference to a secret key.",
+                              "description": "SecretRef struct for a reference to a secret key.",
                               "type": "object",
                               "properties": {
                                 "key": {
@@ -29320,7 +29320,7 @@
                               "type": "boolean"
                             },
                             "appPasswordRef": {
-                              "description": "Utility struct for a reference to a secret key.",
+                              "description": "SecretRef struct for a reference to a secret key.",
                               "type": "object",
                               "properties": {
                                 "key": {
@@ -29360,7 +29360,7 @@
                               "type": "object",
                               "properties": {
                                 "passwordRef": {
-                                  "description": "Utility struct for a reference to a secret key.",
+                                  "description": "SecretRef struct for a reference to a secret key.",
                                   "type": "object",
                                   "properties": {
                                     "key": {
@@ -29384,7 +29384,7 @@
                               "type": "object",
                               "properties": {
                                 "tokenRef": {
-                                  "description": "Utility struct for a reference to a secret key.",
+                                  "description": "SecretRef struct for a reference to a secret key.",
                                   "type": "object",
                                   "properties": {
                                     "key": {
@@ -29400,7 +29400,7 @@
                               "additionalProperties": false
                             },
                             "caRef": {
-                              "description": "Utility struct for a reference to a configmap key.",
+                              "description": "ConfigMapKeyRef struct for a reference to a configmap key.",
                               "type": "object",
                               "properties": {
                                 "configMapName": {
@@ -29485,7 +29485,7 @@
                               "type": "string"
                             },
                             "tokenRef": {
-                              "description": "Utility struct for a reference to a secret key.",
+                              "description": "SecretRef struct for a reference to a secret key.",
                               "type": "object",
                               "properties": {
                                 "key": {
@@ -29521,7 +29521,7 @@
                               "type": "string"
                             },
                             "tokenRef": {
-                              "description": "Utility struct for a reference to a secret key.",
+                              "description": "SecretRef struct for a reference to a secret key.",
                               "type": "object",
                               "properties": {
                                 "key": {
@@ -29549,7 +29549,7 @@
                               "type": "string"
                             },
                             "caRef": {
-                              "description": "Utility struct for a reference to a configmap key.",
+                              "description": "ConfigMapKeyRef struct for a reference to a configmap key.",
                               "type": "object",
                               "properties": {
                                 "configMapName": {
@@ -29578,7 +29578,7 @@
                               "title": "Skips validating the SCM provider's TLS certificate - useful for self-signed certificates.; default: false"
                             },
                             "tokenRef": {
-                              "description": "Utility struct for a reference to a secret key.",
+                              "description": "SecretRef struct for a reference to a secret key.",
                               "type": "object",
                               "properties": {
                                 "key": {
@@ -32334,6 +32334,11 @@
                   },
                   "additionalProperties": false
                 }
+              },
+              "resourcesCount": {
+                "description": "ResourcesCount is the total number of resources managed by this application set. The count may be higher than actual number of items in the Resources field when\nthe number of managed resources exceeds the limit imposed by the controller (to avoid making the status field too large).",
+                "type": "integer",
+                "format": "int64"
               }
             },
             "additionalProperties": false
