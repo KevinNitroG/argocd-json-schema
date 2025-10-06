@@ -662,8 +662,8 @@
                                 "type": "string"
                               },
                               "targetBranch": {
-                                "type": "string",
-                                "title": "TargetBranch is the branch to which hydrated manifests should be committed"
+                                "description": "TargetBranch is the branch from which hydrated manifests will be synced.\nIf HydrateTo is not set, this is also the branch to which hydrated manifests are committed.",
+                                "type": "string"
                               }
                             }
                           }
@@ -1858,8 +1858,8 @@
                                 "type": "string"
                               },
                               "targetBranch": {
-                                "type": "string",
-                                "title": "TargetBranch is the branch to which hydrated manifests should be committed"
+                                "description": "TargetBranch is the branch from which hydrated manifests will be synced.\nIf HydrateTo is not set, this is also the branch to which hydrated manifests are committed.",
+                                "type": "string"
                               }
                             }
                           }
@@ -3052,8 +3052,8 @@
                                 "type": "string"
                               },
                               "targetBranch": {
-                                "type": "string",
-                                "title": "TargetBranch is the branch to which hydrated manifests should be committed"
+                                "description": "TargetBranch is the branch from which hydrated manifests will be synced.\nIf HydrateTo is not set, this is also the branch to which hydrated manifests are committed.",
+                                "type": "string"
                               }
                             }
                           }
@@ -4223,8 +4223,8 @@
                                 "type": "string"
                               },
                               "targetBranch": {
-                                "type": "string",
-                                "title": "TargetBranch is the branch to which hydrated manifests should be committed"
+                                "description": "TargetBranch is the branch from which hydrated manifests will be synced.\nIf HydrateTo is not set, this is also the branch to which hydrated manifests are committed.",
+                                "type": "string"
                               }
                             }
                           }
@@ -5423,8 +5423,8 @@
                                 "type": "string"
                               },
                               "targetBranch": {
-                                "type": "string",
-                                "title": "TargetBranch is the branch to which hydrated manifests should be committed"
+                                "description": "TargetBranch is the branch from which hydrated manifests will be synced.\nIf HydrateTo is not set, this is also the branch to which hydrated manifests are committed.",
+                                "type": "string"
                               }
                             }
                           }
@@ -6913,8 +6913,8 @@
                                 "type": "string"
                               },
                               "targetBranch": {
-                                "type": "string",
-                                "title": "TargetBranch is the branch to which hydrated manifests should be committed"
+                                "description": "TargetBranch is the branch from which hydrated manifests will be synced.\nIf HydrateTo is not set, this is also the branch to which hydrated manifests are committed.",
+                                "type": "string"
                               }
                             }
                           }
@@ -8409,8 +8409,8 @@
                                 "type": "string"
                               },
                               "targetBranch": {
-                                "type": "string",
-                                "title": "TargetBranch is the branch to which hydrated manifests should be committed"
+                                "description": "TargetBranch is the branch from which hydrated manifests will be synced.\nIf HydrateTo is not set, this is also the branch to which hydrated manifests are committed.",
+                                "type": "string"
                               }
                             }
                           }
@@ -9600,8 +9600,8 @@
                       "type": "string"
                     },
                     "targetBranch": {
-                      "type": "string",
-                      "title": "TargetBranch is the branch to which hydrated manifests should be committed"
+                      "description": "TargetBranch is the branch from which hydrated manifests will be synced.\nIf HydrateTo is not set, this is also the branch to which hydrated manifests are committed.",
+                      "type": "string"
                     }
                   }
                 }

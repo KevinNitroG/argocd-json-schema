@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "title": "AppHealthStatus contains information about the currently observed health state of an application",
+  "properties": {
+    "lastTransitionTime": {
+      "description": "Time is a wrapper around time.Time which supports correct\nmarshaling to YAML and JSON.  Wrappers are provided for many\nof the factory methods that the time package offers.\n\n+protobuf.options.marshal=false\n+protobuf.as=Timestamp\n+protobuf.options.(gogoproto.goproto_stringer)=false",
+      "type": "string",
+      "format": "date-time"
+    },
+    "message": {
+      "description": "Deprecated: this field is not used and will be removed in a future release.",
+      "type": "string",
+      "title": "Message is a human-readable informational message describing the health status"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status holds the status code of the application"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}
