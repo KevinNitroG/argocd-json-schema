@@ -46,6 +46,9 @@
       "$ref": "_definitions.json#/definitions/applicationApplicationRollbackRequest"
     },
     {
+      "$ref": "_definitions.json#/definitions/applicationApplicationServerSideDiffResponse"
+    },
+    {
       "$ref": "_definitions.json#/definitions/applicationApplicationSyncRequest"
     },
     {
@@ -563,6 +566,9 @@
     },
     {
       "$ref": "_definitions.json#/definitions/v1alpha1KustomizeSelector"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/v1alpha1KustomizeVersion"
     },
     {
       "$ref": "_definitions.json#/definitions/v1alpha1ListGenerator"
