@@ -1,0 +1,75 @@
+{
+  "description": "SCMProviderGeneratorBitbucketServer defines connection info specific to Bitbucket Server.",
+  "type": "object",
+  "properties": {
+    "allBranches": {
+      "description": "Scan all branches instead of just the default branch.",
+      "type": "boolean"
+    },
+    "api": {
+      "description": "The Bitbucket Server REST API URL to talk to. Required.",
+      "type": "string"
+    },
+    "basicAuth": {
+      "description": "BasicAuthBitbucketServer defines the username/(password or personal access token) for Basic auth.",
+      "type": "object",
+      "properties": {
+        "passwordRef": {
+          "description": "SecretRef struct for a reference to a secret key.",
+          "type": "object",
+          "properties": {
+            "key": {
+              "type": "string"
+            },
+            "secretName": {
+              "type": "string"
+            }
+          }
+        },
+        "username": {
+          "type": "string",
+          "title": "Username for Basic auth"
+        }
+      }
+    },
+    "bearerToken": {
+      "description": "BearerTokenBitbucket defines the Bearer token for BitBucket AppToken auth.",
+      "type": "object",
+      "properties": {
+        "tokenRef": {
+          "description": "SecretRef struct for a reference to a secret key.",
+          "type": "object",
+          "properties": {
+            "key": {
+              "type": "string"
+            },
+            "secretName": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "caRef": {
+      "description": "ConfigMapKeyRef struct for a reference to a configmap key.",
+      "type": "object",
+      "properties": {
+        "configMapName": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        }
+      }
+    },
+    "insecure": {
+      "type": "boolean",
+      "title": "Allow self-signed TLS / Certificates; default: false"
+    },
+    "project": {
+      "description": "Project to scan. Required.",
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}
