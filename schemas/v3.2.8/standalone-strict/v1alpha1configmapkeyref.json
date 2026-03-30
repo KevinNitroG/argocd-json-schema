@@ -1,0 +1,14 @@
+{
+  "description": "Utility struct for a reference to a configmap key.",
+  "type": "object",
+  "properties": {
+    "configMapName": {
+      "type": "string"
+    },
+    "key": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}

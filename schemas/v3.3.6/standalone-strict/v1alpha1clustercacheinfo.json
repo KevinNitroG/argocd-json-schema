@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "title": "ClusterCacheInfo contains information about the cluster cache",
+  "properties": {
+    "apisCount": {
+      "type": "integer",
+      "format": "int64",
+      "title": "APIsCount holds number of observed Kubernetes API count"
+    },
+    "lastCacheSyncTime": {
+      "description": "Time is a wrapper around time.Time which supports correct\nmarshaling to YAML and JSON.  Wrappers are provided for many\nof the factory methods that the time package offers.\n\n+protobuf.options.marshal=false\n+protobuf.as=Timestamp\n+protobuf.options.(gogoproto.goproto_stringer)=false",
+      "type": "string",
+      "format": "date-time"
+    },
+    "resourcesCount": {
+      "type": "integer",
+      "format": "int64",
+      "title": "ResourcesCount holds number of observed Kubernetes resources"
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}
