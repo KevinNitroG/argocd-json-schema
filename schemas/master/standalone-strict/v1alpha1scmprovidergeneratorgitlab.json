@@ -27,6 +27,10 @@
       "description": "Gitlab group to scan. Required.  You can use either the project id (recommended) or the full namespaced path.",
       "type": "string"
     },
+    "includeArchivedRepos": {
+      "description": "Include repositories that are archived.",
+      "type": "boolean"
+    },
     "includeSharedProjects": {
       "type": "boolean",
       "title": "When recursing through subgroups, also include shared Projects (true) or scan only the subgroups under same path (false).  Defaults to \"true\""

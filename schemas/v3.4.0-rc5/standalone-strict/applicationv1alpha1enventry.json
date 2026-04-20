@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "title": "EnvEntry represents an entry in the application's environment",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name is the name of the variable, usually expressed in uppercase"
+    },
+    "value": {
+      "type": "string",
+      "title": "Value is the value of the variable"
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}
