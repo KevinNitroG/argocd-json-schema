@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "title": "KustomizeVersion holds information about additional Kustomize versions",
+  "properties": {
+    "buildOptions": {
+      "type": "string",
+      "title": "BuildOptions that are specific to a Kustomize version"
+    },
+    "name": {
+      "type": "string",
+      "title": "Name holds Kustomize version name"
+    },
+    "path": {
+      "type": "string",
+      "title": "Path holds the corresponding binary path"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}
