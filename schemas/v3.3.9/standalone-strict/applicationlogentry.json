@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "content": {
+      "type": "string"
+    },
+    "last": {
+      "type": "boolean"
+    },
+    "podName": {
+      "type": "string"
+    },
+    "timeStamp": {
+      "description": "Time is a wrapper around time.Time which supports correct\nmarshaling to YAML and JSON.  Wrappers are provided for many\nof the factory methods that the time package offers.\n\n+protobuf.options.marshal=false\n+protobuf.as=Timestamp\n+protobuf.options.(gogoproto.goproto_stringer)=false",
+      "type": "string",
+      "format": "date-time"
+    },
+    "timeStampStr": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}
