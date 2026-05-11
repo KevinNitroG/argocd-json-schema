@@ -1,0 +1,21 @@
+{
+  "description": "BearerTokenBitbucket defines the Bearer token for BitBucket AppToken auth.",
+  "type": "object",
+  "properties": {
+    "tokenRef": {
+      "description": "Utility struct for a reference to a secret key.",
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "secretName": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}

@@ -1,0 +1,17 @@
+{
+  "description": "SyncStrategyHook will perform a sync using hooks annotations.\nIf no hook annotation is specified falls back to `kubectl apply`.",
+  "type": "object",
+  "properties": {
+    "syncStrategyApply": {
+      "type": "object",
+      "title": "SyncStrategyApply uses `kubectl apply` to perform the apply",
+      "properties": {
+        "force": {
+          "description": "Force indicates whether or not to supply the --force flag to `kubectl apply`.\nThe --force flag deletes and re-create the resource, when PATCH encounters conflict and has\nretried for 5 times.",
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

@@ -514,6 +514,10 @@
       },
       "additionalProperties": false
     },
+    "lastComparedDryRevision": {
+      "description": "LastComparedDryRevision holds the resolved revision from the most recent dry source comparison.\nThis is updated on every evaluation, even when hydration is skipped due to no changes.",
+      "type": "string"
+    },
     "lastSuccessfulOperation": {
       "type": "object",
       "title": "SuccessfulHydrateOperation contains information about the most recent successful hydrate operation",

@@ -56,8 +56,34 @@
       }
     },
     "signatureInfo": {
-      "description": "SignatureInfo contains a hint on the signer if the revision was signed with GPG, and signature verification is enabled.",
+      "description": "SignatureInfo contains a hint on the signer if the revision was signed with GPG, and signature verification is enabled.\n\nDeprecated: Use SourceIntegrityResult for more detailed information. SignatureInfo will be removed with the next major version.",
       "type": "string"
+    },
+    "sourceIntegrityResult": {
+      "description": "SourceIntegrityCheckResult represents a conclusion of the SourceIntegrity evaluation.\nEach check performed on a source(es), holds a check item representing all checks performed.",
+      "type": "object",
+      "properties": {
+        "checks": {
+          "description": "Checks holds a list of checks performed, with their eventual problems. If a check is not specified here,\nit means it was not performed.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "Name of the check that is human-understandable pointing out to the kind of verification performed.",
+                "type": "string"
+              },
+              "problems": {
+                "description": "Problems is a list of messages explaining why the check failed. Empty list means the check has succeeded.",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     "tags": {
       "type": "array",

@@ -742,6 +742,27 @@
       "$ref": "_definitions.json#/definitions/v1alpha1SourceHydratorStatus"
     },
     {
+      "$ref": "_definitions.json#/definitions/v1alpha1SourceIntegrity"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/v1alpha1SourceIntegrityCheckResult"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/v1alpha1SourceIntegrityCheckResultItem"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/v1alpha1SourceIntegrityGit"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/v1alpha1SourceIntegrityGitPolicy"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/v1alpha1SourceIntegrityGitPolicyGPG"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/v1alpha1SourceIntegrityGitPolicyRepo"
+    },
+    {
       "$ref": "_definitions.json#/definitions/v1alpha1SuccessfulHydrateOperation"
     },
     {

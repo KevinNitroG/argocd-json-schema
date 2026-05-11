@@ -400,6 +400,9 @@
       "$ref": "_definitions.json#/definitions/v1alpha1ApplicationSetTree"
     },
     {
+      "$ref": "_definitions.json#/definitions/v1alpha1ApplicationSetWatchEvent"
+    },
+    {
       "$ref": "_definitions.json#/definitions/v1alpha1ApplicationSource"
     },
     {

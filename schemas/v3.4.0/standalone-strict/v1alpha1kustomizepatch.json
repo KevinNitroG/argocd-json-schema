@@ -1,0 +1,58 @@
+{
+  "type": "object",
+  "properties": {
+    "options": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "boolean"
+      }
+    },
+    "patch": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    },
+    "target": {
+      "type": "object",
+      "properties": {
+        "annotationSelector": {
+          "type": "string"
+        },
+        "labelSelector": {
+          "type": "string"
+        },
+        "resId": {
+          "type": "object",
+          "properties": {
+            "gvk": {
+              "type": "object",
+              "properties": {
+                "group": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            },
+            "name": {
+              "type": "string"
+            },
+            "namespace": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}

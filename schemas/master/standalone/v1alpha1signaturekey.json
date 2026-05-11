@@ -1,4 +1,5 @@
 {
+  "description": "Deprecated: Use SourceIntegrity instead. SignatureKeys will be removed with the next major version.",
   "type": "object",
   "title": "SignatureKey is the specification of a key required to verify commit signatures with",
   "properties": {
