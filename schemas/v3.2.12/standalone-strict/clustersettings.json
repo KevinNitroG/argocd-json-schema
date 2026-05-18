@@ -1,0 +1,381 @@
+{
+  "type": "object",
+  "properties": {
+    "additionalUrls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "appLabelKey": {
+      "type": "string"
+    },
+    "appsInAnyNamespaceEnabled": {
+      "type": "boolean"
+    },
+    "configManagementPlugins": {
+      "description": "Deprecated: use sidecar plugins instead.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "title": "ConfigManagementPlugin contains config management plugin configuration",
+        "properties": {
+          "generate": {
+            "type": "object",
+            "title": "Command holds binary path and arguments list",
+            "properties": {
+              "args": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "command": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "additionalProperties": false
+          },
+          "init": {
+            "type": "object",
+            "title": "Command holds binary path and arguments list",
+            "properties": {
+              "args": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "command": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "additionalProperties": false
+          },
+          "lockRepo": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "controllerNamespace": {
+      "type": "string"
+    },
+    "dexConfig": {
+      "type": "object",
+      "properties": {
+        "connectors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "execEnabled": {
+      "type": "boolean"
+    },
+    "googleAnalytics": {
+      "type": "object",
+      "properties": {
+        "anonymizeUsers": {
+          "type": "boolean"
+        },
+        "trackingID": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "help": {
+      "type": "object",
+      "title": "Help settings",
+      "properties": {
+        "binaryUrls": {
+          "type": "object",
+          "title": "the URLs for downloading argocd binaries",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "chatText": {
+          "type": "string",
+          "title": "the text for getting chat help, defaults to \"Chat now!\""
+        },
+        "chatUrl": {
+          "type": "string",
+          "title": "the URL for getting chat help, this will typically be your Slack channel for support"
+        }
+      },
+      "additionalProperties": false
+    },
+    "hydratorEnabled": {
+      "type": "boolean"
+    },
+    "impersonationEnabled": {
+      "type": "boolean"
+    },
+    "installationID": {
+      "type": "string"
+    },
+    "kustomizeOptions": {
+      "type": "object",
+      "title": "KustomizeOptions are options for kustomize to use when building manifests",
+      "properties": {
+        "binaryPath": {
+          "description": "Deprecated: Use settings.Settings instead. See: settings.Settings.KustomizeVersions.\nIf this field is set, it will be used as the Kustomize binary path.\nOtherwise, Versions is used.",
+          "type": "string",
+          "title": "BinaryPath holds optional path to kustomize binary"
+        },
+        "buildOptions": {
+          "type": "string",
+          "title": "BuildOptions is a string of build parameters to use when calling `kustomize build`"
+        },
+        "versions": {
+          "description": "Versions is a list of Kustomize versions and their corresponding binary paths and build options.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "title": "KustomizeVersion holds information about additional Kustomize versions",
+            "properties": {
+              "buildOptions": {
+                "type": "string",
+                "title": "BuildOptions that are specific to a Kustomize version"
+              },
+              "name": {
+                "type": "string",
+                "title": "Name holds Kustomize version name"
+              },
+              "path": {
+                "type": "string",
+                "title": "Path holds the corresponding binary path"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "kustomizeVersions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "oidcConfig": {
+      "type": "object",
+      "properties": {
+        "cliClientID": {
+          "type": "string"
+        },
+        "clientID": {
+          "type": "string"
+        },
+        "enablePKCEAuthentication": {
+          "type": "boolean"
+        },
+        "idTokenClaims": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "essential": {
+                "type": "boolean"
+              },
+              "value": {
+                "type": "string"
+              },
+              "values": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "issuer": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "scopes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "passwordPattern": {
+      "type": "string"
+    },
+    "plugins": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "title": "Plugin settings",
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "the name of the plugin, e.g. \"kasane\""
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "resourceOverrides": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "title": "ResourceOverride holds configuration to customize resource diffing and health assessment",
+        "properties": {
+          "actions": {
+            "description": "Actions defines the set of actions that can be performed on the resource, as a Lua script.",
+            "type": "string"
+          },
+          "healthLua": {
+            "description": "HealthLua contains a Lua script that defines custom health checks for the resource.",
+            "type": "string"
+          },
+          "ignoreDifferences": {
+            "type": "object",
+            "title": "OverrideIgnoreDiff contains configurations about how fields should be ignored during diffs between\nthe desired state and live state",
+            "properties": {
+              "jSONPointers": {
+                "type": "array",
+                "title": "JSONPointers is a JSON path list following the format defined in RFC4627 (https://datatracker.ietf.org/doc/html/rfc6902#section-3)",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "jqPathExpressions": {
+                "type": "array",
+                "title": "JQPathExpressions is a JQ path list that will be evaludated during the diff process",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "managedFieldsManagers": {
+                "type": "array",
+                "title": "ManagedFieldsManagers is a list of trusted managers. Fields mutated by those managers will take precedence over the\ndesired state defined in the SCM and won't be displayed in diffs",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "additionalProperties": false
+          },
+          "ignoreResourceUpdates": {
+            "type": "object",
+            "title": "OverrideIgnoreDiff contains configurations about how fields should be ignored during diffs between\nthe desired state and live state",
+            "properties": {
+              "jSONPointers": {
+                "type": "array",
+                "title": "JSONPointers is a JSON path list following the format defined in RFC4627 (https://datatracker.ietf.org/doc/html/rfc6902#section-3)",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "jqPathExpressions": {
+                "type": "array",
+                "title": "JQPathExpressions is a JQ path list that will be evaludated during the diff process",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "managedFieldsManagers": {
+                "type": "array",
+                "title": "ManagedFieldsManagers is a list of trusted managers. Fields mutated by those managers will take precedence over the\ndesired state defined in the SCM and won't be displayed in diffs",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "additionalProperties": false
+          },
+          "knownTypeFields": {
+            "description": "KnownTypeFields lists fields for which unit conversions should be applied.",
+            "type": "array",
+            "items": {
+              "description": "KnownTypeField contains a mapping between a Custom Resource Definition (CRD) field\nand a well-known Kubernetes type. This mapping is primarily used for unit conversions\nin resources where the type is not explicitly defined (e.g., converting \"0.1\" to \"100m\" for CPU requests).",
+              "type": "object",
+              "properties": {
+                "field": {
+                  "type": "string",
+                  "title": "Field represents the JSON path to the specific field in the CRD that requires type conversion.\nExample: \"spec.resources.requests.cpu\""
+                },
+                "type": {
+                  "description": "Type specifies the expected Kubernetes type for the field, such as \"cpu\" or \"memory\".\nThis helps in converting values between different formats (e.g., \"0.1\" to \"100m\" for CPU).",
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "useOpenLibs": {
+            "description": "UseOpenLibs indicates whether to use open-source libraries for the resource.",
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "statusBadgeEnabled": {
+      "type": "boolean"
+    },
+    "statusBadgeRootUrl": {
+      "type": "string"
+    },
+    "trackingMethod": {
+      "type": "string"
+    },
+    "uiBannerContent": {
+      "type": "string"
+    },
+    "uiBannerPermanent": {
+      "type": "boolean"
+    },
+    "uiBannerPosition": {
+      "type": "string"
+    },
+    "uiBannerURL": {
+      "type": "string"
+    },
+    "uiCssURL": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "userLoginsDisabled": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}

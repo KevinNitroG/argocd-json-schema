@@ -424,7 +424,7 @@
                                   },
                                   "helm": {
                                     "type": "object",
-                                    "title": "ApplicationSourceHelm holds helm specific options",
+                                    "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                     "properties": {
                                       "apiVersions": {
                                         "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -863,7 +863,7 @@
                                       },
                                       "helm": {
                                         "type": "object",
-                                        "title": "ApplicationSourceHelm holds helm specific options",
+                                        "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                         "properties": {
                                           "apiVersions": {
                                             "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -1323,7 +1323,7 @@
                                     },
                                     "helm": {
                                       "type": "object",
-                                      "title": "ApplicationSourceHelm holds helm specific options",
+                                      "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                       "properties": {
                                         "apiVersions": {
                                           "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -2029,7 +2029,7 @@
                                   },
                                   "helm": {
                                     "type": "object",
-                                    "title": "ApplicationSourceHelm holds helm specific options",
+                                    "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                     "properties": {
                                       "apiVersions": {
                                         "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -2468,7 +2468,7 @@
                                       },
                                       "helm": {
                                         "type": "object",
-                                        "title": "ApplicationSourceHelm holds helm specific options",
+                                        "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                         "properties": {
                                           "apiVersions": {
                                             "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -2928,7 +2928,7 @@
                                     },
                                     "helm": {
                                       "type": "object",
-                                      "title": "ApplicationSourceHelm holds helm specific options",
+                                      "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                       "properties": {
                                         "apiVersions": {
                                           "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -3632,7 +3632,7 @@
                                   },
                                   "helm": {
                                     "type": "object",
-                                    "title": "ApplicationSourceHelm holds helm specific options",
+                                    "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                     "properties": {
                                       "apiVersions": {
                                         "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -4071,7 +4071,7 @@
                                       },
                                       "helm": {
                                         "type": "object",
-                                        "title": "ApplicationSourceHelm holds helm specific options",
+                                        "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                         "properties": {
                                           "apiVersions": {
                                             "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -4531,7 +4531,7 @@
                                     },
                                     "helm": {
                                       "type": "object",
-                                      "title": "ApplicationSourceHelm holds helm specific options",
+                                      "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                       "properties": {
                                         "apiVersions": {
                                           "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -5212,7 +5212,7 @@
                                   },
                                   "helm": {
                                     "type": "object",
-                                    "title": "ApplicationSourceHelm holds helm specific options",
+                                    "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                     "properties": {
                                       "apiVersions": {
                                         "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -5651,7 +5651,7 @@
                                       },
                                       "helm": {
                                         "type": "object",
-                                        "title": "ApplicationSourceHelm holds helm specific options",
+                                        "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                         "properties": {
                                           "apiVersions": {
                                             "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -6111,7 +6111,7 @@
                                     },
                                     "helm": {
                                       "type": "object",
-                                      "title": "ApplicationSourceHelm holds helm specific options",
+                                      "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                       "properties": {
                                         "apiVersions": {
                                           "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -6827,7 +6827,7 @@
                                             },
                                             "helm": {
                                               "type": "object",
-                                              "title": "ApplicationSourceHelm holds helm specific options",
+                                              "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                               "properties": {
                                                 "apiVersions": {
                                                   "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -7266,7 +7266,7 @@
                                                 },
                                                 "helm": {
                                                   "type": "object",
-                                                  "title": "ApplicationSourceHelm holds helm specific options",
+                                                  "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                   "properties": {
                                                     "apiVersions": {
                                                       "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -7726,7 +7726,7 @@
                                               },
                                               "helm": {
                                                 "type": "object",
-                                                "title": "ApplicationSourceHelm holds helm specific options",
+                                                "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                 "properties": {
                                                   "apiVersions": {
                                                     "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -8432,7 +8432,7 @@
                                             },
                                             "helm": {
                                               "type": "object",
-                                              "title": "ApplicationSourceHelm holds helm specific options",
+                                              "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                               "properties": {
                                                 "apiVersions": {
                                                   "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -8871,7 +8871,7 @@
                                                 },
                                                 "helm": {
                                                   "type": "object",
-                                                  "title": "ApplicationSourceHelm holds helm specific options",
+                                                  "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                   "properties": {
                                                     "apiVersions": {
                                                       "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -9331,7 +9331,7 @@
                                               },
                                               "helm": {
                                                 "type": "object",
-                                                "title": "ApplicationSourceHelm holds helm specific options",
+                                                "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                 "properties": {
                                                   "apiVersions": {
                                                     "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -10035,7 +10035,7 @@
                                             },
                                             "helm": {
                                               "type": "object",
-                                              "title": "ApplicationSourceHelm holds helm specific options",
+                                              "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                               "properties": {
                                                 "apiVersions": {
                                                   "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -10474,7 +10474,7 @@
                                                 },
                                                 "helm": {
                                                   "type": "object",
-                                                  "title": "ApplicationSourceHelm holds helm specific options",
+                                                  "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                   "properties": {
                                                     "apiVersions": {
                                                       "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -10934,7 +10934,7 @@
                                               },
                                               "helm": {
                                                 "type": "object",
-                                                "title": "ApplicationSourceHelm holds helm specific options",
+                                                "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                 "properties": {
                                                   "apiVersions": {
                                                     "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -11615,7 +11615,7 @@
                                             },
                                             "helm": {
                                               "type": "object",
-                                              "title": "ApplicationSourceHelm holds helm specific options",
+                                              "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                               "properties": {
                                                 "apiVersions": {
                                                   "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -12054,7 +12054,7 @@
                                                 },
                                                 "helm": {
                                                   "type": "object",
-                                                  "title": "ApplicationSourceHelm holds helm specific options",
+                                                  "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                   "properties": {
                                                     "apiVersions": {
                                                       "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -12514,7 +12514,7 @@
                                               },
                                               "helm": {
                                                 "type": "object",
-                                                "title": "ApplicationSourceHelm holds helm specific options",
+                                                "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                 "properties": {
                                                   "apiVersions": {
                                                     "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -13224,7 +13224,7 @@
                                             },
                                             "helm": {
                                               "type": "object",
-                                              "title": "ApplicationSourceHelm holds helm specific options",
+                                              "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                               "properties": {
                                                 "apiVersions": {
                                                   "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -13663,7 +13663,7 @@
                                                 },
                                                 "helm": {
                                                   "type": "object",
-                                                  "title": "ApplicationSourceHelm holds helm specific options",
+                                                  "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                   "properties": {
                                                     "apiVersions": {
                                                       "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -14123,7 +14123,7 @@
                                               },
                                               "helm": {
                                                 "type": "object",
-                                                "title": "ApplicationSourceHelm holds helm specific options",
+                                                "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                 "properties": {
                                                   "apiVersions": {
                                                     "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -15123,7 +15123,7 @@
                                             },
                                             "helm": {
                                               "type": "object",
-                                              "title": "ApplicationSourceHelm holds helm specific options",
+                                              "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                               "properties": {
                                                 "apiVersions": {
                                                   "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -15562,7 +15562,7 @@
                                                 },
                                                 "helm": {
                                                   "type": "object",
-                                                  "title": "ApplicationSourceHelm holds helm specific options",
+                                                  "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                   "properties": {
                                                     "apiVersions": {
                                                       "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -16022,7 +16022,7 @@
                                               },
                                               "helm": {
                                                 "type": "object",
-                                                "title": "ApplicationSourceHelm holds helm specific options",
+                                                "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                 "properties": {
                                                   "apiVersions": {
                                                     "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -17040,7 +17040,7 @@
                                             },
                                             "helm": {
                                               "type": "object",
-                                              "title": "ApplicationSourceHelm holds helm specific options",
+                                              "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                               "properties": {
                                                 "apiVersions": {
                                                   "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -17479,7 +17479,7 @@
                                                 },
                                                 "helm": {
                                                   "type": "object",
-                                                  "title": "ApplicationSourceHelm holds helm specific options",
+                                                  "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                   "properties": {
                                                     "apiVersions": {
                                                       "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -17939,7 +17939,7 @@
                                               },
                                               "helm": {
                                                 "type": "object",
-                                                "title": "ApplicationSourceHelm holds helm specific options",
+                                                "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                 "properties": {
                                                   "apiVersions": {
                                                     "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -18640,7 +18640,7 @@
                                   },
                                   "helm": {
                                     "type": "object",
-                                    "title": "ApplicationSourceHelm holds helm specific options",
+                                    "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                     "properties": {
                                       "apiVersions": {
                                         "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -19079,7 +19079,7 @@
                                       },
                                       "helm": {
                                         "type": "object",
-                                        "title": "ApplicationSourceHelm holds helm specific options",
+                                        "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                         "properties": {
                                           "apiVersions": {
                                             "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -19539,7 +19539,7 @@
                                     },
                                     "helm": {
                                       "type": "object",
-                                      "title": "ApplicationSourceHelm holds helm specific options",
+                                      "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                       "properties": {
                                         "apiVersions": {
                                           "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -20255,7 +20255,7 @@
                                             },
                                             "helm": {
                                               "type": "object",
-                                              "title": "ApplicationSourceHelm holds helm specific options",
+                                              "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                               "properties": {
                                                 "apiVersions": {
                                                   "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -20694,7 +20694,7 @@
                                                 },
                                                 "helm": {
                                                   "type": "object",
-                                                  "title": "ApplicationSourceHelm holds helm specific options",
+                                                  "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                   "properties": {
                                                     "apiVersions": {
                                                       "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -21154,7 +21154,7 @@
                                               },
                                               "helm": {
                                                 "type": "object",
-                                                "title": "ApplicationSourceHelm holds helm specific options",
+                                                "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                 "properties": {
                                                   "apiVersions": {
                                                     "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -21860,7 +21860,7 @@
                                             },
                                             "helm": {
                                               "type": "object",
-                                              "title": "ApplicationSourceHelm holds helm specific options",
+                                              "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                               "properties": {
                                                 "apiVersions": {
                                                   "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -22299,7 +22299,7 @@
                                                 },
                                                 "helm": {
                                                   "type": "object",
-                                                  "title": "ApplicationSourceHelm holds helm specific options",
+                                                  "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                   "properties": {
                                                     "apiVersions": {
                                                       "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -22759,7 +22759,7 @@
                                               },
                                               "helm": {
                                                 "type": "object",
-                                                "title": "ApplicationSourceHelm holds helm specific options",
+                                                "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                 "properties": {
                                                   "apiVersions": {
                                                     "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -23463,7 +23463,7 @@
                                             },
                                             "helm": {
                                               "type": "object",
-                                              "title": "ApplicationSourceHelm holds helm specific options",
+                                              "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                               "properties": {
                                                 "apiVersions": {
                                                   "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -23902,7 +23902,7 @@
                                                 },
                                                 "helm": {
                                                   "type": "object",
-                                                  "title": "ApplicationSourceHelm holds helm specific options",
+                                                  "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                   "properties": {
                                                     "apiVersions": {
                                                       "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -24362,7 +24362,7 @@
                                               },
                                               "helm": {
                                                 "type": "object",
-                                                "title": "ApplicationSourceHelm holds helm specific options",
+                                                "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                 "properties": {
                                                   "apiVersions": {
                                                     "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -25043,7 +25043,7 @@
                                             },
                                             "helm": {
                                               "type": "object",
-                                              "title": "ApplicationSourceHelm holds helm specific options",
+                                              "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                               "properties": {
                                                 "apiVersions": {
                                                   "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -25482,7 +25482,7 @@
                                                 },
                                                 "helm": {
                                                   "type": "object",
-                                                  "title": "ApplicationSourceHelm holds helm specific options",
+                                                  "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                   "properties": {
                                                     "apiVersions": {
                                                       "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -25942,7 +25942,7 @@
                                               },
                                               "helm": {
                                                 "type": "object",
-                                                "title": "ApplicationSourceHelm holds helm specific options",
+                                                "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                 "properties": {
                                                   "apiVersions": {
                                                     "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -26652,7 +26652,7 @@
                                             },
                                             "helm": {
                                               "type": "object",
-                                              "title": "ApplicationSourceHelm holds helm specific options",
+                                              "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                               "properties": {
                                                 "apiVersions": {
                                                   "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -27091,7 +27091,7 @@
                                                 },
                                                 "helm": {
                                                   "type": "object",
-                                                  "title": "ApplicationSourceHelm holds helm specific options",
+                                                  "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                   "properties": {
                                                     "apiVersions": {
                                                       "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -27551,7 +27551,7 @@
                                               },
                                               "helm": {
                                                 "type": "object",
-                                                "title": "ApplicationSourceHelm holds helm specific options",
+                                                "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                 "properties": {
                                                   "apiVersions": {
                                                     "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -28551,7 +28551,7 @@
                                             },
                                             "helm": {
                                               "type": "object",
-                                              "title": "ApplicationSourceHelm holds helm specific options",
+                                              "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                               "properties": {
                                                 "apiVersions": {
                                                   "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -28990,7 +28990,7 @@
                                                 },
                                                 "helm": {
                                                   "type": "object",
-                                                  "title": "ApplicationSourceHelm holds helm specific options",
+                                                  "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                   "properties": {
                                                     "apiVersions": {
                                                       "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -29450,7 +29450,7 @@
                                               },
                                               "helm": {
                                                 "type": "object",
-                                                "title": "ApplicationSourceHelm holds helm specific options",
+                                                "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                 "properties": {
                                                   "apiVersions": {
                                                     "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -30468,7 +30468,7 @@
                                             },
                                             "helm": {
                                               "type": "object",
-                                              "title": "ApplicationSourceHelm holds helm specific options",
+                                              "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                               "properties": {
                                                 "apiVersions": {
                                                   "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -30907,7 +30907,7 @@
                                                 },
                                                 "helm": {
                                                   "type": "object",
-                                                  "title": "ApplicationSourceHelm holds helm specific options",
+                                                  "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                   "properties": {
                                                     "apiVersions": {
                                                       "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -31367,7 +31367,7 @@
                                               },
                                               "helm": {
                                                 "type": "object",
-                                                "title": "ApplicationSourceHelm holds helm specific options",
+                                                "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                                 "properties": {
                                                   "apiVersions": {
                                                     "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -32074,7 +32074,7 @@
                                   },
                                   "helm": {
                                     "type": "object",
-                                    "title": "ApplicationSourceHelm holds helm specific options",
+                                    "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                     "properties": {
                                       "apiVersions": {
                                         "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -32513,7 +32513,7 @@
                                       },
                                       "helm": {
                                         "type": "object",
-                                        "title": "ApplicationSourceHelm holds helm specific options",
+                                        "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                         "properties": {
                                           "apiVersions": {
                                             "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -32973,7 +32973,7 @@
                                     },
                                     "helm": {
                                       "type": "object",
-                                      "title": "ApplicationSourceHelm holds helm specific options",
+                                      "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                       "properties": {
                                         "apiVersions": {
                                           "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -33663,7 +33663,7 @@
                                   },
                                   "helm": {
                                     "type": "object",
-                                    "title": "ApplicationSourceHelm holds helm specific options",
+                                    "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                     "properties": {
                                       "apiVersions": {
                                         "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -34102,7 +34102,7 @@
                                       },
                                       "helm": {
                                         "type": "object",
-                                        "title": "ApplicationSourceHelm holds helm specific options",
+                                        "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                         "properties": {
                                           "apiVersions": {
                                             "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -34562,7 +34562,7 @@
                                     },
                                     "helm": {
                                       "type": "object",
-                                      "title": "ApplicationSourceHelm holds helm specific options",
+                                      "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                       "properties": {
                                         "apiVersions": {
                                           "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -35562,7 +35562,7 @@
                                   },
                                   "helm": {
                                     "type": "object",
-                                    "title": "ApplicationSourceHelm holds helm specific options",
+                                    "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                     "properties": {
                                       "apiVersions": {
                                         "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -36001,7 +36001,7 @@
                                       },
                                       "helm": {
                                         "type": "object",
-                                        "title": "ApplicationSourceHelm holds helm specific options",
+                                        "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                         "properties": {
                                           "apiVersions": {
                                             "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -36461,7 +36461,7 @@
                                     },
                                     "helm": {
                                       "type": "object",
-                                      "title": "ApplicationSourceHelm holds helm specific options",
+                                      "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                       "properties": {
                                         "apiVersions": {
                                           "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -37479,7 +37479,7 @@
                                   },
                                   "helm": {
                                     "type": "object",
-                                    "title": "ApplicationSourceHelm holds helm specific options",
+                                    "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                     "properties": {
                                       "apiVersions": {
                                         "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -37918,7 +37918,7 @@
                                       },
                                       "helm": {
                                         "type": "object",
-                                        "title": "ApplicationSourceHelm holds helm specific options",
+                                        "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                         "properties": {
                                           "apiVersions": {
                                             "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -38378,7 +38378,7 @@
                                     },
                                     "helm": {
                                       "type": "object",
-                                      "title": "ApplicationSourceHelm holds helm specific options",
+                                      "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                       "properties": {
                                         "apiVersions": {
                                           "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -39210,7 +39210,7 @@
                         },
                         "helm": {
                           "type": "object",
-                          "title": "ApplicationSourceHelm holds helm specific options",
+                          "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                           "properties": {
                             "apiVersions": {
                               "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -39649,7 +39649,7 @@
                             },
                             "helm": {
                               "type": "object",
-                              "title": "ApplicationSourceHelm holds helm specific options",
+                              "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                               "properties": {
                                 "apiVersions": {
                                   "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -40109,7 +40109,7 @@
                           },
                           "helm": {
                             "type": "object",
-                            "title": "ApplicationSourceHelm holds helm specific options",
+                            "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                             "properties": {
                               "apiVersions": {
                                 "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",

@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "title": "OrphanedResourcesMonitorSettings holds settings of orphaned resources monitoring",
+  "properties": {
+    "ignore": {
+      "type": "array",
+      "title": "Ignore contains a list of resources that are to be excluded from orphaned resources monitoring",
+      "items": {
+        "type": "object",
+        "title": "OrphanedResourceKey is a reference to a resource to be ignored from",
+        "properties": {
+          "group": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "warn": {
+      "type": "boolean",
+      "title": "Warn indicates if warning condition should be created for apps which have orphaned resources"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

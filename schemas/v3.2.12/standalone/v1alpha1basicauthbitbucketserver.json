@@ -1,0 +1,23 @@
+{
+  "description": "BasicAuthBitbucketServer defines the username/(password or personal access token) for Basic auth.",
+  "type": "object",
+  "properties": {
+    "passwordRef": {
+      "description": "Utility struct for a reference to a secret key.",
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "secretName": {
+          "type": "string"
+        }
+      }
+    },
+    "username": {
+      "type": "string",
+      "title": "Username for Basic auth"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}
