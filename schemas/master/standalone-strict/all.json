@@ -133,6 +133,21 @@
       "$ref": "_definitions.json#/definitions/clusterSettingsPluginsResponse"
     },
     {
+      "$ref": "_definitions.json#/definitions/eventsEvent"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/eventsEventList"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/eventsEventSeries"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/eventsEventSource"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/eventsObjectReference"
+    },
+    {
       "$ref": "_definitions.json#/definitions/gpgkeyGnuPGPublicKeyCreateResponse"
     },
     {
@@ -253,18 +268,6 @@
       "$ref": "_definitions.json#/definitions/sessionSessionResponse"
     },
     {
-      "$ref": "_definitions.json#/definitions/v1Event"
-    },
-    {
-      "$ref": "_definitions.json#/definitions/v1EventList"
-    },
-    {
-      "$ref": "_definitions.json#/definitions/v1EventSeries"
-    },
-    {
-      "$ref": "_definitions.json#/definitions/v1EventSource"
-    },
-    {
       "$ref": "_definitions.json#/definitions/v1FieldsV1"
     },
     {
@@ -299,9 +302,6 @@
     },
     {
       "$ref": "_definitions.json#/definitions/v1ObjectMeta"
-    },
-    {
-      "$ref": "_definitions.json#/definitions/v1ObjectReference"
     },
     {
       "$ref": "_definitions.json#/definitions/v1OwnerReference"

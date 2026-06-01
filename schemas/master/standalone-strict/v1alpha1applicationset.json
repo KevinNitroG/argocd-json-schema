@@ -1260,7 +1260,7 @@
                                 "additionalProperties": false
                               },
                               "hydrateTo": {
-                                "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                                "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                                 "type": "object",
                                 "properties": {
                                   "targetBranch": {
@@ -1271,11 +1271,15 @@
                                 "additionalProperties": false
                               },
                               "syncSource": {
-                                "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                                "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                                 "type": "object",
                                 "properties": {
                                   "path": {
                                     "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                    "type": "string"
+                                  },
+                                  "repoURL": {
+                                    "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                     "type": "string"
                                   },
                                   "targetBranch": {
@@ -2939,7 +2943,7 @@
                                 "additionalProperties": false
                               },
                               "hydrateTo": {
-                                "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                                "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                                 "type": "object",
                                 "properties": {
                                   "targetBranch": {
@@ -2950,11 +2954,15 @@
                                 "additionalProperties": false
                               },
                               "syncSource": {
-                                "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                                "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                                 "type": "object",
                                 "properties": {
                                   "path": {
                                     "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                    "type": "string"
+                                  },
+                                  "repoURL": {
+                                    "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                     "type": "string"
                                   },
                                   "targetBranch": {
@@ -4616,7 +4624,7 @@
                                 "additionalProperties": false
                               },
                               "hydrateTo": {
-                                "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                                "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                                 "type": "object",
                                 "properties": {
                                   "targetBranch": {
@@ -4627,11 +4635,15 @@
                                 "additionalProperties": false
                               },
                               "syncSource": {
-                                "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                                "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                                 "type": "object",
                                 "properties": {
                                   "path": {
                                     "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                    "type": "string"
+                                  },
+                                  "repoURL": {
+                                    "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                     "type": "string"
                                   },
                                   "targetBranch": {
@@ -6269,7 +6281,7 @@
                                 "additionalProperties": false
                               },
                               "hydrateTo": {
-                                "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                                "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                                 "type": "object",
                                 "properties": {
                                   "targetBranch": {
@@ -6280,11 +6292,15 @@
                                 "additionalProperties": false
                               },
                               "syncSource": {
-                                "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                                "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                                 "type": "object",
                                 "properties": {
                                   "path": {
                                     "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                    "type": "string"
+                                  },
+                                  "repoURL": {
+                                    "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                     "type": "string"
                                   },
                                   "targetBranch": {
@@ -7958,7 +7974,7 @@
                                           "additionalProperties": false
                                         },
                                         "hydrateTo": {
-                                          "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                                          "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                                           "type": "object",
                                           "properties": {
                                             "targetBranch": {
@@ -7969,11 +7985,15 @@
                                           "additionalProperties": false
                                         },
                                         "syncSource": {
-                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                                           "type": "object",
                                           "properties": {
                                             "path": {
                                               "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                              "type": "string"
+                                            },
+                                            "repoURL": {
+                                              "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -9637,7 +9657,7 @@
                                           "additionalProperties": false
                                         },
                                         "hydrateTo": {
-                                          "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                                          "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                                           "type": "object",
                                           "properties": {
                                             "targetBranch": {
@@ -9648,11 +9668,15 @@
                                           "additionalProperties": false
                                         },
                                         "syncSource": {
-                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                                           "type": "object",
                                           "properties": {
                                             "path": {
                                               "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                              "type": "string"
+                                            },
+                                            "repoURL": {
+                                              "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -11314,7 +11338,7 @@
                                           "additionalProperties": false
                                         },
                                         "hydrateTo": {
-                                          "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                                          "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                                           "type": "object",
                                           "properties": {
                                             "targetBranch": {
@@ -11325,11 +11349,15 @@
                                           "additionalProperties": false
                                         },
                                         "syncSource": {
-                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                                           "type": "object",
                                           "properties": {
                                             "path": {
                                               "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                              "type": "string"
+                                            },
+                                            "repoURL": {
+                                              "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -12967,7 +12995,7 @@
                                           "additionalProperties": false
                                         },
                                         "hydrateTo": {
-                                          "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                                          "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                                           "type": "object",
                                           "properties": {
                                             "targetBranch": {
@@ -12978,11 +13006,15 @@
                                           "additionalProperties": false
                                         },
                                         "syncSource": {
-                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                                           "type": "object",
                                           "properties": {
                                             "path": {
                                               "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                              "type": "string"
+                                            },
+                                            "repoURL": {
+                                              "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -14653,7 +14685,7 @@
                                           "additionalProperties": false
                                         },
                                         "hydrateTo": {
-                                          "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                                          "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                                           "type": "object",
                                           "properties": {
                                             "targetBranch": {
@@ -14664,11 +14696,15 @@
                                           "additionalProperties": false
                                         },
                                         "syncSource": {
-                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                                           "type": "object",
                                           "properties": {
                                             "path": {
                                               "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                              "type": "string"
+                                            },
+                                            "repoURL": {
+                                              "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -16645,7 +16681,7 @@
                                           "additionalProperties": false
                                         },
                                         "hydrateTo": {
-                                          "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                                          "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                                           "type": "object",
                                           "properties": {
                                             "targetBranch": {
@@ -16656,11 +16692,15 @@
                                           "additionalProperties": false
                                         },
                                         "syncSource": {
-                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                                           "type": "object",
                                           "properties": {
                                             "path": {
                                               "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                              "type": "string"
+                                            },
+                                            "repoURL": {
+                                              "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -18654,7 +18694,7 @@
                                           "additionalProperties": false
                                         },
                                         "hydrateTo": {
-                                          "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                                          "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                                           "type": "object",
                                           "properties": {
                                             "targetBranch": {
@@ -18665,11 +18705,15 @@
                                           "additionalProperties": false
                                         },
                                         "syncSource": {
-                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                                           "type": "object",
                                           "properties": {
                                             "path": {
                                               "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                              "type": "string"
+                                            },
+                                            "repoURL": {
+                                              "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -20329,7 +20373,7 @@
                                 "additionalProperties": false
                               },
                               "hydrateTo": {
-                                "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                                "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                                 "type": "object",
                                 "properties": {
                                   "targetBranch": {
@@ -20340,11 +20384,15 @@
                                 "additionalProperties": false
                               },
                               "syncSource": {
-                                "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                                "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                                 "type": "object",
                                 "properties": {
                                   "path": {
                                     "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                    "type": "string"
+                                  },
+                                  "repoURL": {
+                                    "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                     "type": "string"
                                   },
                                   "targetBranch": {
@@ -22018,7 +22066,7 @@
                                           "additionalProperties": false
                                         },
                                         "hydrateTo": {
-                                          "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                                          "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                                           "type": "object",
                                           "properties": {
                                             "targetBranch": {
@@ -22029,11 +22077,15 @@
                                           "additionalProperties": false
                                         },
                                         "syncSource": {
-                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                                           "type": "object",
                                           "properties": {
                                             "path": {
                                               "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                              "type": "string"
+                                            },
+                                            "repoURL": {
+                                              "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -23697,7 +23749,7 @@
                                           "additionalProperties": false
                                         },
                                         "hydrateTo": {
-                                          "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                                          "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                                           "type": "object",
                                           "properties": {
                                             "targetBranch": {
@@ -23708,11 +23760,15 @@
                                           "additionalProperties": false
                                         },
                                         "syncSource": {
-                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                                           "type": "object",
                                           "properties": {
                                             "path": {
                                               "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                              "type": "string"
+                                            },
+                                            "repoURL": {
+                                              "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -25374,7 +25430,7 @@
                                           "additionalProperties": false
                                         },
                                         "hydrateTo": {
-                                          "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                                          "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                                           "type": "object",
                                           "properties": {
                                             "targetBranch": {
@@ -25385,11 +25441,15 @@
                                           "additionalProperties": false
                                         },
                                         "syncSource": {
-                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                                           "type": "object",
                                           "properties": {
                                             "path": {
                                               "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                              "type": "string"
+                                            },
+                                            "repoURL": {
+                                              "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -27027,7 +27087,7 @@
                                           "additionalProperties": false
                                         },
                                         "hydrateTo": {
-                                          "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                                          "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                                           "type": "object",
                                           "properties": {
                                             "targetBranch": {
@@ -27038,11 +27098,15 @@
                                           "additionalProperties": false
                                         },
                                         "syncSource": {
-                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                                           "type": "object",
                                           "properties": {
                                             "path": {
                                               "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                              "type": "string"
+                                            },
+                                            "repoURL": {
+                                              "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -28713,7 +28777,7 @@
                                           "additionalProperties": false
                                         },
                                         "hydrateTo": {
-                                          "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                                          "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                                           "type": "object",
                                           "properties": {
                                             "targetBranch": {
@@ -28724,11 +28788,15 @@
                                           "additionalProperties": false
                                         },
                                         "syncSource": {
-                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                                           "type": "object",
                                           "properties": {
                                             "path": {
                                               "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                              "type": "string"
+                                            },
+                                            "repoURL": {
+                                              "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -30705,7 +30773,7 @@
                                           "additionalProperties": false
                                         },
                                         "hydrateTo": {
-                                          "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                                          "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                                           "type": "object",
                                           "properties": {
                                             "targetBranch": {
@@ -30716,11 +30784,15 @@
                                           "additionalProperties": false
                                         },
                                         "syncSource": {
-                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                                           "type": "object",
                                           "properties": {
                                             "path": {
                                               "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                              "type": "string"
+                                            },
+                                            "repoURL": {
+                                              "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -32714,7 +32786,7 @@
                                           "additionalProperties": false
                                         },
                                         "hydrateTo": {
-                                          "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                                          "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                                           "type": "object",
                                           "properties": {
                                             "targetBranch": {
@@ -32725,11 +32797,15 @@
                                           "additionalProperties": false
                                         },
                                         "syncSource": {
-                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                                          "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                                           "type": "object",
                                           "properties": {
                                             "path": {
                                               "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                              "type": "string"
+                                            },
+                                            "repoURL": {
+                                              "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -34395,7 +34471,7 @@
                                 "additionalProperties": false
                               },
                               "hydrateTo": {
-                                "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                                "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                                 "type": "object",
                                 "properties": {
                                   "targetBranch": {
@@ -34406,11 +34482,15 @@
                                 "additionalProperties": false
                               },
                               "syncSource": {
-                                "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                                "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                                 "type": "object",
                                 "properties": {
                                   "path": {
                                     "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                    "type": "string"
+                                  },
+                                  "repoURL": {
+                                    "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                     "type": "string"
                                   },
                                   "targetBranch": {
@@ -36059,7 +36139,7 @@
                                 "additionalProperties": false
                               },
                               "hydrateTo": {
-                                "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                                "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                                 "type": "object",
                                 "properties": {
                                   "targetBranch": {
@@ -36070,11 +36150,15 @@
                                 "additionalProperties": false
                               },
                               "syncSource": {
-                                "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                                "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                                 "type": "object",
                                 "properties": {
                                   "path": {
                                     "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                    "type": "string"
+                                  },
+                                  "repoURL": {
+                                    "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                     "type": "string"
                                   },
                                   "targetBranch": {
@@ -38051,7 +38135,7 @@
                                 "additionalProperties": false
                               },
                               "hydrateTo": {
-                                "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                                "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                                 "type": "object",
                                 "properties": {
                                   "targetBranch": {
@@ -38062,11 +38146,15 @@
                                 "additionalProperties": false
                               },
                               "syncSource": {
-                                "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                                "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                                 "type": "object",
                                 "properties": {
                                   "path": {
                                     "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                    "type": "string"
+                                  },
+                                  "repoURL": {
+                                    "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                     "type": "string"
                                   },
                                   "targetBranch": {
@@ -40060,7 +40148,7 @@
                                 "additionalProperties": false
                               },
                               "hydrateTo": {
-                                "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                                "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                                 "type": "object",
                                 "properties": {
                                   "targetBranch": {
@@ -40071,11 +40159,15 @@
                                 "additionalProperties": false
                               },
                               "syncSource": {
-                                "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                                "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                                 "type": "object",
                                 "properties": {
                                   "path": {
                                     "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                    "type": "string"
+                                  },
+                                  "repoURL": {
+                                    "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                     "type": "string"
                                   },
                                   "targetBranch": {
@@ -41874,7 +41966,7 @@
                       "additionalProperties": false
                     },
                     "hydrateTo": {
-                      "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                      "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                       "type": "object",
                       "properties": {
                         "targetBranch": {
@@ -41885,11 +41977,15 @@
                       "additionalProperties": false
                     },
                     "syncSource": {
-                      "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                      "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                       "type": "object",
                       "properties": {
                         "path": {
                           "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                          "type": "string"
+                        },
+                        "repoURL": {
+                          "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                           "type": "string"
                         },
                         "targetBranch": {
