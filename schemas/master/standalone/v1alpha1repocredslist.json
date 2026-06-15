@@ -125,6 +125,16 @@
         "selfLink": {
           "type": "string",
           "title": "Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.\n+optional"
+        },
+        "shardInfo": {
+          "description": "ShardInfo describes the shard selector that was applied to produce a list response.\nIts presence on a list response indicates the list is a filtered subset.",
+          "type": "object",
+          "properties": {
+            "selector": {
+              "type": "string",
+              "title": "selector is the shard selector string from the request, echoed back so clients\ncan verify which shard they received and merge responses from multiple shards.\n+required"
+            }
+          }
         }
       }
     }

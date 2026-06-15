@@ -310,6 +310,9 @@
       "$ref": "_definitions.json#/definitions/v1PortStatus"
     },
     {
+      "$ref": "_definitions.json#/definitions/v1ShardInfo"
+    },
+    {
       "$ref": "_definitions.json#/definitions/v1Time"
     },
     {

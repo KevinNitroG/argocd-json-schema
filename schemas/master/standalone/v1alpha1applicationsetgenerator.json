@@ -507,7 +507,7 @@
                             "type": "object",
                             "properties": {
                               "count": {
-                                "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                 "type": "object",
                                 "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                 "properties": {
@@ -608,6 +608,10 @@
                     "repoURL": {
                       "type": "string",
                       "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                    },
+                    "tagPrefix": {
+                      "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                      "type": "string"
                     },
                     "targetRevision": {
                       "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -946,7 +950,7 @@
                                 "type": "object",
                                 "properties": {
                                   "count": {
-                                    "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                    "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                     "type": "object",
                                     "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                     "properties": {
@@ -1410,7 +1414,7 @@
                               "type": "object",
                               "properties": {
                                 "count": {
-                                  "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                  "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                   "type": "object",
                                   "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                   "properties": {
@@ -1511,6 +1515,10 @@
                       "repoURL": {
                         "type": "string",
                         "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                      },
+                      "tagPrefix": {
+                        "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                        "type": "string"
                       },
                       "targetRevision": {
                         "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -2116,7 +2124,7 @@
                             "type": "object",
                             "properties": {
                               "count": {
-                                "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                 "type": "object",
                                 "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                 "properties": {
@@ -2217,6 +2225,10 @@
                     "repoURL": {
                       "type": "string",
                       "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                    },
+                    "tagPrefix": {
+                      "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                      "type": "string"
                     },
                     "targetRevision": {
                       "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -2555,7 +2567,7 @@
                                 "type": "object",
                                 "properties": {
                                   "count": {
-                                    "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                    "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                     "type": "object",
                                     "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                     "properties": {
@@ -3019,7 +3031,7 @@
                               "type": "object",
                               "properties": {
                                 "count": {
-                                  "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                  "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                   "type": "object",
                                   "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                   "properties": {
@@ -3120,6 +3132,10 @@
                       "repoURL": {
                         "type": "string",
                         "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                      },
+                      "tagPrefix": {
+                        "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                        "type": "string"
                       },
                       "targetRevision": {
                         "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -3723,7 +3739,7 @@
                             "type": "object",
                             "properties": {
                               "count": {
-                                "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                 "type": "object",
                                 "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                 "properties": {
@@ -3824,6 +3840,10 @@
                     "repoURL": {
                       "type": "string",
                       "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                    },
+                    "tagPrefix": {
+                      "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                      "type": "string"
                     },
                     "targetRevision": {
                       "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -4162,7 +4182,7 @@
                                 "type": "object",
                                 "properties": {
                                   "count": {
-                                    "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                    "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                     "type": "object",
                                     "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                     "properties": {
@@ -4626,7 +4646,7 @@
                               "type": "object",
                               "properties": {
                                 "count": {
-                                  "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                  "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                   "type": "object",
                                   "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                   "properties": {
@@ -4727,6 +4747,10 @@
                       "repoURL": {
                         "type": "string",
                         "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                      },
+                      "tagPrefix": {
+                        "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                        "type": "string"
                       },
                       "targetRevision": {
                         "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -5307,7 +5331,7 @@
                             "type": "object",
                             "properties": {
                               "count": {
-                                "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                 "type": "object",
                                 "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                 "properties": {
@@ -5408,6 +5432,10 @@
                     "repoURL": {
                       "type": "string",
                       "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                    },
+                    "tagPrefix": {
+                      "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                      "type": "string"
                     },
                     "targetRevision": {
                       "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -5746,7 +5774,7 @@
                                 "type": "object",
                                 "properties": {
                                   "count": {
-                                    "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                    "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                     "type": "object",
                                     "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                     "properties": {
@@ -6210,7 +6238,7 @@
                               "type": "object",
                               "properties": {
                                 "count": {
-                                  "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                  "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                   "type": "object",
                                   "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                   "properties": {
@@ -6311,6 +6339,10 @@
                       "repoURL": {
                         "type": "string",
                         "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                      },
+                      "tagPrefix": {
+                        "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                        "type": "string"
                       },
                       "targetRevision": {
                         "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -6926,7 +6958,7 @@
                                       "type": "object",
                                       "properties": {
                                         "count": {
-                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                           "type": "object",
                                           "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                           "properties": {
@@ -7027,6 +7059,10 @@
                               "repoURL": {
                                 "type": "string",
                                 "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                              },
+                              "tagPrefix": {
+                                "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                "type": "string"
                               },
                               "targetRevision": {
                                 "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -7365,7 +7401,7 @@
                                           "type": "object",
                                           "properties": {
                                             "count": {
-                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                               "type": "object",
                                               "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                               "properties": {
@@ -7829,7 +7865,7 @@
                                         "type": "object",
                                         "properties": {
                                           "count": {
-                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                             "type": "object",
                                             "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                             "properties": {
@@ -7930,6 +7966,10 @@
                                 "repoURL": {
                                   "type": "string",
                                   "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                                },
+                                "tagPrefix": {
+                                  "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                  "type": "string"
                                 },
                                 "targetRevision": {
                                   "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -8535,7 +8575,7 @@
                                       "type": "object",
                                       "properties": {
                                         "count": {
-                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                           "type": "object",
                                           "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                           "properties": {
@@ -8636,6 +8676,10 @@
                               "repoURL": {
                                 "type": "string",
                                 "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                              },
+                              "tagPrefix": {
+                                "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                "type": "string"
                               },
                               "targetRevision": {
                                 "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -8974,7 +9018,7 @@
                                           "type": "object",
                                           "properties": {
                                             "count": {
-                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                               "type": "object",
                                               "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                               "properties": {
@@ -9438,7 +9482,7 @@
                                         "type": "object",
                                         "properties": {
                                           "count": {
-                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                             "type": "object",
                                             "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                             "properties": {
@@ -9539,6 +9583,10 @@
                                 "repoURL": {
                                   "type": "string",
                                   "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                                },
+                                "tagPrefix": {
+                                  "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                  "type": "string"
                                 },
                                 "targetRevision": {
                                   "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -10142,7 +10190,7 @@
                                       "type": "object",
                                       "properties": {
                                         "count": {
-                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                           "type": "object",
                                           "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                           "properties": {
@@ -10243,6 +10291,10 @@
                               "repoURL": {
                                 "type": "string",
                                 "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                              },
+                              "tagPrefix": {
+                                "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                "type": "string"
                               },
                               "targetRevision": {
                                 "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -10581,7 +10633,7 @@
                                           "type": "object",
                                           "properties": {
                                             "count": {
-                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                               "type": "object",
                                               "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                               "properties": {
@@ -11045,7 +11097,7 @@
                                         "type": "object",
                                         "properties": {
                                           "count": {
-                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                             "type": "object",
                                             "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                             "properties": {
@@ -11146,6 +11198,10 @@
                                 "repoURL": {
                                   "type": "string",
                                   "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                                },
+                                "tagPrefix": {
+                                  "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                  "type": "string"
                                 },
                                 "targetRevision": {
                                   "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -11726,7 +11782,7 @@
                                       "type": "object",
                                       "properties": {
                                         "count": {
-                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                           "type": "object",
                                           "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                           "properties": {
@@ -11827,6 +11883,10 @@
                               "repoURL": {
                                 "type": "string",
                                 "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                              },
+                              "tagPrefix": {
+                                "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                "type": "string"
                               },
                               "targetRevision": {
                                 "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -12165,7 +12225,7 @@
                                           "type": "object",
                                           "properties": {
                                             "count": {
-                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                               "type": "object",
                                               "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                               "properties": {
@@ -12629,7 +12689,7 @@
                                         "type": "object",
                                         "properties": {
                                           "count": {
-                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                             "type": "object",
                                             "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                             "properties": {
@@ -12730,6 +12790,10 @@
                                 "repoURL": {
                                   "type": "string",
                                   "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                                },
+                                "tagPrefix": {
+                                  "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                  "type": "string"
                                 },
                                 "targetRevision": {
                                   "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -13339,7 +13403,7 @@
                                       "type": "object",
                                       "properties": {
                                         "count": {
-                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                           "type": "object",
                                           "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                           "properties": {
@@ -13440,6 +13504,10 @@
                               "repoURL": {
                                 "type": "string",
                                 "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                              },
+                              "tagPrefix": {
+                                "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                "type": "string"
                               },
                               "targetRevision": {
                                 "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -13778,7 +13846,7 @@
                                           "type": "object",
                                           "properties": {
                                             "count": {
-                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                               "type": "object",
                                               "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                               "properties": {
@@ -14242,7 +14310,7 @@
                                         "type": "object",
                                         "properties": {
                                           "count": {
-                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                             "type": "object",
                                             "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                             "properties": {
@@ -14343,6 +14411,10 @@
                                 "repoURL": {
                                   "type": "string",
                                   "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                                },
+                                "tagPrefix": {
+                                  "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                  "type": "string"
                                 },
                                 "targetRevision": {
                                   "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -15242,7 +15314,7 @@
                                       "type": "object",
                                       "properties": {
                                         "count": {
-                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                           "type": "object",
                                           "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                           "properties": {
@@ -15343,6 +15415,10 @@
                               "repoURL": {
                                 "type": "string",
                                 "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                              },
+                              "tagPrefix": {
+                                "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                "type": "string"
                               },
                               "targetRevision": {
                                 "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -15681,7 +15757,7 @@
                                           "type": "object",
                                           "properties": {
                                             "count": {
-                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                               "type": "object",
                                               "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                               "properties": {
@@ -16145,7 +16221,7 @@
                                         "type": "object",
                                         "properties": {
                                           "count": {
-                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                             "type": "object",
                                             "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                             "properties": {
@@ -16246,6 +16322,10 @@
                                 "repoURL": {
                                   "type": "string",
                                   "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                                },
+                                "tagPrefix": {
+                                  "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                  "type": "string"
                                 },
                                 "targetRevision": {
                                   "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -17163,7 +17243,7 @@
                                       "type": "object",
                                       "properties": {
                                         "count": {
-                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                           "type": "object",
                                           "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                           "properties": {
@@ -17264,6 +17344,10 @@
                               "repoURL": {
                                 "type": "string",
                                 "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                              },
+                              "tagPrefix": {
+                                "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                "type": "string"
                               },
                               "targetRevision": {
                                 "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -17602,7 +17686,7 @@
                                           "type": "object",
                                           "properties": {
                                             "count": {
-                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                               "type": "object",
                                               "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                               "properties": {
@@ -18066,7 +18150,7 @@
                                         "type": "object",
                                         "properties": {
                                           "count": {
-                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                             "type": "object",
                                             "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                             "properties": {
@@ -18167,6 +18251,10 @@
                                 "repoURL": {
                                   "type": "string",
                                   "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                                },
+                                "tagPrefix": {
+                                  "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                  "type": "string"
                                 },
                                 "targetRevision": {
                                   "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -18767,7 +18855,7 @@
                             "type": "object",
                             "properties": {
                               "count": {
-                                "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                 "type": "object",
                                 "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                 "properties": {
@@ -18868,6 +18956,10 @@
                     "repoURL": {
                       "type": "string",
                       "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                    },
+                    "tagPrefix": {
+                      "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                      "type": "string"
                     },
                     "targetRevision": {
                       "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -19206,7 +19298,7 @@
                                 "type": "object",
                                 "properties": {
                                   "count": {
-                                    "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                    "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                     "type": "object",
                                     "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                     "properties": {
@@ -19670,7 +19762,7 @@
                               "type": "object",
                               "properties": {
                                 "count": {
-                                  "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                  "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                   "type": "object",
                                   "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                   "properties": {
@@ -19771,6 +19863,10 @@
                       "repoURL": {
                         "type": "string",
                         "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                      },
+                      "tagPrefix": {
+                        "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                        "type": "string"
                       },
                       "targetRevision": {
                         "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -20386,7 +20482,7 @@
                                       "type": "object",
                                       "properties": {
                                         "count": {
-                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                           "type": "object",
                                           "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                           "properties": {
@@ -20487,6 +20583,10 @@
                               "repoURL": {
                                 "type": "string",
                                 "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                              },
+                              "tagPrefix": {
+                                "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                "type": "string"
                               },
                               "targetRevision": {
                                 "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -20825,7 +20925,7 @@
                                           "type": "object",
                                           "properties": {
                                             "count": {
-                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                               "type": "object",
                                               "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                               "properties": {
@@ -21289,7 +21389,7 @@
                                         "type": "object",
                                         "properties": {
                                           "count": {
-                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                             "type": "object",
                                             "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                             "properties": {
@@ -21390,6 +21490,10 @@
                                 "repoURL": {
                                   "type": "string",
                                   "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                                },
+                                "tagPrefix": {
+                                  "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                  "type": "string"
                                 },
                                 "targetRevision": {
                                   "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -21995,7 +22099,7 @@
                                       "type": "object",
                                       "properties": {
                                         "count": {
-                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                           "type": "object",
                                           "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                           "properties": {
@@ -22096,6 +22200,10 @@
                               "repoURL": {
                                 "type": "string",
                                 "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                              },
+                              "tagPrefix": {
+                                "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                "type": "string"
                               },
                               "targetRevision": {
                                 "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -22434,7 +22542,7 @@
                                           "type": "object",
                                           "properties": {
                                             "count": {
-                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                               "type": "object",
                                               "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                               "properties": {
@@ -22898,7 +23006,7 @@
                                         "type": "object",
                                         "properties": {
                                           "count": {
-                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                             "type": "object",
                                             "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                             "properties": {
@@ -22999,6 +23107,10 @@
                                 "repoURL": {
                                   "type": "string",
                                   "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                                },
+                                "tagPrefix": {
+                                  "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                  "type": "string"
                                 },
                                 "targetRevision": {
                                   "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -23602,7 +23714,7 @@
                                       "type": "object",
                                       "properties": {
                                         "count": {
-                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                           "type": "object",
                                           "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                           "properties": {
@@ -23703,6 +23815,10 @@
                               "repoURL": {
                                 "type": "string",
                                 "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                              },
+                              "tagPrefix": {
+                                "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                "type": "string"
                               },
                               "targetRevision": {
                                 "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -24041,7 +24157,7 @@
                                           "type": "object",
                                           "properties": {
                                             "count": {
-                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                               "type": "object",
                                               "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                               "properties": {
@@ -24505,7 +24621,7 @@
                                         "type": "object",
                                         "properties": {
                                           "count": {
-                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                             "type": "object",
                                             "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                             "properties": {
@@ -24606,6 +24722,10 @@
                                 "repoURL": {
                                   "type": "string",
                                   "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                                },
+                                "tagPrefix": {
+                                  "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                  "type": "string"
                                 },
                                 "targetRevision": {
                                   "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -25186,7 +25306,7 @@
                                       "type": "object",
                                       "properties": {
                                         "count": {
-                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                           "type": "object",
                                           "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                           "properties": {
@@ -25287,6 +25407,10 @@
                               "repoURL": {
                                 "type": "string",
                                 "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                              },
+                              "tagPrefix": {
+                                "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                "type": "string"
                               },
                               "targetRevision": {
                                 "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -25625,7 +25749,7 @@
                                           "type": "object",
                                           "properties": {
                                             "count": {
-                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                               "type": "object",
                                               "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                               "properties": {
@@ -26089,7 +26213,7 @@
                                         "type": "object",
                                         "properties": {
                                           "count": {
-                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                             "type": "object",
                                             "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                             "properties": {
@@ -26190,6 +26314,10 @@
                                 "repoURL": {
                                   "type": "string",
                                   "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                                },
+                                "tagPrefix": {
+                                  "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                  "type": "string"
                                 },
                                 "targetRevision": {
                                   "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -26799,7 +26927,7 @@
                                       "type": "object",
                                       "properties": {
                                         "count": {
-                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                           "type": "object",
                                           "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                           "properties": {
@@ -26900,6 +27028,10 @@
                               "repoURL": {
                                 "type": "string",
                                 "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                              },
+                              "tagPrefix": {
+                                "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                "type": "string"
                               },
                               "targetRevision": {
                                 "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -27238,7 +27370,7 @@
                                           "type": "object",
                                           "properties": {
                                             "count": {
-                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                               "type": "object",
                                               "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                               "properties": {
@@ -27702,7 +27834,7 @@
                                         "type": "object",
                                         "properties": {
                                           "count": {
-                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                             "type": "object",
                                             "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                             "properties": {
@@ -27803,6 +27935,10 @@
                                 "repoURL": {
                                   "type": "string",
                                   "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                                },
+                                "tagPrefix": {
+                                  "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                  "type": "string"
                                 },
                                 "targetRevision": {
                                   "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -28702,7 +28838,7 @@
                                       "type": "object",
                                       "properties": {
                                         "count": {
-                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                           "type": "object",
                                           "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                           "properties": {
@@ -28803,6 +28939,10 @@
                               "repoURL": {
                                 "type": "string",
                                 "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                              },
+                              "tagPrefix": {
+                                "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                "type": "string"
                               },
                               "targetRevision": {
                                 "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -29141,7 +29281,7 @@
                                           "type": "object",
                                           "properties": {
                                             "count": {
-                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                               "type": "object",
                                               "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                               "properties": {
@@ -29605,7 +29745,7 @@
                                         "type": "object",
                                         "properties": {
                                           "count": {
-                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                             "type": "object",
                                             "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                             "properties": {
@@ -29706,6 +29846,10 @@
                                 "repoURL": {
                                   "type": "string",
                                   "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                                },
+                                "tagPrefix": {
+                                  "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                  "type": "string"
                                 },
                                 "targetRevision": {
                                   "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -30623,7 +30767,7 @@
                                       "type": "object",
                                       "properties": {
                                         "count": {
-                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                           "type": "object",
                                           "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                           "properties": {
@@ -30724,6 +30868,10 @@
                               "repoURL": {
                                 "type": "string",
                                 "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                              },
+                              "tagPrefix": {
+                                "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                "type": "string"
                               },
                               "targetRevision": {
                                 "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -31062,7 +31210,7 @@
                                           "type": "object",
                                           "properties": {
                                             "count": {
-                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                               "type": "object",
                                               "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                               "properties": {
@@ -31526,7 +31674,7 @@
                                         "type": "object",
                                         "properties": {
                                           "count": {
-                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                             "type": "object",
                                             "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                             "properties": {
@@ -31627,6 +31775,10 @@
                                 "repoURL": {
                                   "type": "string",
                                   "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                                },
+                                "tagPrefix": {
+                                  "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                                  "type": "string"
                                 },
                                 "targetRevision": {
                                   "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -32233,7 +32385,7 @@
                             "type": "object",
                             "properties": {
                               "count": {
-                                "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                 "type": "object",
                                 "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                 "properties": {
@@ -32334,6 +32486,10 @@
                     "repoURL": {
                       "type": "string",
                       "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                    },
+                    "tagPrefix": {
+                      "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                      "type": "string"
                     },
                     "targetRevision": {
                       "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -32672,7 +32828,7 @@
                                 "type": "object",
                                 "properties": {
                                   "count": {
-                                    "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                    "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                     "type": "object",
                                     "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                     "properties": {
@@ -33136,7 +33292,7 @@
                               "type": "object",
                               "properties": {
                                 "count": {
-                                  "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                  "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                   "type": "object",
                                   "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                   "properties": {
@@ -33237,6 +33393,10 @@
                       "repoURL": {
                         "type": "string",
                         "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                      },
+                      "tagPrefix": {
+                        "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                        "type": "string"
                       },
                       "targetRevision": {
                         "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -33826,7 +33986,7 @@
                             "type": "object",
                             "properties": {
                               "count": {
-                                "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                 "type": "object",
                                 "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                 "properties": {
@@ -33927,6 +34087,10 @@
                     "repoURL": {
                       "type": "string",
                       "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                    },
+                    "tagPrefix": {
+                      "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                      "type": "string"
                     },
                     "targetRevision": {
                       "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -34265,7 +34429,7 @@
                                 "type": "object",
                                 "properties": {
                                   "count": {
-                                    "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                    "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                     "type": "object",
                                     "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                     "properties": {
@@ -34729,7 +34893,7 @@
                               "type": "object",
                               "properties": {
                                 "count": {
-                                  "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                  "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                   "type": "object",
                                   "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                   "properties": {
@@ -34830,6 +34994,10 @@
                       "repoURL": {
                         "type": "string",
                         "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                      },
+                      "tagPrefix": {
+                        "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                        "type": "string"
                       },
                       "targetRevision": {
                         "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -35729,7 +35897,7 @@
                             "type": "object",
                             "properties": {
                               "count": {
-                                "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                 "type": "object",
                                 "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                 "properties": {
@@ -35830,6 +35998,10 @@
                     "repoURL": {
                       "type": "string",
                       "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                    },
+                    "tagPrefix": {
+                      "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                      "type": "string"
                     },
                     "targetRevision": {
                       "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -36168,7 +36340,7 @@
                                 "type": "object",
                                 "properties": {
                                   "count": {
-                                    "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                    "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                     "type": "object",
                                     "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                     "properties": {
@@ -36632,7 +36804,7 @@
                               "type": "object",
                               "properties": {
                                 "count": {
-                                  "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                  "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                   "type": "object",
                                   "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                   "properties": {
@@ -36733,6 +36905,10 @@
                       "repoURL": {
                         "type": "string",
                         "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                      },
+                      "tagPrefix": {
+                        "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                        "type": "string"
                       },
                       "targetRevision": {
                         "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -37650,7 +37826,7 @@
                             "type": "object",
                             "properties": {
                               "count": {
-                                "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                 "type": "object",
                                 "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                 "properties": {
@@ -37751,6 +37927,10 @@
                     "repoURL": {
                       "type": "string",
                       "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                    },
+                    "tagPrefix": {
+                      "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                      "type": "string"
                     },
                     "targetRevision": {
                       "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -38089,7 +38269,7 @@
                                 "type": "object",
                                 "properties": {
                                   "count": {
-                                    "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                    "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                     "type": "object",
                                     "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                     "properties": {
@@ -38553,7 +38733,7 @@
                               "type": "object",
                               "properties": {
                                 "count": {
-                                  "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                  "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                   "type": "object",
                                   "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                   "properties": {
@@ -38654,6 +38834,10 @@
                       "repoURL": {
                         "type": "string",
                         "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                      },
+                      "tagPrefix": {
+                        "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                        "type": "string"
                       },
                       "targetRevision": {
                         "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
