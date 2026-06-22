@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "anonymizeUsers": {
+      "type": "boolean"
+    },
+    "trackingID": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}

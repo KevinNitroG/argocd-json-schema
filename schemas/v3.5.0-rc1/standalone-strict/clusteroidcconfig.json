@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "properties": {
+    "cliClientID": {
+      "type": "string"
+    },
+    "clientID": {
+      "type": "string"
+    },
+    "enablePKCEAuthentication": {
+      "type": "boolean"
+    },
+    "idTokenClaims": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "essential": {
+            "type": "boolean"
+          },
+          "value": {
+            "type": "string"
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "issuer": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "scopes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}
