@@ -1,0 +1,42 @@
+{
+  "description": "LoadBalancerIngress represents the status of a load-balancer ingress point:\ntraffic intended for the service should be sent to an ingress point.",
+  "type": "object",
+  "properties": {
+    "hostname": {
+      "type": "string",
+      "title": "Hostname is set for load-balancer ingress points that are DNS based\n(typically AWS load-balancers)\n+optional"
+    },
+    "ip": {
+      "type": "string",
+      "title": "IP is set for load-balancer ingress points that are IP based\n(typically GCE or OpenStack load-balancers)\n+optional"
+    },
+    "ipMode": {
+      "type": "string",
+      "title": "IPMode specifies how the load-balancer IP behaves, and may only be specified when the ip field is specified.\nSetting this to \"VIP\" indicates that traffic is delivered to the node with\nthe destination set to the load-balancer's IP and port.\nSetting this to \"Proxy\" indicates that traffic is delivered to the node or pod with\nthe destination set to the node's IP and node port or the pod's IP and port.\nService implementations may use this information to adjust traffic routing.\n+optional"
+    },
+    "ports": {
+      "type": "array",
+      "title": "Ports is a list of records of service ports\nIf used, every port defined in the service should have an entry in it\n+listType=atomic\n+optional",
+      "items": {
+        "type": "object",
+        "title": "PortStatus represents the error condition of a service port",
+        "properties": {
+          "error": {
+            "type": "string",
+            "title": "Error is to record the problem with the service port\nThe format of the error shall comply with the following rules:\n- built-in error values shall be specified in this file and those shall use\n  CamelCase names\n- cloud provider specific error values must have names that comply with the\n  format foo.example.com/CamelCase.\n---\nThe regex it matches is (dns1123SubdomainFmt/)?(qualifiedNameFmt)\n+optional\n+kubebuilder:validation:Required\n+kubebuilder:validation:Pattern=`^([a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*/)?(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])$`\n+kubebuilder:validation:MaxLength=316"
+          },
+          "port": {
+            "type": "integer",
+            "format": "int32",
+            "title": "Port is the port number of the service port of which status is recorded here"
+          },
+          "protocol": {
+            "type": "string",
+            "title": "Protocol is the protocol of the service port of which status is recorded here\nThe supported values are: \"TCP\", \"UDP\", \"SCTP\""
+          }
+        }
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

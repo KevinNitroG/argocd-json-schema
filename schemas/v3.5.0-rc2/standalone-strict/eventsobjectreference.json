@@ -1,0 +1,36 @@
+{
+  "description": "ObjectReference contains enough information to let you inspect or modify\nthe referred object.",
+  "type": "object",
+  "properties": {
+    "apiVersion": {
+      "description": "API version of the referent.",
+      "type": "string"
+    },
+    "fieldPath": {
+      "description": "If referring to a piece of an object instead of an entire object, this\nstring should contain a valid JSON/Go field access statement, such as\ndesiredState.manifest.containers[2]. For example, if the object reference\nis to a container within a pod, this would take on a value like:\n\"spec.containers{name}\" (where \"name\" refers to the name of the container\nthat triggered the event) or if no container name is specified\n\"spec.containers[2]\" (container with index 2 in this pod).",
+      "type": "string"
+    },
+    "kind": {
+      "description": "Kind of the referent.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the referent.",
+      "type": "string"
+    },
+    "namespace": {
+      "description": "Namespace of the referent.",
+      "type": "string"
+    },
+    "resourceVersion": {
+      "description": "Specific resourceVersion to which this reference is made, if any.",
+      "type": "string"
+    },
+    "uid": {
+      "description": "UID of the referent.",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}

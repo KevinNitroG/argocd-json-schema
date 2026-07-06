@@ -1,0 +1,66 @@
+{
+  "type": "object",
+  "title": "ClusterInfo contains information about the cluster",
+  "properties": {
+    "apiVersions": {
+      "type": "array",
+      "title": "APIVersions contains list of API versions supported by the cluster",
+      "items": {
+        "type": "string"
+      }
+    },
+    "applicationsCount": {
+      "type": "integer",
+      "format": "int64",
+      "title": "ApplicationsCount is the number of applications managed by Argo CD on the cluster"
+    },
+    "cacheInfo": {
+      "type": "object",
+      "title": "ClusterCacheInfo contains information about the cluster cache",
+      "properties": {
+        "apisCount": {
+          "type": "integer",
+          "format": "int64",
+          "title": "APIsCount holds number of observed Kubernetes API count"
+        },
+        "lastCacheSyncTime": {
+          "description": "Time is a wrapper around time.Time which supports correct\nmarshaling to YAML and JSON.  Wrappers are provided for many\nof the factory methods that the time package offers.\n\n+protobuf.options.marshal=false\n+protobuf.as=Timestamp\n+protobuf.options.(gogoproto.goproto_stringer)=false",
+          "type": "string",
+          "format": "date-time"
+        },
+        "resourcesCount": {
+          "type": "integer",
+          "format": "int64",
+          "title": "ResourcesCount holds number of observed Kubernetes resources"
+        }
+      },
+      "additionalProperties": false
+    },
+    "connectionState": {
+      "type": "object",
+      "title": "ConnectionState contains information about remote resource connection state, currently used for clusters and repositories",
+      "properties": {
+        "attemptedAt": {
+          "description": "Time is a wrapper around time.Time which supports correct\nmarshaling to YAML and JSON.  Wrappers are provided for many\nof the factory methods that the time package offers.\n\n+protobuf.options.marshal=false\n+protobuf.as=Timestamp\n+protobuf.options.(gogoproto.goproto_stringer)=false",
+          "type": "string",
+          "format": "date-time"
+        },
+        "message": {
+          "type": "string",
+          "title": "Message contains human readable information about the connection status"
+        },
+        "status": {
+          "type": "string",
+          "title": "Status contains the current status indicator for the connection"
+        }
+      },
+      "additionalProperties": false
+    },
+    "serverVersion": {
+      "type": "string",
+      "title": "ServerVersion contains information about the Kubernetes version of the cluster"
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}

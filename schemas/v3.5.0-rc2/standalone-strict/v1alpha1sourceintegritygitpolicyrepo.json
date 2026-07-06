@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "url": {
+      "description": "URL specifier, glob.",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}
