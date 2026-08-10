@@ -261,7 +261,7 @@
                           },
                           "helm": {
                             "type": "object",
-                            "title": "ApplicationSourceHelm holds helm specific options",
+                            "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                             "properties": {
                               "apiVersions": {
                                 "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -513,7 +513,7 @@
                                   "type": "object",
                                   "properties": {
                                     "count": {
-                                      "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                      "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                       "type": "object",
                                       "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                       "properties": {
@@ -615,6 +615,10 @@
                             "type": "string",
                             "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
                           },
+                          "tagPrefix": {
+                            "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                            "type": "string"
+                          },
                           "targetRevision": {
                             "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
                             "type": "string"
@@ -700,7 +704,7 @@
                               },
                               "helm": {
                                 "type": "object",
-                                "title": "ApplicationSourceHelm holds helm specific options",
+                                "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                 "properties": {
                                   "apiVersions": {
                                     "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -952,7 +956,7 @@
                                       "type": "object",
                                       "properties": {
                                         "count": {
-                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                           "type": "object",
                                           "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                           "properties": {
@@ -1053,7 +1057,7 @@
                             }
                           },
                           "hydrateTo": {
-                            "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                            "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                             "type": "object",
                             "properties": {
                               "targetBranch": {
@@ -1063,11 +1067,15 @@
                             }
                           },
                           "syncSource": {
-                            "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                            "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                             "type": "object",
                             "properties": {
                               "path": {
                                 "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                "type": "string"
+                              },
+                              "repoURL": {
+                                "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                 "type": "string"
                               },
                               "targetBranch": {
@@ -1160,7 +1168,7 @@
                             },
                             "helm": {
                               "type": "object",
-                              "title": "ApplicationSourceHelm holds helm specific options",
+                              "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                               "properties": {
                                 "apiVersions": {
                                   "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -1412,7 +1420,7 @@
                                     "type": "object",
                                     "properties": {
                                       "count": {
-                                        "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                        "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                         "type": "object",
                                         "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                         "properties": {
@@ -1513,6 +1521,10 @@
                             "repoURL": {
                               "type": "string",
                               "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                            },
+                            "tagPrefix": {
+                              "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                              "type": "string"
                             },
                             "targetRevision": {
                               "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -1866,7 +1878,7 @@
                           },
                           "helm": {
                             "type": "object",
-                            "title": "ApplicationSourceHelm holds helm specific options",
+                            "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                             "properties": {
                               "apiVersions": {
                                 "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -2118,7 +2130,7 @@
                                   "type": "object",
                                   "properties": {
                                     "count": {
-                                      "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                      "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                       "type": "object",
                                       "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                       "properties": {
@@ -2220,6 +2232,10 @@
                             "type": "string",
                             "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
                           },
+                          "tagPrefix": {
+                            "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                            "type": "string"
+                          },
                           "targetRevision": {
                             "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
                             "type": "string"
@@ -2305,7 +2321,7 @@
                               },
                               "helm": {
                                 "type": "object",
-                                "title": "ApplicationSourceHelm holds helm specific options",
+                                "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                 "properties": {
                                   "apiVersions": {
                                     "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -2557,7 +2573,7 @@
                                       "type": "object",
                                       "properties": {
                                         "count": {
-                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                           "type": "object",
                                           "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                           "properties": {
@@ -2658,7 +2674,7 @@
                             }
                           },
                           "hydrateTo": {
-                            "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                            "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                             "type": "object",
                             "properties": {
                               "targetBranch": {
@@ -2668,11 +2684,15 @@
                             }
                           },
                           "syncSource": {
-                            "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                            "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                             "type": "object",
                             "properties": {
                               "path": {
                                 "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                "type": "string"
+                              },
+                              "repoURL": {
+                                "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                 "type": "string"
                               },
                               "targetBranch": {
@@ -2765,7 +2785,7 @@
                             },
                             "helm": {
                               "type": "object",
-                              "title": "ApplicationSourceHelm holds helm specific options",
+                              "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                               "properties": {
                                 "apiVersions": {
                                   "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -3017,7 +3037,7 @@
                                     "type": "object",
                                     "properties": {
                                       "count": {
-                                        "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                        "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                         "type": "object",
                                         "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                         "properties": {
@@ -3118,6 +3138,10 @@
                             "repoURL": {
                               "type": "string",
                               "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                            },
+                            "tagPrefix": {
+                              "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                              "type": "string"
                             },
                             "targetRevision": {
                               "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -3469,7 +3493,7 @@
                           },
                           "helm": {
                             "type": "object",
-                            "title": "ApplicationSourceHelm holds helm specific options",
+                            "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                             "properties": {
                               "apiVersions": {
                                 "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -3721,7 +3745,7 @@
                                   "type": "object",
                                   "properties": {
                                     "count": {
-                                      "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                      "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                       "type": "object",
                                       "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                       "properties": {
@@ -3823,6 +3847,10 @@
                             "type": "string",
                             "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
                           },
+                          "tagPrefix": {
+                            "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                            "type": "string"
+                          },
                           "targetRevision": {
                             "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
                             "type": "string"
@@ -3908,7 +3936,7 @@
                               },
                               "helm": {
                                 "type": "object",
-                                "title": "ApplicationSourceHelm holds helm specific options",
+                                "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                 "properties": {
                                   "apiVersions": {
                                     "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -4160,7 +4188,7 @@
                                       "type": "object",
                                       "properties": {
                                         "count": {
-                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                           "type": "object",
                                           "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                           "properties": {
@@ -4261,7 +4289,7 @@
                             }
                           },
                           "hydrateTo": {
-                            "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                            "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                             "type": "object",
                             "properties": {
                               "targetBranch": {
@@ -4271,11 +4299,15 @@
                             }
                           },
                           "syncSource": {
-                            "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                            "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                             "type": "object",
                             "properties": {
                               "path": {
                                 "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                "type": "string"
+                              },
+                              "repoURL": {
+                                "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                 "type": "string"
                               },
                               "targetBranch": {
@@ -4368,7 +4400,7 @@
                             },
                             "helm": {
                               "type": "object",
-                              "title": "ApplicationSourceHelm holds helm specific options",
+                              "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                               "properties": {
                                 "apiVersions": {
                                   "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -4620,7 +4652,7 @@
                                     "type": "object",
                                     "properties": {
                                       "count": {
-                                        "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                        "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                         "type": "object",
                                         "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                         "properties": {
@@ -4721,6 +4753,10 @@
                             "repoURL": {
                               "type": "string",
                               "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                            },
+                            "tagPrefix": {
+                              "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                              "type": "string"
                             },
                             "targetRevision": {
                               "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -5049,7 +5085,7 @@
                           },
                           "helm": {
                             "type": "object",
-                            "title": "ApplicationSourceHelm holds helm specific options",
+                            "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                             "properties": {
                               "apiVersions": {
                                 "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -5301,7 +5337,7 @@
                                   "type": "object",
                                   "properties": {
                                     "count": {
-                                      "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                      "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                       "type": "object",
                                       "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                       "properties": {
@@ -5403,6 +5439,10 @@
                             "type": "string",
                             "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
                           },
+                          "tagPrefix": {
+                            "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                            "type": "string"
+                          },
                           "targetRevision": {
                             "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
                             "type": "string"
@@ -5488,7 +5528,7 @@
                               },
                               "helm": {
                                 "type": "object",
-                                "title": "ApplicationSourceHelm holds helm specific options",
+                                "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                 "properties": {
                                   "apiVersions": {
                                     "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -5740,7 +5780,7 @@
                                       "type": "object",
                                       "properties": {
                                         "count": {
-                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                           "type": "object",
                                           "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                           "properties": {
@@ -5841,7 +5881,7 @@
                             }
                           },
                           "hydrateTo": {
-                            "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                            "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                             "type": "object",
                             "properties": {
                               "targetBranch": {
@@ -5851,11 +5891,15 @@
                             }
                           },
                           "syncSource": {
-                            "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                            "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                             "type": "object",
                             "properties": {
                               "path": {
                                 "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                "type": "string"
+                              },
+                              "repoURL": {
+                                "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                 "type": "string"
                               },
                               "targetBranch": {
@@ -5948,7 +5992,7 @@
                             },
                             "helm": {
                               "type": "object",
-                              "title": "ApplicationSourceHelm holds helm specific options",
+                              "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                               "properties": {
                                 "apiVersions": {
                                   "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -6200,7 +6244,7 @@
                                     "type": "object",
                                     "properties": {
                                       "count": {
-                                        "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                        "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                         "type": "object",
                                         "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                         "properties": {
@@ -6301,6 +6345,10 @@
                             "repoURL": {
                               "type": "string",
                               "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                            },
+                            "tagPrefix": {
+                              "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                              "type": "string"
                             },
                             "targetRevision": {
                               "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -6658,7 +6706,7 @@
                           },
                           "helm": {
                             "type": "object",
-                            "title": "ApplicationSourceHelm holds helm specific options",
+                            "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                             "properties": {
                               "apiVersions": {
                                 "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -6910,7 +6958,7 @@
                                   "type": "object",
                                   "properties": {
                                     "count": {
-                                      "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                      "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                       "type": "object",
                                       "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                       "properties": {
@@ -7012,6 +7060,10 @@
                             "type": "string",
                             "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
                           },
+                          "tagPrefix": {
+                            "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                            "type": "string"
+                          },
                           "targetRevision": {
                             "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
                             "type": "string"
@@ -7097,7 +7149,7 @@
                               },
                               "helm": {
                                 "type": "object",
-                                "title": "ApplicationSourceHelm holds helm specific options",
+                                "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                 "properties": {
                                   "apiVersions": {
                                     "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -7349,7 +7401,7 @@
                                       "type": "object",
                                       "properties": {
                                         "count": {
-                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                           "type": "object",
                                           "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                           "properties": {
@@ -7450,7 +7502,7 @@
                             }
                           },
                           "hydrateTo": {
-                            "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                            "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                             "type": "object",
                             "properties": {
                               "targetBranch": {
@@ -7460,11 +7512,15 @@
                             }
                           },
                           "syncSource": {
-                            "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                            "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                             "type": "object",
                             "properties": {
                               "path": {
                                 "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                "type": "string"
+                              },
+                              "repoURL": {
+                                "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                 "type": "string"
                               },
                               "targetBranch": {
@@ -7557,7 +7613,7 @@
                             },
                             "helm": {
                               "type": "object",
-                              "title": "ApplicationSourceHelm holds helm specific options",
+                              "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                               "properties": {
                                 "apiVersions": {
                                   "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -7809,7 +7865,7 @@
                                     "type": "object",
                                     "properties": {
                                       "count": {
-                                        "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                        "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                         "type": "object",
                                         "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                         "properties": {
@@ -7910,6 +7966,10 @@
                             "repoURL": {
                               "type": "string",
                               "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                            },
+                            "tagPrefix": {
+                              "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                              "type": "string"
                             },
                             "targetRevision": {
                               "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -8557,7 +8617,7 @@
                           },
                           "helm": {
                             "type": "object",
-                            "title": "ApplicationSourceHelm holds helm specific options",
+                            "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                             "properties": {
                               "apiVersions": {
                                 "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -8809,7 +8869,7 @@
                                   "type": "object",
                                   "properties": {
                                     "count": {
-                                      "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                      "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                       "type": "object",
                                       "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                       "properties": {
@@ -8911,6 +8971,10 @@
                             "type": "string",
                             "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
                           },
+                          "tagPrefix": {
+                            "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                            "type": "string"
+                          },
                           "targetRevision": {
                             "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
                             "type": "string"
@@ -8996,7 +9060,7 @@
                               },
                               "helm": {
                                 "type": "object",
-                                "title": "ApplicationSourceHelm holds helm specific options",
+                                "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                 "properties": {
                                   "apiVersions": {
                                     "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -9248,7 +9312,7 @@
                                       "type": "object",
                                       "properties": {
                                         "count": {
-                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                           "type": "object",
                                           "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                           "properties": {
@@ -9349,7 +9413,7 @@
                             }
                           },
                           "hydrateTo": {
-                            "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                            "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                             "type": "object",
                             "properties": {
                               "targetBranch": {
@@ -9359,11 +9423,15 @@
                             }
                           },
                           "syncSource": {
-                            "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                            "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                             "type": "object",
                             "properties": {
                               "path": {
                                 "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                "type": "string"
+                              },
+                              "repoURL": {
+                                "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                 "type": "string"
                               },
                               "targetBranch": {
@@ -9456,7 +9524,7 @@
                             },
                             "helm": {
                               "type": "object",
-                              "title": "ApplicationSourceHelm holds helm specific options",
+                              "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                               "properties": {
                                 "apiVersions": {
                                   "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -9708,7 +9776,7 @@
                                     "type": "object",
                                     "properties": {
                                       "count": {
-                                        "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                        "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                         "type": "object",
                                         "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                         "properties": {
@@ -9809,6 +9877,10 @@
                             "repoURL": {
                               "type": "string",
                               "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                            },
+                            "tagPrefix": {
+                              "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                              "type": "string"
                             },
                             "targetRevision": {
                               "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -10143,6 +10215,10 @@
                     "description": "The Gitea URL to talk to. For example https://gitea.mydomain.com/.",
                     "type": "string"
                   },
+                  "excludeArchivedRepos": {
+                    "description": "Exclude repositories that are archived.",
+                    "type": "boolean"
+                  },
                   "insecure": {
                     "type": "boolean",
                     "title": "Allow self-signed TLS / Certificates; default: false"
@@ -10180,6 +10256,10 @@
                   "appSecretName": {
                     "description": "AppSecretName is a reference to a GitHub App repo-creds secret.",
                     "type": "string"
+                  },
+                  "excludeArchivedRepos": {
+                    "description": "Exclude repositories that are archived.",
+                    "type": "boolean"
                   },
                   "organization": {
                     "description": "GitHub org to scan. Required.",
@@ -10226,6 +10306,10 @@
                   "group": {
                     "description": "Gitlab group to scan. Required.  You can use either the project id (recommended) or the full namespaced path.",
                     "type": "string"
+                  },
+                  "includeArchivedRepos": {
+                    "description": "Include repositories that are archived.",
+                    "type": "boolean"
                   },
                   "includeSharedProjects": {
                     "type": "boolean",
@@ -10462,7 +10546,7 @@
                           },
                           "helm": {
                             "type": "object",
-                            "title": "ApplicationSourceHelm holds helm specific options",
+                            "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                             "properties": {
                               "apiVersions": {
                                 "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -10714,7 +10798,7 @@
                                   "type": "object",
                                   "properties": {
                                     "count": {
-                                      "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                      "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                       "type": "object",
                                       "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                       "properties": {
@@ -10816,6 +10900,10 @@
                             "type": "string",
                             "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
                           },
+                          "tagPrefix": {
+                            "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                            "type": "string"
+                          },
                           "targetRevision": {
                             "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
                             "type": "string"
@@ -10901,7 +10989,7 @@
                               },
                               "helm": {
                                 "type": "object",
-                                "title": "ApplicationSourceHelm holds helm specific options",
+                                "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                                 "properties": {
                                   "apiVersions": {
                                     "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -11153,7 +11241,7 @@
                                       "type": "object",
                                       "properties": {
                                         "count": {
-                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                          "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                           "type": "object",
                                           "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                           "properties": {
@@ -11254,7 +11342,7 @@
                             }
                           },
                           "hydrateTo": {
-                            "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                            "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                             "type": "object",
                             "properties": {
                               "targetBranch": {
@@ -11264,11 +11352,15 @@
                             }
                           },
                           "syncSource": {
-                            "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                            "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                             "type": "object",
                             "properties": {
                               "path": {
                                 "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                                "type": "string"
+                              },
+                              "repoURL": {
+                                "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                                 "type": "string"
                               },
                               "targetBranch": {
@@ -11361,7 +11453,7 @@
                             },
                             "helm": {
                               "type": "object",
-                              "title": "ApplicationSourceHelm holds helm specific options",
+                              "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                               "properties": {
                                 "apiVersions": {
                                   "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -11613,7 +11705,7 @@
                                     "type": "object",
                                     "properties": {
                                       "count": {
-                                        "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                        "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                         "type": "object",
                                         "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                         "properties": {
@@ -11714,6 +11806,10 @@
                             "repoURL": {
                               "type": "string",
                               "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                            },
+                            "tagPrefix": {
+                              "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                              "type": "string"
                             },
                             "targetRevision": {
                               "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
@@ -12062,7 +12158,7 @@
                 },
                 "helm": {
                   "type": "object",
-                  "title": "ApplicationSourceHelm holds helm specific options",
+                  "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                   "properties": {
                     "apiVersions": {
                       "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -12314,7 +12410,7 @@
                         "type": "object",
                         "properties": {
                           "count": {
-                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                            "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                             "type": "object",
                             "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                             "properties": {
@@ -12416,6 +12512,10 @@
                   "type": "string",
                   "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
                 },
+                "tagPrefix": {
+                  "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                  "type": "string"
+                },
                 "targetRevision": {
                   "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",
                   "type": "string"
@@ -12501,7 +12601,7 @@
                     },
                     "helm": {
                       "type": "object",
-                      "title": "ApplicationSourceHelm holds helm specific options",
+                      "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                       "properties": {
                         "apiVersions": {
                           "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -12753,7 +12853,7 @@
                             "type": "object",
                             "properties": {
                               "count": {
-                                "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                                "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                                 "type": "object",
                                 "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                                 "properties": {
@@ -12854,7 +12954,7 @@
                   }
                 },
                 "hydrateTo": {
-                  "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+                  "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
                   "type": "object",
                   "properties": {
                     "targetBranch": {
@@ -12864,11 +12964,15 @@
                   }
                 },
                 "syncSource": {
-                  "description": "SyncSource specifies a location from which hydrated manifests may be synced. RepoURL is assumed based on the\nassociated DrySource config in the SourceHydrator.",
+                  "description": "SyncSource specifies a location from which hydrated manifests may be synced. If RepoURL is not set, it is assumed\nto be the same as the associated DrySource config in the SourceHydrator.",
                   "type": "object",
                   "properties": {
                     "path": {
                       "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.\n\n+kubebuilder:validation:Required\n+kubebuilder:validation:MinLength=1\n+kubebuilder:validation:Pattern=`^.{2,}|[^./]$`",
+                      "type": "string"
+                    },
+                    "repoURL": {
+                      "description": "RepoURL is the URL to the git repository that contains the hydrated manifests. If not set, defaults to\nthe DrySource.RepoURL.",
                       "type": "string"
                     },
                     "targetBranch": {
@@ -12961,7 +13065,7 @@
                   },
                   "helm": {
                     "type": "object",
-                    "title": "ApplicationSourceHelm holds helm specific options",
+                    "title": "ApplicationSourceHelm holds helm specific options\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                     "properties": {
                       "apiVersions": {
                         "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
@@ -13213,7 +13317,7 @@
                           "type": "object",
                           "properties": {
                             "count": {
-                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+                              "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true\n+k8s:openapi-model-package=io.k8s.apimachinery.pkg.util.intstr",
                               "type": "object",
                               "title": "IntOrString is a type that can hold an int32 or a string.  When used in\nJSON or YAML marshalling and unmarshalling, it produces or consumes the\ninner type.  This allows you to have, for example, a JSON field that can\naccept a name or number.\nTODO: Rename to Int32OrString",
                               "properties": {
@@ -13314,6 +13418,10 @@
                   "repoURL": {
                     "type": "string",
                     "title": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+                  },
+                  "tagPrefix": {
+                    "description": "TagPrefix filters git tags to only those with this prefix before evaluating targetRevision as a semver constraint.\nThe prefix is stripped from tag names before comparison and re-added to the resolved version.\nFor example, with tagPrefix \"component-b/\" and targetRevision \"1.0.*\", tags like \"component-b/1.0.0\" and\n\"component-b/1.0.1\" are candidates, and the constraint resolves to \"component-b/1.0.1\".",
+                    "type": "string"
                   },
                   "targetRevision": {
                     "description": "TargetRevision defines the revision of the source to sync the application to.\nIn case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.\nIn case of Helm, this is a semver tag for the Chart's version.",

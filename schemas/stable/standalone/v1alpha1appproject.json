@@ -67,11 +67,11 @@
                 "title": "FieldsType is the discriminator for the different fields format and version.\nThere is currently only one possible value: \"FieldsV1\""
               },
               "fieldsV1": {
-                "description": "FieldsV1 stores a set of fields in a data structure like a Trie, in JSON format.\n\nEach key is either a '.' representing the field itself, and will always map to an empty set,\nor a string representing a sub-field or item. The string will follow one of these four formats:\n'f:<name>', where <name> is the name of a field in a struct, or key in a map\n'v:<value>', where <value> is the exact json formatted value of a list item\n'i:<index>', where <index> is position of a item in a list\n'k:<keys>', where <keys> is a map of  a list item's key fields to their unique values\nIf a key maps to an empty Fields value, the field that key represents is part of the set.\n\nThe exact format is defined in sigs.k8s.io/structured-merge-diff\n+protobuf.options.(gogoproto.goproto_stringer)=false",
+                "description": "FieldsV1 stores a set of fields in a data structure like a Trie, in JSON format.\n\nEach key is either a '.' representing the field itself, and will always map to an empty set,\nor a string representing a sub-field or item. The string will follow one of these four formats:\n'f:<name>', where <name> is the name of a field in a struct, or key in a map\n'v:<value>', where <value> is the exact json formatted value of a list item\n'i:<index>', where <index> is position of a item in a list\n'k:<keys>', where <keys> is a map of  a list item's key fields to their unique values\nIf a key maps to an empty Fields value, the field that key represents is part of the set.\n\nThe exact format is defined in sigs.k8s.io/structured-merge-diff\n+k8s:deepcopy-gen=false\n+protobuf.options.marshal=false\n+protobuf.options.(gogoproto.goproto_stringer)=false",
                 "type": "object",
                 "properties": {
                   "Raw": {
-                    "description": "Raw is the underlying serialization of this object.",
+                    "description": "Raw is the underlying serialization of this object.\n\nDeprecated: Direct access to this field is deprecated. Use GetRawBytes, GetRawString, SetRawBytes, SetRawString, GetRawReader, NewFieldsV1 instead.",
                     "type": "string",
                     "format": "byte"
                   }
@@ -366,15 +366,64 @@
           }
         },
         "signatureKeys": {
+          "description": "Deprecated: Use SourceIntegrity instead. SignatureKeys will be removed with the next major version.",
           "type": "array",
           "title": "SignatureKeys contains a list of PGP key IDs that commits in Git must be signed with in order to be allowed for sync",
           "items": {
+            "description": "Deprecated: Use SourceIntegrity instead. SignatureKeys will be removed with the next major version.",
             "type": "object",
             "title": "SignatureKey is the specification of a key required to verify commit signatures with",
             "properties": {
               "keyID": {
                 "type": "string",
                 "title": "The ID of the key in hexadecimal notation"
+              }
+            }
+          }
+        },
+        "sourceIntegrity": {
+          "type": "object",
+          "properties": {
+            "git": {
+              "type": "object",
+              "properties": {
+                "policies": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "gpg": {
+                        "description": "SourceIntegrityGitPolicyGPG verifies that the commit(s) are both correctly signed by a key in the repo-server keyring,\nand that they are signed by one of the key listed in Keys.\n\nThis policy can be deactivated through the ARGOCD_GPG_ENABLED environment variable.\n\nNote the listing of problematic commits/signatures reported when \"strict\" mode validation fails may not be complete.\nThis means that a user that has addressed all problems reported by source integrity check can run into\nfurther problematic signatures on a subsequent attempt. That happens namely when history contains seal commits signed\nwith gpg keys that are in the keyring, but not listed in Keys.",
+                        "type": "object",
+                        "properties": {
+                          "keys": {
+                            "description": "List of key IDs to trust. The keys need to be in the repository server keyring.",
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "mode": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "repos": {
+                        "type": "array",
+                        "title": "List of repository criteria restricting repositories the policy will apply to",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "url": {
+                              "description": "URL specifier, glob.",
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -444,6 +493,10 @@
               "schedule": {
                 "type": "string",
                 "title": "Schedule is the time the window will begin, specified in cron format"
+              },
+              "syncOverrun": {
+                "type": "boolean",
+                "title": "SyncOverrun allows ongoing syncs to continue in two scenarios:\nFor deny windows: allows syncs that started before the deny window became active to continue running\nFor allow windows: allows syncs that started during the allow window to continue after the window ends"
               },
               "timeZone": {
                 "type": "string",

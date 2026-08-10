@@ -133,6 +133,21 @@
       "$ref": "_definitions.json#/definitions/clusterSettingsPluginsResponse"
     },
     {
+      "$ref": "_definitions.json#/definitions/eventsEvent"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/eventsEventList"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/eventsEventSeries"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/eventsEventSource"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/eventsObjectReference"
+    },
+    {
       "$ref": "_definitions.json#/definitions/gpgkeyGnuPGPublicKeyCreateResponse"
     },
     {
@@ -253,18 +268,6 @@
       "$ref": "_definitions.json#/definitions/sessionSessionResponse"
     },
     {
-      "$ref": "_definitions.json#/definitions/v1Event"
-    },
-    {
-      "$ref": "_definitions.json#/definitions/v1EventList"
-    },
-    {
-      "$ref": "_definitions.json#/definitions/v1EventSeries"
-    },
-    {
-      "$ref": "_definitions.json#/definitions/v1EventSource"
-    },
-    {
       "$ref": "_definitions.json#/definitions/v1FieldsV1"
     },
     {
@@ -301,13 +304,13 @@
       "$ref": "_definitions.json#/definitions/v1ObjectMeta"
     },
     {
-      "$ref": "_definitions.json#/definitions/v1ObjectReference"
-    },
-    {
       "$ref": "_definitions.json#/definitions/v1OwnerReference"
     },
     {
       "$ref": "_definitions.json#/definitions/v1PortStatus"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/v1ShardInfo"
     },
     {
       "$ref": "_definitions.json#/definitions/v1Time"
@@ -740,6 +743,27 @@
     },
     {
       "$ref": "_definitions.json#/definitions/v1alpha1SourceHydratorStatus"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/v1alpha1SourceIntegrity"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/v1alpha1SourceIntegrityCheckResult"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/v1alpha1SourceIntegrityCheckResultItem"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/v1alpha1SourceIntegrityGit"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/v1alpha1SourceIntegrityGitPolicy"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/v1alpha1SourceIntegrityGitPolicyGPG"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/v1alpha1SourceIntegrityGitPolicyRepo"
     },
     {
       "$ref": "_definitions.json#/definitions/v1alpha1SuccessfulHydrateOperation"
