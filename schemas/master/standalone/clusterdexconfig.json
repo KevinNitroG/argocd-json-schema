@@ -6,6 +6,9 @@
       "items": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string"
+          },
           "name": {
             "type": "string"
           },
@@ -14,6 +17,10 @@
           }
         }
       }
+    },
+    "dexAuthConnectorID": {
+      "type": "string",
+      "title": "dexAuthConnectorID is the connector ID that the login screen should redirect to directly, bypassing the connector selection screen"
     }
   },
   "$schema": "http://json-schema.org/schema#"
