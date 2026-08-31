@@ -447,7 +447,7 @@
           "title": "SyncWindows controls when syncs can be run for apps in this project",
           "items": {
             "type": "object",
-            "title": "SyncWindow contains the kind, time, duration and attributes that are used to assign the syncWindows to apps",
+            "title": "InlineSyncWindow contains the kind, time, duration and attributes that are used to assign the syncWindows to apps",
             "properties": {
               "andOperator": {
                 "type": "boolean",

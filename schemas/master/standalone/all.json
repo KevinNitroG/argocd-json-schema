@@ -547,6 +547,9 @@
       "$ref": "_definitions.json#/definitions/v1alpha1InfoItem"
     },
     {
+      "$ref": "_definitions.json#/definitions/v1alpha1InlineSyncWindow"
+    },
+    {
       "$ref": "_definitions.json#/definitions/v1alpha1JWTToken"
     },
     {
@@ -797,9 +800,6 @@
     },
     {
       "$ref": "_definitions.json#/definitions/v1alpha1SyncStrategyHook"
-    },
-    {
-      "$ref": "_definitions.json#/definitions/v1alpha1SyncWindow"
     },
     {
       "$ref": "_definitions.json#/definitions/v1alpha1TLSClientConfig"

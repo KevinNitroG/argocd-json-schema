@@ -1,0 +1,52 @@
+{
+  "type": "object",
+  "properties": {
+    "activeWindows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "duration": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "manualSync": {
+            "type": "boolean"
+          },
+          "schedule": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "assignedWindows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "duration": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "manualSync": {
+            "type": "boolean"
+          },
+          "schedule": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "canSync": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}
