@@ -142,6 +142,11 @@
             },
             "additionalProperties": false
           },
+          "configHash": {
+            "type": "string",
+            "format": "uint64",
+            "title": "ConfigHash is an opaque value which tracks changes to the desired configuration of a Cluster"
+          },
           "connectionState": {
             "type": "object",
             "title": "ConnectionState contains information about remote resource connection state, currently used for clusters and repositories",
