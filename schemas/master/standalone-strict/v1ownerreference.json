@@ -3,8 +3,8 @@
   "title": "OwnerReference contains enough information to let you identify an owning\nobject. An owning object must be in the same namespace as the dependent, or\nbe cluster-scoped, so there is no namespace field.\n+structType=atomic",
   "properties": {
     "apiVersion": {
-      "description": "API version of the referent.",
-      "type": "string"
+      "type": "string",
+      "title": "API version of the referent.\n+k8s:alpha(since:\"1.37\")=+k8s:required"
     },
     "blockOwnerDeletion": {
       "type": "boolean",
@@ -16,15 +16,15 @@
     },
     "kind": {
       "type": "string",
-      "title": "Kind of the referent.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds"
+      "title": "Kind of the referent.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds\n+k8s:alpha(since:\"1.37\")=+k8s:required"
     },
     "name": {
       "type": "string",
-      "title": "Name of the referent.\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#names"
+      "title": "Name of the referent.\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#names\n+k8s:alpha(since:\"1.37\")=+k8s:required"
     },
     "uid": {
       "type": "string",
-      "title": "UID of the referent.\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids"
+      "title": "UID of the referent.\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids\n+k8s:alpha(since:\"1.37\")=+k8s:required"
     }
   },
   "additionalProperties": false,

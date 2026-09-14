@@ -24,7 +24,7 @@
             "deletionGracePeriodSeconds": {
               "type": "integer",
               "format": "int64",
-              "title": "Number of seconds allowed for this object to gracefully terminate before\nit will be removed from the system. Only set when deletionTimestamp is also set.\nMay only be shortened.\nRead-only.\n+optional"
+              "title": "Number of seconds allowed for this object to gracefully terminate before\nit will be removed from the system. Only set when deletionTimestamp is also set.\nMay only be shortened.\nRead-only.\n+optional\n+k8s:alpha(since: \"1.37\")=+k8s:optional\n+k8s:alpha(since: \"1.37\")=+k8s:immutable"
             },
             "deletionTimestamp": {
               "description": "Time is a wrapper around time.Time which supports correct\nmarshaling to YAML and JSON.  Wrappers are provided for many\nof the factory methods that the time package offers.\n\n+protobuf.options.marshal=false\n+protobuf.as=Timestamp\n+protobuf.options.(gogoproto.goproto_stringer)=false",
@@ -45,7 +45,7 @@
             "generation": {
               "type": "integer",
               "format": "int64",
-              "title": "A sequence number representing a specific generation of the desired state.\nPopulated by the system. Read-only.\n+optional"
+              "title": "A sequence number representing a specific generation of the desired state.\nPopulated by the system. Read-only.\n+optional\n+k8s:alpha(since: \"1.37\")=+k8s:optional\n+k8s:alpha(since: \"1.37\")=+k8s:minimum=0"
             },
             "labels": {
               "type": "object",
@@ -55,7 +55,7 @@
               }
             },
             "managedFields": {
-              "description": "ManagedFields maps workflow-id and version to the set of fields\nthat are managed by that workflow. This is mostly for internal\nhousekeeping, and users typically shouldn't need to set or\nunderstand this field. A workflow can be the user's name, a\ncontroller's name, or the name of a specific apply path like\n\"ci-cd\". The set of fields is always in the version that the\nworkflow used when modifying the object.\n\n+optional\n+listType=atomic",
+              "description": "ManagedFields maps workflow-id and version to the set of fields\nthat are managed by that workflow. This is mostly for internal\nhousekeeping, and users typically shouldn't need to set or\nunderstand this field. A workflow can be the user's name, a\ncontroller's name, or the name of a specific apply path like\n\"ci-cd\". The set of fields is always in the version that the\nworkflow used when modifying the object.\n\n+optional\n+listType=atomic\n+k8s:alpha(since: \"1.37\")=+k8s:optional",
               "type": "array",
               "items": {
                 "description": "ManagedFieldsEntry is a workflow-id, a FieldSet and the group version of the resource\nthat the fieldset applies to.",
@@ -86,8 +86,8 @@
                     "type": "string"
                   },
                   "operation": {
-                    "description": "Operation is the type of operation which lead to this ManagedFieldsEntry being created.\nThe only valid values for this field are 'Apply' and 'Update'.",
-                    "type": "string"
+                    "type": "string",
+                    "title": "Operation is the type of operation which lead to this ManagedFieldsEntry being created.\nThe only valid values for this field are 'Apply' and 'Update'.\n+k8s:alpha(since: \"1.37\")=+k8s:required"
                   },
                   "subresource": {
                     "description": "Subresource is the name of the subresource used to update that object, or\nempty string if the object was updated through the main resource. The\nvalue of this field is used to distinguish between managers, even if they\nshare the same name. For example, a status update will be distinct from a\nregular update using the same manager name.\nNote that the APIVersion field is not related to the Subresource field and\nit always corresponds to the version of the main resource.",
@@ -112,14 +112,14 @@
             },
             "ownerReferences": {
               "type": "array",
-              "title": "List of objects depended by this object. If ALL objects in the list have\nbeen deleted, this object will be garbage collected. If this object is managed by a controller,\nthen an entry in this list will point to this controller, with the controller field set to true.\nThere cannot be more than one managing controller.\n+optional\n+patchMergeKey=uid\n+patchStrategy=merge\n+listType=map\n+listMapKey=uid",
+              "title": "List of objects depended by this object. If ALL objects in the list have\nbeen deleted, this object will be garbage collected. If this object is managed by a controller,\nthen an entry in this list will point to this controller, with the controller field set to true.\nThere cannot be more than one managing controller.\n+optional\n+patchMergeKey=uid\n+patchStrategy=merge\n+listType=map\n+listMapKey=uid\n+k8s:alpha(since:\"1.37\")=+k8s:optional",
               "items": {
                 "type": "object",
                 "title": "OwnerReference contains enough information to let you identify an owning\nobject. An owning object must be in the same namespace as the dependent, or\nbe cluster-scoped, so there is no namespace field.\n+structType=atomic",
                 "properties": {
                   "apiVersion": {
-                    "description": "API version of the referent.",
-                    "type": "string"
+                    "type": "string",
+                    "title": "API version of the referent.\n+k8s:alpha(since:\"1.37\")=+k8s:required"
                   },
                   "blockOwnerDeletion": {
                     "type": "boolean",
@@ -131,15 +131,15 @@
                   },
                   "kind": {
                     "type": "string",
-                    "title": "Kind of the referent.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds"
+                    "title": "Kind of the referent.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds\n+k8s:alpha(since:\"1.37\")=+k8s:required"
                   },
                   "name": {
                     "type": "string",
-                    "title": "Name of the referent.\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#names"
+                    "title": "Name of the referent.\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#names\n+k8s:alpha(since:\"1.37\")=+k8s:required"
                   },
                   "uid": {
                     "type": "string",
-                    "title": "UID of the referent.\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids"
+                    "title": "UID of the referent.\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids\n+k8s:alpha(since:\"1.37\")=+k8s:required"
                   }
                 },
                 "additionalProperties": false
@@ -154,7 +154,7 @@
               "title": "Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.\n+optional"
             },
             "uid": {
-              "description": "UID is the unique in time and space value for this object. It is typically generated by\nthe server on successful creation of a resource and is not allowed to change on PUT\noperations.\n\nPopulated by the system.\nRead-only.\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids\n+optional",
+              "description": "UID is the unique in time and space value for this object. It is typically generated by\nthe server on successful creation of a resource and is not allowed to change on PUT\noperations.\n\nPopulated by the system.\nRead-only.\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids\n+optional\n+k8s:alpha(since: \"1.37\")=+k8s:optional\n+k8s:alpha(since: \"1.37\")=+k8s:immutable",
               "type": "string"
             }
           },

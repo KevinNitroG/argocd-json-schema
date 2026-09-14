@@ -598,6 +598,15 @@
       "$ref": "_definitions.json#/definitions/v1alpha1OCIMetadata"
     },
     {
+      "$ref": "_definitions.json#/definitions/v1alpha1OciDirectoryGeneratorItem"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/v1alpha1OciFileGeneratorItem"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/v1alpha1OciGenerator"
+    },
+    {
       "$ref": "_definitions.json#/definitions/v1alpha1Operation"
     },
     {
