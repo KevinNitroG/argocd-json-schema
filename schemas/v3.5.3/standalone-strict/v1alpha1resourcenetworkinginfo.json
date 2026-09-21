@@ -1,0 +1,105 @@
+{
+  "description": "ResourceNetworkingInfo holds networking-related information for a resource.",
+  "type": "object",
+  "properties": {
+    "externalURLs": {
+      "description": "ExternalURLs holds a list of URLs that should be accessible externally.\nThis field is typically populated for Ingress resources based on their hostname rules.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ingress": {
+      "description": "Ingress provides information about external access points (e.g., load balancer ingress) for this resource.",
+      "type": "array",
+      "items": {
+        "description": "LoadBalancerIngress represents the status of a load-balancer ingress point:\ntraffic intended for the service should be sent to an ingress point.",
+        "type": "object",
+        "properties": {
+          "hostname": {
+            "type": "string",
+            "title": "Hostname is set for load-balancer ingress points that are DNS based\n(typically AWS load-balancers)\n+optional"
+          },
+          "ip": {
+            "type": "string",
+            "title": "IP is set for load-balancer ingress points that are IP based\n(typically GCE or OpenStack load-balancers)\n+optional"
+          },
+          "ipMode": {
+            "type": "string",
+            "title": "IPMode specifies how the load-balancer IP behaves, and may only be specified when the ip field is specified.\nSetting this to \"VIP\" indicates that traffic is delivered to the node with\nthe destination set to the load-balancer's IP and port.\nSetting this to \"Proxy\" indicates that traffic is delivered to the node or pod with\nthe destination set to the node's IP and node port or the pod's IP and port.\nService implementations may use this information to adjust traffic routing.\n+optional"
+          },
+          "ports": {
+            "type": "array",
+            "title": "Ports is a list of records of service ports\nIf used, every port defined in the service should have an entry in it\n+listType=atomic\n+optional",
+            "items": {
+              "type": "object",
+              "title": "PortStatus represents the error condition of a service port",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "title": "Error is to record the problem with the service port\nThe format of the error shall comply with the following rules:\n- built-in error values shall be specified in this file and those shall use\n  CamelCase names\n- cloud provider specific error values must have names that comply with the\n  format foo.example.com/CamelCase.\n---\nThe regex it matches is (dns1123SubdomainFmt/)?(qualifiedNameFmt)\n+optional\n+kubebuilder:validation:Required\n+kubebuilder:validation:Pattern=`^([a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*/)?(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])$`\n+kubebuilder:validation:MaxLength=316"
+                },
+                "port": {
+                  "type": "integer",
+                  "format": "int32",
+                  "title": "Port is the port number of the service port of which status is recorded here"
+                },
+                "protocol": {
+                  "type": "string",
+                  "title": "Protocol is the protocol of the service port of which status is recorded here\nThe supported values are: \"TCP\", \"UDP\", \"SCTP\""
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "labels": {
+      "description": "Labels holds the labels associated with this networking resource.",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "targetLabels": {
+      "description": "TargetLabels represents labels associated with the target resources that this resource communicates with.",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "targetRefs": {
+      "description": "TargetRefs contains references to other resources that this resource interacts with, such as Services or Pods.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "title": "ResourceRef includes fields which uniquely identify a resource",
+        "properties": {
+          "group": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          },
+          "uid": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}
