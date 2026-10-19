@@ -1,0 +1,52 @@
+{
+  "type": "object",
+  "title": "ConfigManagementPlugin contains config management plugin configuration",
+  "properties": {
+    "generate": {
+      "type": "object",
+      "title": "Command holds binary path and arguments list",
+      "properties": {
+        "args": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "command": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "init": {
+      "type": "object",
+      "title": "Command holds binary path and arguments list",
+      "properties": {
+        "args": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "command": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "lockRepo": {
+      "type": "boolean"
+    },
+    "name": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}

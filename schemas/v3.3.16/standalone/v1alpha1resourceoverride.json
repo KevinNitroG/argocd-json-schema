@@ -1,0 +1,91 @@
+{
+  "type": "object",
+  "title": "ResourceOverride holds configuration to customize resource diffing and health assessment",
+  "properties": {
+    "actions": {
+      "description": "Actions defines the set of actions that can be performed on the resource, as a Lua script.",
+      "type": "string"
+    },
+    "healthLua": {
+      "description": "HealthLua contains a Lua script that defines custom health checks for the resource.",
+      "type": "string"
+    },
+    "ignoreDifferences": {
+      "type": "object",
+      "title": "OverrideIgnoreDiff contains configurations about how fields should be ignored during diffs between\nthe desired state and live state",
+      "properties": {
+        "jSONPointers": {
+          "type": "array",
+          "title": "JSONPointers is a JSON path list following the format defined in RFC4627 (https://datatracker.ietf.org/doc/html/rfc6902#section-3)",
+          "items": {
+            "type": "string"
+          }
+        },
+        "jqPathExpressions": {
+          "type": "array",
+          "title": "JQPathExpressions is a JQ path list that will be evaludated during the diff process",
+          "items": {
+            "type": "string"
+          }
+        },
+        "managedFieldsManagers": {
+          "type": "array",
+          "title": "ManagedFieldsManagers is a list of trusted managers. Fields mutated by those managers will take precedence over the\ndesired state defined in the SCM and won't be displayed in diffs",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ignoreResourceUpdates": {
+      "type": "object",
+      "title": "OverrideIgnoreDiff contains configurations about how fields should be ignored during diffs between\nthe desired state and live state",
+      "properties": {
+        "jSONPointers": {
+          "type": "array",
+          "title": "JSONPointers is a JSON path list following the format defined in RFC4627 (https://datatracker.ietf.org/doc/html/rfc6902#section-3)",
+          "items": {
+            "type": "string"
+          }
+        },
+        "jqPathExpressions": {
+          "type": "array",
+          "title": "JQPathExpressions is a JQ path list that will be evaludated during the diff process",
+          "items": {
+            "type": "string"
+          }
+        },
+        "managedFieldsManagers": {
+          "type": "array",
+          "title": "ManagedFieldsManagers is a list of trusted managers. Fields mutated by those managers will take precedence over the\ndesired state defined in the SCM and won't be displayed in diffs",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "knownTypeFields": {
+      "description": "KnownTypeFields lists fields for which unit conversions should be applied.",
+      "type": "array",
+      "items": {
+        "description": "KnownTypeField contains a mapping between a Custom Resource Definition (CRD) field\nand a well-known Kubernetes type. This mapping is primarily used for unit conversions\nin resources where the type is not explicitly defined (e.g., converting \"0.1\" to \"100m\" for CPU requests).",
+        "type": "object",
+        "properties": {
+          "field": {
+            "type": "string",
+            "title": "Field represents the JSON path to the specific field in the CRD that requires type conversion.\nExample: \"spec.resources.requests.cpu\""
+          },
+          "type": {
+            "description": "Type specifies the expected Kubernetes type for the field, such as \"cpu\" or \"memory\".\nThis helps in converting values between different formats (e.g., \"0.1\" to \"100m\" for CPU).",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "useOpenLibs": {
+      "description": "UseOpenLibs indicates whether to use open-source libraries for the resource.",
+      "type": "boolean"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

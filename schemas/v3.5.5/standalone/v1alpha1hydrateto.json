@@ -1,0 +1,11 @@
+{
+  "description": "HydrateTo specifies a branch to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The repository and path are inherited from SyncSource.",
+  "type": "object",
+  "properties": {
+    "targetBranch": {
+      "type": "string",
+      "title": "TargetBranch is the branch to which hydrated manifests should be committed"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}
