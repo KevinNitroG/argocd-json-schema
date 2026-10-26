@@ -1,0 +1,112 @@
+{
+  "type": "object",
+  "title": "ApplicationSourceHelm holds helm specific options",
+  "properties": {
+    "apiVersions": {
+      "description": "APIVersions specifies the Kubernetes resource API versions to pass to Helm when templating manifests. By default,\nArgo CD uses the API versions of the target cluster. The format is [group/]version/kind.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "fileParameters": {
+      "type": "array",
+      "title": "FileParameters are file parameters to the helm template",
+      "items": {
+        "type": "object",
+        "title": "HelmFileParameter is a file parameter that's passed to helm template during manifest generation",
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name is the name of the Helm parameter"
+          },
+          "path": {
+            "type": "string",
+            "title": "Path is the path to the file containing the values for the Helm parameter"
+          }
+        }
+      }
+    },
+    "ignoreMissingValueFiles": {
+      "type": "boolean",
+      "title": "IgnoreMissingValueFiles prevents helm template from failing when valueFiles do not exist locally by not appending them to helm template --values"
+    },
+    "kubeVersion": {
+      "description": "KubeVersion specifies the Kubernetes API version to pass to Helm when templating manifests. By default, Argo CD\nuses the Kubernetes version of the target cluster.",
+      "type": "string"
+    },
+    "namespace": {
+      "description": "Namespace is an optional namespace to template with. If left empty, defaults to the app's destination namespace.",
+      "type": "string"
+    },
+    "parameters": {
+      "type": "array",
+      "title": "Parameters is a list of Helm parameters which are passed to the helm template command upon manifest generation",
+      "items": {
+        "type": "object",
+        "title": "HelmParameter is a parameter that's passed to helm template during manifest generation",
+        "properties": {
+          "forceString": {
+            "type": "boolean",
+            "title": "ForceString determines whether to tell Helm to interpret booleans and numbers as strings"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name is the name of the Helm parameter"
+          },
+          "value": {
+            "type": "string",
+            "title": "Value is the value for the Helm parameter"
+          }
+        }
+      }
+    },
+    "passCredentials": {
+      "type": "boolean",
+      "title": "PassCredentials pass credentials to all domains (Helm's --pass-credentials)"
+    },
+    "releaseName": {
+      "type": "string",
+      "title": "ReleaseName is the Helm release name to use. If omitted it will use the application name"
+    },
+    "skipCrds": {
+      "type": "boolean",
+      "title": "SkipCrds skips custom resource definition installation step (Helm's --skip-crds)"
+    },
+    "skipSchemaValidation": {
+      "type": "boolean",
+      "title": "SkipSchemaValidation skips JSON schema validation (Helm's --skip-schema-validation)"
+    },
+    "skipTests": {
+      "description": "SkipTests skips test manifest installation step (Helm's --skip-tests).",
+      "type": "boolean"
+    },
+    "valueFiles": {
+      "type": "array",
+      "title": "ValuesFiles is a list of Helm value files to use when generating a template",
+      "items": {
+        "type": "string"
+      }
+    },
+    "values": {
+      "type": "string",
+      "title": "Values specifies Helm values to be passed to helm template, typically defined as a block. ValuesObject takes precedence over Values, so use one or the other.\n+patchStrategy=replace"
+    },
+    "valuesObject": {
+      "description": "RawExtension is used to hold extensions in external versions.\n\nTo use this, make a field which has RawExtension as its type in your external, versioned\nstruct, and Object in your internal struct. You also need to register your\nvarious plugin types.\n\n// Internal package:\n\n\ttype MyAPIObject struct {\n\t\truntime.TypeMeta `json:\",inline\"`\n\t\tMyPlugin runtime.Object `json:\"myPlugin\"`\n\t}\n\n\ttype PluginA struct {\n\t\tAOption string `json:\"aOption\"`\n\t}\n\n// External package:\n\n\ttype MyAPIObject struct {\n\t\truntime.TypeMeta `json:\",inline\"`\n\t\tMyPlugin runtime.RawExtension `json:\"myPlugin\"`\n\t}\n\n\ttype PluginA struct {\n\t\tAOption string `json:\"aOption\"`\n\t}\n\n// On the wire, the JSON will look something like this:\n\n\t{\n\t\t\"kind\":\"MyAPIObject\",\n\t\t\"apiVersion\":\"v1\",\n\t\t\"myPlugin\": {\n\t\t\t\"kind\":\"PluginA\",\n\t\t\t\"aOption\":\"foo\",\n\t\t},\n\t}\n\nSo what happens? Decode first uses json or yaml to unmarshal the serialized data into\nyour external MyAPIObject. That causes the raw JSON to be stored, but not unpacked.\nThe next step is to copy (using pkg/conversion) into the internal struct. The runtime\npackage's DefaultScheme has conversion functions installed which will unpack the\nJSON stored in RawExtension, turning it into the correct object type, and storing it\nin the Object. (TODO: In the case where the object is of an unknown type, a\nruntime.Unknown object will be created and stored.)\n\n+k8s:deepcopy-gen=true\n+protobuf=true\n+k8s:openapi-gen=true",
+      "type": "object",
+      "properties": {
+        "raw": {
+          "description": "Raw is the underlying serialization of this object.\n\nTODO: Determine how to detect ContentType and ContentEncoding of 'Raw' data.",
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "version": {
+      "type": "string",
+      "title": "Version is the Helm version to use for templating (\"3\")"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

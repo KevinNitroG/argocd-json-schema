@@ -1,0 +1,32 @@
+{
+  "description": "CommitMetadata contains metadata about a commit that is related in some way to another commit.",
+  "type": "object",
+  "properties": {
+    "author": {
+      "description": "Author is the author of the commit, i.e. `git show -s --format=%an <%ae>`.\nMust be formatted according to RFC 5322 (mail.Address.String()).\nComes from the Argocd-reference-commit-author trailer.",
+      "type": "string"
+    },
+    "body": {
+      "description": "Body is the commit message body minus the subject line, i.e. `git show -s --format=%b`.\nComes from the Argocd-reference-commit-body trailer.",
+      "type": "string"
+    },
+    "date": {
+      "description": "Date is the date of the commit, formatted as by `git show -s --format=%aI` (RFC 3339).\nIt can also be an empty string if the date is unknown.\nComes from the Argocd-reference-commit-date trailer.",
+      "type": "string"
+    },
+    "repoUrl": {
+      "description": "RepoURL is the URL of the repository where the commit is located.\nComes from the Argocd-reference-commit-repourl trailer.\nThis value is not validated and should not be used to construct UI links unless it is properly\nvalidated and/or sanitized first.",
+      "type": "string"
+    },
+    "sha": {
+      "description": "SHA is the commit hash.\nComes from the Argocd-reference-commit-sha trailer.",
+      "type": "string"
+    },
+    "subject": {
+      "description": "Subject is the commit message subject line, i.e. `git show -s --format=%s`.\nComes from the Argocd-reference-commit-subject trailer.",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}

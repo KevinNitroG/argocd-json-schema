@@ -199,6 +199,9 @@
         "clientID": {
           "type": "string"
         },
+        "deviceURL": {
+          "type": "string"
+        },
         "enablePKCEAuthentication": {
           "type": "boolean"
         },
@@ -234,6 +237,9 @@
           "items": {
             "type": "string"
           }
+        },
+        "tokenURL": {
+          "type": "string"
         }
       },
       "additionalProperties": false

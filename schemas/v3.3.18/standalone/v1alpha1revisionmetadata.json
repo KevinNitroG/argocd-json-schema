@@ -1,0 +1,71 @@
+{
+  "description": "RevisionMetadata contains metadata for a specific revision in a Git repository. This field is used by the\nSource Hydrator feature which may be removed in the future.",
+  "type": "object",
+  "properties": {
+    "author": {
+      "type": "string",
+      "title": "who authored this revision,\ntypically their name and email, e.g. \"John Doe <john_doe@my-company.com>\",\nbut might not match this example"
+    },
+    "date": {
+      "description": "Time is a wrapper around time.Time which supports correct\nmarshaling to YAML and JSON.  Wrappers are provided for many\nof the factory methods that the time package offers.\n\n+protobuf.options.marshal=false\n+protobuf.as=Timestamp\n+protobuf.options.(gogoproto.goproto_stringer)=false",
+      "type": "string",
+      "format": "date-time"
+    },
+    "message": {
+      "description": "Message contains the message associated with the revision, most likely the commit message.",
+      "type": "string"
+    },
+    "references": {
+      "description": "References contains references to information that's related to this commit in some way.",
+      "type": "array",
+      "items": {
+        "description": "RevisionReference contains a reference to a some information that is related in some way to another commit. For now,\nit supports only references to a commit. In the future, it may support other types of references.",
+        "type": "object",
+        "properties": {
+          "commit": {
+            "description": "CommitMetadata contains metadata about a commit that is related in some way to another commit.",
+            "type": "object",
+            "properties": {
+              "author": {
+                "description": "Author is the author of the commit, i.e. `git show -s --format=%an <%ae>`.\nMust be formatted according to RFC 5322 (mail.Address.String()).\nComes from the Argocd-reference-commit-author trailer.",
+                "type": "string"
+              },
+              "body": {
+                "description": "Body is the commit message body minus the subject line, i.e. `git show -s --format=%b`.\nComes from the Argocd-reference-commit-body trailer.",
+                "type": "string"
+              },
+              "date": {
+                "description": "Date is the date of the commit, formatted as by `git show -s --format=%aI` (RFC 3339).\nIt can also be an empty string if the date is unknown.\nComes from the Argocd-reference-commit-date trailer.",
+                "type": "string"
+              },
+              "repoUrl": {
+                "description": "RepoURL is the URL of the repository where the commit is located.\nComes from the Argocd-reference-commit-repourl trailer.\nThis value is not validated and should not be used to construct UI links unless it is properly\nvalidated and/or sanitized first.",
+                "type": "string"
+              },
+              "sha": {
+                "description": "SHA is the commit hash.\nComes from the Argocd-reference-commit-sha trailer.",
+                "type": "string"
+              },
+              "subject": {
+                "description": "Subject is the commit message subject line, i.e. `git show -s --format=%s`.\nComes from the Argocd-reference-commit-subject trailer.",
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "signatureInfo": {
+      "description": "SignatureInfo contains a hint on the signer if the revision was signed with GPG, and signature verification is enabled.",
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "title": "Tags specifies any tags currently attached to the revision\nFloating tags can move from one revision to another",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}
