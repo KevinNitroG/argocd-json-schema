@@ -6,6 +6,13 @@
       "type": "string",
       "title": "The Gitea API URL to talk to. Required"
     },
+    "excludedLabels": {
+      "type": "array",
+      "title": "ExcludedLabels is used to exclude PRs with these labels",
+      "items": {
+        "type": "string"
+      }
+    },
     "insecure": {
       "description": "Allow insecure tls, for self-signed certificates; default: false.",
       "type": "boolean"

@@ -1819,6 +1819,29 @@
                                 },
                                 "additionalProperties": false
                               },
+                              "manualDefaults": {
+                                "type": "object",
+                                "title": "SyncPolicyManualDefaults controls the default behavior of a manual sync",
+                                "properties": {
+                                  "applyOnly": {
+                                    "type": "boolean",
+                                    "title": "ApplyOnly specifies whether manual syncs should use apply-only strategy by default (default: false)"
+                                  },
+                                  "dryRun": {
+                                    "type": "boolean",
+                                    "title": "DryRun specifies whether manual syncs should be performed as a dry run by default (default: false)"
+                                  },
+                                  "force": {
+                                    "type": "boolean",
+                                    "title": "Force specifies whether manual syncs should supply --force to kubectl by default (default: false)"
+                                  },
+                                  "prune": {
+                                    "type": "boolean",
+                                    "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of manual sync (default: true)"
+                                  }
+                                },
+                                "additionalProperties": false
+                              },
                               "retry": {
                                 "type": "object",
                                 "title": "RetryStrategy contains information about the strategy to apply when a sync failed",
@@ -3518,6 +3541,29 @@
                                     "additionalProperties": {
                                       "type": "string"
                                     }
+                                  }
+                                },
+                                "additionalProperties": false
+                              },
+                              "manualDefaults": {
+                                "type": "object",
+                                "title": "SyncPolicyManualDefaults controls the default behavior of a manual sync",
+                                "properties": {
+                                  "applyOnly": {
+                                    "type": "boolean",
+                                    "title": "ApplyOnly specifies whether manual syncs should use apply-only strategy by default (default: false)"
+                                  },
+                                  "dryRun": {
+                                    "type": "boolean",
+                                    "title": "DryRun specifies whether manual syncs should be performed as a dry run by default (default: false)"
+                                  },
+                                  "force": {
+                                    "type": "boolean",
+                                    "title": "Force specifies whether manual syncs should supply --force to kubectl by default (default: false)"
+                                  },
+                                  "prune": {
+                                    "type": "boolean",
+                                    "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of manual sync (default: true)"
                                   }
                                 },
                                 "additionalProperties": false
@@ -5223,6 +5269,29 @@
                                 },
                                 "additionalProperties": false
                               },
+                              "manualDefaults": {
+                                "type": "object",
+                                "title": "SyncPolicyManualDefaults controls the default behavior of a manual sync",
+                                "properties": {
+                                  "applyOnly": {
+                                    "type": "boolean",
+                                    "title": "ApplyOnly specifies whether manual syncs should use apply-only strategy by default (default: false)"
+                                  },
+                                  "dryRun": {
+                                    "type": "boolean",
+                                    "title": "DryRun specifies whether manual syncs should be performed as a dry run by default (default: false)"
+                                  },
+                                  "force": {
+                                    "type": "boolean",
+                                    "title": "Force specifies whether manual syncs should supply --force to kubectl by default (default: false)"
+                                  },
+                                  "prune": {
+                                    "type": "boolean",
+                                    "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of manual sync (default: true)"
+                                  }
+                                },
+                                "additionalProperties": false
+                              },
                               "retry": {
                                 "type": "object",
                                 "title": "RetryStrategy contains information about the strategy to apply when a sync failed",
@@ -6896,6 +6965,29 @@
                                     "additionalProperties": {
                                       "type": "string"
                                     }
+                                  }
+                                },
+                                "additionalProperties": false
+                              },
+                              "manualDefaults": {
+                                "type": "object",
+                                "title": "SyncPolicyManualDefaults controls the default behavior of a manual sync",
+                                "properties": {
+                                  "applyOnly": {
+                                    "type": "boolean",
+                                    "title": "ApplyOnly specifies whether manual syncs should use apply-only strategy by default (default: false)"
+                                  },
+                                  "dryRun": {
+                                    "type": "boolean",
+                                    "title": "DryRun specifies whether manual syncs should be performed as a dry run by default (default: false)"
+                                  },
+                                  "force": {
+                                    "type": "boolean",
+                                    "title": "Force specifies whether manual syncs should supply --force to kubectl by default (default: false)"
+                                  },
+                                  "prune": {
+                                    "type": "boolean",
+                                    "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of manual sync (default: true)"
                                   }
                                 },
                                 "additionalProperties": false
@@ -8613,6 +8705,29 @@
                                           },
                                           "additionalProperties": false
                                         },
+                                        "manualDefaults": {
+                                          "type": "object",
+                                          "title": "SyncPolicyManualDefaults controls the default behavior of a manual sync",
+                                          "properties": {
+                                            "applyOnly": {
+                                              "type": "boolean",
+                                              "title": "ApplyOnly specifies whether manual syncs should use apply-only strategy by default (default: false)"
+                                            },
+                                            "dryRun": {
+                                              "type": "boolean",
+                                              "title": "DryRun specifies whether manual syncs should be performed as a dry run by default (default: false)"
+                                            },
+                                            "force": {
+                                              "type": "boolean",
+                                              "title": "Force specifies whether manual syncs should supply --force to kubectl by default (default: false)"
+                                            },
+                                            "prune": {
+                                              "type": "boolean",
+                                              "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of manual sync (default: true)"
+                                            }
+                                          },
+                                          "additionalProperties": false
+                                        },
                                         "retry": {
                                           "type": "object",
                                           "title": "RetryStrategy contains information about the strategy to apply when a sync failed",
@@ -10312,6 +10427,29 @@
                                               "additionalProperties": {
                                                 "type": "string"
                                               }
+                                            }
+                                          },
+                                          "additionalProperties": false
+                                        },
+                                        "manualDefaults": {
+                                          "type": "object",
+                                          "title": "SyncPolicyManualDefaults controls the default behavior of a manual sync",
+                                          "properties": {
+                                            "applyOnly": {
+                                              "type": "boolean",
+                                              "title": "ApplyOnly specifies whether manual syncs should use apply-only strategy by default (default: false)"
+                                            },
+                                            "dryRun": {
+                                              "type": "boolean",
+                                              "title": "DryRun specifies whether manual syncs should be performed as a dry run by default (default: false)"
+                                            },
+                                            "force": {
+                                              "type": "boolean",
+                                              "title": "Force specifies whether manual syncs should supply --force to kubectl by default (default: false)"
+                                            },
+                                            "prune": {
+                                              "type": "boolean",
+                                              "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of manual sync (default: true)"
                                             }
                                           },
                                           "additionalProperties": false
@@ -12017,6 +12155,29 @@
                                           },
                                           "additionalProperties": false
                                         },
+                                        "manualDefaults": {
+                                          "type": "object",
+                                          "title": "SyncPolicyManualDefaults controls the default behavior of a manual sync",
+                                          "properties": {
+                                            "applyOnly": {
+                                              "type": "boolean",
+                                              "title": "ApplyOnly specifies whether manual syncs should use apply-only strategy by default (default: false)"
+                                            },
+                                            "dryRun": {
+                                              "type": "boolean",
+                                              "title": "DryRun specifies whether manual syncs should be performed as a dry run by default (default: false)"
+                                            },
+                                            "force": {
+                                              "type": "boolean",
+                                              "title": "Force specifies whether manual syncs should supply --force to kubectl by default (default: false)"
+                                            },
+                                            "prune": {
+                                              "type": "boolean",
+                                              "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of manual sync (default: true)"
+                                            }
+                                          },
+                                          "additionalProperties": false
+                                        },
                                         "retry": {
                                           "type": "object",
                                           "title": "RetryStrategy contains information about the strategy to apply when a sync failed",
@@ -13690,6 +13851,29 @@
                                               "additionalProperties": {
                                                 "type": "string"
                                               }
+                                            }
+                                          },
+                                          "additionalProperties": false
+                                        },
+                                        "manualDefaults": {
+                                          "type": "object",
+                                          "title": "SyncPolicyManualDefaults controls the default behavior of a manual sync",
+                                          "properties": {
+                                            "applyOnly": {
+                                              "type": "boolean",
+                                              "title": "ApplyOnly specifies whether manual syncs should use apply-only strategy by default (default: false)"
+                                            },
+                                            "dryRun": {
+                                              "type": "boolean",
+                                              "title": "DryRun specifies whether manual syncs should be performed as a dry run by default (default: false)"
+                                            },
+                                            "force": {
+                                              "type": "boolean",
+                                              "title": "Force specifies whether manual syncs should supply --force to kubectl by default (default: false)"
+                                            },
+                                            "prune": {
+                                              "type": "boolean",
+                                              "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of manual sync (default: true)"
                                             }
                                           },
                                           "additionalProperties": false
@@ -15410,6 +15594,29 @@
                                           },
                                           "additionalProperties": false
                                         },
+                                        "manualDefaults": {
+                                          "type": "object",
+                                          "title": "SyncPolicyManualDefaults controls the default behavior of a manual sync",
+                                          "properties": {
+                                            "applyOnly": {
+                                              "type": "boolean",
+                                              "title": "ApplyOnly specifies whether manual syncs should use apply-only strategy by default (default: false)"
+                                            },
+                                            "dryRun": {
+                                              "type": "boolean",
+                                              "title": "DryRun specifies whether manual syncs should be performed as a dry run by default (default: false)"
+                                            },
+                                            "force": {
+                                              "type": "boolean",
+                                              "title": "Force specifies whether manual syncs should supply --force to kubectl by default (default: false)"
+                                            },
+                                            "prune": {
+                                              "type": "boolean",
+                                              "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of manual sync (default: true)"
+                                            }
+                                          },
+                                          "additionalProperties": false
+                                        },
                                         "retry": {
                                           "type": "object",
                                           "title": "RetryStrategy contains information about the strategy to apply when a sync failed",
@@ -17105,6 +17312,29 @@
                                           },
                                           "additionalProperties": false
                                         },
+                                        "manualDefaults": {
+                                          "type": "object",
+                                          "title": "SyncPolicyManualDefaults controls the default behavior of a manual sync",
+                                          "properties": {
+                                            "applyOnly": {
+                                              "type": "boolean",
+                                              "title": "ApplyOnly specifies whether manual syncs should use apply-only strategy by default (default: false)"
+                                            },
+                                            "dryRun": {
+                                              "type": "boolean",
+                                              "title": "DryRun specifies whether manual syncs should be performed as a dry run by default (default: false)"
+                                            },
+                                            "force": {
+                                              "type": "boolean",
+                                              "title": "Force specifies whether manual syncs should supply --force to kubectl by default (default: false)"
+                                            },
+                                            "prune": {
+                                              "type": "boolean",
+                                              "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of manual sync (default: true)"
+                                            }
+                                          },
+                                          "additionalProperties": false
+                                        },
                                         "retry": {
                                           "type": "object",
                                           "title": "RetryStrategy contains information about the strategy to apply when a sync failed",
@@ -17178,6 +17408,13 @@
                                 "api": {
                                   "description": "The Azure DevOps API URL to talk to. If blank, use https://dev.azure.com/.",
                                   "type": "string"
+                                },
+                                "excludedLabels": {
+                                  "type": "array",
+                                  "title": "ExcludedLabels is used to exclude PRs with these labels",
+                                  "items": {
+                                    "type": "string"
+                                  }
                                 },
                                 "labels": {
                                   "type": "array",
@@ -17389,6 +17626,13 @@
                                   "type": "string",
                                   "title": "The Gitea API URL to talk to. Required"
                                 },
+                                "excludedLabels": {
+                                  "type": "array",
+                                  "title": "ExcludedLabels is used to exclude PRs with these labels",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                },
                                 "insecure": {
                                   "description": "Allow insecure tls, for self-signed certificates; default: false.",
                                   "type": "boolean"
@@ -17435,6 +17679,13 @@
                                 "appSecretName": {
                                   "description": "AppSecretName is a reference to a GitHub App repo-creds secret with permission to access pull requests.",
                                   "type": "string"
+                                },
+                                "excludedLabels": {
+                                  "type": "array",
+                                  "title": "ExcludedLabels is used to exclude PRs with these labels",
+                                  "items": {
+                                    "type": "string"
+                                  }
                                 },
                                 "labels": {
                                   "type": "array",
@@ -17487,6 +17738,13 @@
                                     }
                                   },
                                   "additionalProperties": false
+                                },
+                                "excludedLabels": {
+                                  "type": "array",
+                                  "title": "ExcludedLabels is used to exclude MRs with these labels",
+                                  "items": {
+                                    "type": "string"
+                                  }
                                 },
                                 "insecure": {
                                   "type": "boolean",
@@ -19117,6 +19375,29 @@
                                               "additionalProperties": {
                                                 "type": "string"
                                               }
+                                            }
+                                          },
+                                          "additionalProperties": false
+                                        },
+                                        "manualDefaults": {
+                                          "type": "object",
+                                          "title": "SyncPolicyManualDefaults controls the default behavior of a manual sync",
+                                          "properties": {
+                                            "applyOnly": {
+                                              "type": "boolean",
+                                              "title": "ApplyOnly specifies whether manual syncs should use apply-only strategy by default (default: false)"
+                                            },
+                                            "dryRun": {
+                                              "type": "boolean",
+                                              "title": "DryRun specifies whether manual syncs should be performed as a dry run by default (default: false)"
+                                            },
+                                            "force": {
+                                              "type": "boolean",
+                                              "title": "Force specifies whether manual syncs should supply --force to kubectl by default (default: false)"
+                                            },
+                                            "prune": {
+                                              "type": "boolean",
+                                              "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of manual sync (default: true)"
                                             }
                                           },
                                           "additionalProperties": false
@@ -21154,6 +21435,29 @@
                                           },
                                           "additionalProperties": false
                                         },
+                                        "manualDefaults": {
+                                          "type": "object",
+                                          "title": "SyncPolicyManualDefaults controls the default behavior of a manual sync",
+                                          "properties": {
+                                            "applyOnly": {
+                                              "type": "boolean",
+                                              "title": "ApplyOnly specifies whether manual syncs should use apply-only strategy by default (default: false)"
+                                            },
+                                            "dryRun": {
+                                              "type": "boolean",
+                                              "title": "DryRun specifies whether manual syncs should be performed as a dry run by default (default: false)"
+                                            },
+                                            "force": {
+                                              "type": "boolean",
+                                              "title": "Force specifies whether manual syncs should supply --force to kubectl by default (default: false)"
+                                            },
+                                            "prune": {
+                                              "type": "boolean",
+                                              "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of manual sync (default: true)"
+                                            }
+                                          },
+                                          "additionalProperties": false
+                                        },
                                         "retry": {
                                           "type": "object",
                                           "title": "RetryStrategy contains information about the strategy to apply when a sync failed",
@@ -22849,6 +23153,29 @@
                                     "additionalProperties": {
                                       "type": "string"
                                     }
+                                  }
+                                },
+                                "additionalProperties": false
+                              },
+                              "manualDefaults": {
+                                "type": "object",
+                                "title": "SyncPolicyManualDefaults controls the default behavior of a manual sync",
+                                "properties": {
+                                  "applyOnly": {
+                                    "type": "boolean",
+                                    "title": "ApplyOnly specifies whether manual syncs should use apply-only strategy by default (default: false)"
+                                  },
+                                  "dryRun": {
+                                    "type": "boolean",
+                                    "title": "DryRun specifies whether manual syncs should be performed as a dry run by default (default: false)"
+                                  },
+                                  "force": {
+                                    "type": "boolean",
+                                    "title": "Force specifies whether manual syncs should supply --force to kubectl by default (default: false)"
+                                  },
+                                  "prune": {
+                                    "type": "boolean",
+                                    "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of manual sync (default: true)"
                                   }
                                 },
                                 "additionalProperties": false
@@ -24566,6 +24893,29 @@
                                           },
                                           "additionalProperties": false
                                         },
+                                        "manualDefaults": {
+                                          "type": "object",
+                                          "title": "SyncPolicyManualDefaults controls the default behavior of a manual sync",
+                                          "properties": {
+                                            "applyOnly": {
+                                              "type": "boolean",
+                                              "title": "ApplyOnly specifies whether manual syncs should use apply-only strategy by default (default: false)"
+                                            },
+                                            "dryRun": {
+                                              "type": "boolean",
+                                              "title": "DryRun specifies whether manual syncs should be performed as a dry run by default (default: false)"
+                                            },
+                                            "force": {
+                                              "type": "boolean",
+                                              "title": "Force specifies whether manual syncs should supply --force to kubectl by default (default: false)"
+                                            },
+                                            "prune": {
+                                              "type": "boolean",
+                                              "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of manual sync (default: true)"
+                                            }
+                                          },
+                                          "additionalProperties": false
+                                        },
                                         "retry": {
                                           "type": "object",
                                           "title": "RetryStrategy contains information about the strategy to apply when a sync failed",
@@ -26265,6 +26615,29 @@
                                               "additionalProperties": {
                                                 "type": "string"
                                               }
+                                            }
+                                          },
+                                          "additionalProperties": false
+                                        },
+                                        "manualDefaults": {
+                                          "type": "object",
+                                          "title": "SyncPolicyManualDefaults controls the default behavior of a manual sync",
+                                          "properties": {
+                                            "applyOnly": {
+                                              "type": "boolean",
+                                              "title": "ApplyOnly specifies whether manual syncs should use apply-only strategy by default (default: false)"
+                                            },
+                                            "dryRun": {
+                                              "type": "boolean",
+                                              "title": "DryRun specifies whether manual syncs should be performed as a dry run by default (default: false)"
+                                            },
+                                            "force": {
+                                              "type": "boolean",
+                                              "title": "Force specifies whether manual syncs should supply --force to kubectl by default (default: false)"
+                                            },
+                                            "prune": {
+                                              "type": "boolean",
+                                              "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of manual sync (default: true)"
                                             }
                                           },
                                           "additionalProperties": false
@@ -27970,6 +28343,29 @@
                                           },
                                           "additionalProperties": false
                                         },
+                                        "manualDefaults": {
+                                          "type": "object",
+                                          "title": "SyncPolicyManualDefaults controls the default behavior of a manual sync",
+                                          "properties": {
+                                            "applyOnly": {
+                                              "type": "boolean",
+                                              "title": "ApplyOnly specifies whether manual syncs should use apply-only strategy by default (default: false)"
+                                            },
+                                            "dryRun": {
+                                              "type": "boolean",
+                                              "title": "DryRun specifies whether manual syncs should be performed as a dry run by default (default: false)"
+                                            },
+                                            "force": {
+                                              "type": "boolean",
+                                              "title": "Force specifies whether manual syncs should supply --force to kubectl by default (default: false)"
+                                            },
+                                            "prune": {
+                                              "type": "boolean",
+                                              "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of manual sync (default: true)"
+                                            }
+                                          },
+                                          "additionalProperties": false
+                                        },
                                         "retry": {
                                           "type": "object",
                                           "title": "RetryStrategy contains information about the strategy to apply when a sync failed",
@@ -29643,6 +30039,29 @@
                                               "additionalProperties": {
                                                 "type": "string"
                                               }
+                                            }
+                                          },
+                                          "additionalProperties": false
+                                        },
+                                        "manualDefaults": {
+                                          "type": "object",
+                                          "title": "SyncPolicyManualDefaults controls the default behavior of a manual sync",
+                                          "properties": {
+                                            "applyOnly": {
+                                              "type": "boolean",
+                                              "title": "ApplyOnly specifies whether manual syncs should use apply-only strategy by default (default: false)"
+                                            },
+                                            "dryRun": {
+                                              "type": "boolean",
+                                              "title": "DryRun specifies whether manual syncs should be performed as a dry run by default (default: false)"
+                                            },
+                                            "force": {
+                                              "type": "boolean",
+                                              "title": "Force specifies whether manual syncs should supply --force to kubectl by default (default: false)"
+                                            },
+                                            "prune": {
+                                              "type": "boolean",
+                                              "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of manual sync (default: true)"
                                             }
                                           },
                                           "additionalProperties": false
@@ -31363,6 +31782,29 @@
                                           },
                                           "additionalProperties": false
                                         },
+                                        "manualDefaults": {
+                                          "type": "object",
+                                          "title": "SyncPolicyManualDefaults controls the default behavior of a manual sync",
+                                          "properties": {
+                                            "applyOnly": {
+                                              "type": "boolean",
+                                              "title": "ApplyOnly specifies whether manual syncs should use apply-only strategy by default (default: false)"
+                                            },
+                                            "dryRun": {
+                                              "type": "boolean",
+                                              "title": "DryRun specifies whether manual syncs should be performed as a dry run by default (default: false)"
+                                            },
+                                            "force": {
+                                              "type": "boolean",
+                                              "title": "Force specifies whether manual syncs should supply --force to kubectl by default (default: false)"
+                                            },
+                                            "prune": {
+                                              "type": "boolean",
+                                              "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of manual sync (default: true)"
+                                            }
+                                          },
+                                          "additionalProperties": false
+                                        },
                                         "retry": {
                                           "type": "object",
                                           "title": "RetryStrategy contains information about the strategy to apply when a sync failed",
@@ -33058,6 +33500,29 @@
                                           },
                                           "additionalProperties": false
                                         },
+                                        "manualDefaults": {
+                                          "type": "object",
+                                          "title": "SyncPolicyManualDefaults controls the default behavior of a manual sync",
+                                          "properties": {
+                                            "applyOnly": {
+                                              "type": "boolean",
+                                              "title": "ApplyOnly specifies whether manual syncs should use apply-only strategy by default (default: false)"
+                                            },
+                                            "dryRun": {
+                                              "type": "boolean",
+                                              "title": "DryRun specifies whether manual syncs should be performed as a dry run by default (default: false)"
+                                            },
+                                            "force": {
+                                              "type": "boolean",
+                                              "title": "Force specifies whether manual syncs should supply --force to kubectl by default (default: false)"
+                                            },
+                                            "prune": {
+                                              "type": "boolean",
+                                              "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of manual sync (default: true)"
+                                            }
+                                          },
+                                          "additionalProperties": false
+                                        },
                                         "retry": {
                                           "type": "object",
                                           "title": "RetryStrategy contains information about the strategy to apply when a sync failed",
@@ -33131,6 +33596,13 @@
                                 "api": {
                                   "description": "The Azure DevOps API URL to talk to. If blank, use https://dev.azure.com/.",
                                   "type": "string"
+                                },
+                                "excludedLabels": {
+                                  "type": "array",
+                                  "title": "ExcludedLabels is used to exclude PRs with these labels",
+                                  "items": {
+                                    "type": "string"
+                                  }
                                 },
                                 "labels": {
                                   "type": "array",
@@ -33342,6 +33814,13 @@
                                   "type": "string",
                                   "title": "The Gitea API URL to talk to. Required"
                                 },
+                                "excludedLabels": {
+                                  "type": "array",
+                                  "title": "ExcludedLabels is used to exclude PRs with these labels",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                },
                                 "insecure": {
                                   "description": "Allow insecure tls, for self-signed certificates; default: false.",
                                   "type": "boolean"
@@ -33388,6 +33867,13 @@
                                 "appSecretName": {
                                   "description": "AppSecretName is a reference to a GitHub App repo-creds secret with permission to access pull requests.",
                                   "type": "string"
+                                },
+                                "excludedLabels": {
+                                  "type": "array",
+                                  "title": "ExcludedLabels is used to exclude PRs with these labels",
+                                  "items": {
+                                    "type": "string"
+                                  }
                                 },
                                 "labels": {
                                   "type": "array",
@@ -33440,6 +33926,13 @@
                                     }
                                   },
                                   "additionalProperties": false
+                                },
+                                "excludedLabels": {
+                                  "type": "array",
+                                  "title": "ExcludedLabels is used to exclude MRs with these labels",
+                                  "items": {
+                                    "type": "string"
+                                  }
                                 },
                                 "insecure": {
                                   "type": "boolean",
@@ -35070,6 +35563,29 @@
                                               "additionalProperties": {
                                                 "type": "string"
                                               }
+                                            }
+                                          },
+                                          "additionalProperties": false
+                                        },
+                                        "manualDefaults": {
+                                          "type": "object",
+                                          "title": "SyncPolicyManualDefaults controls the default behavior of a manual sync",
+                                          "properties": {
+                                            "applyOnly": {
+                                              "type": "boolean",
+                                              "title": "ApplyOnly specifies whether manual syncs should use apply-only strategy by default (default: false)"
+                                            },
+                                            "dryRun": {
+                                              "type": "boolean",
+                                              "title": "DryRun specifies whether manual syncs should be performed as a dry run by default (default: false)"
+                                            },
+                                            "force": {
+                                              "type": "boolean",
+                                              "title": "Force specifies whether manual syncs should supply --force to kubectl by default (default: false)"
+                                            },
+                                            "prune": {
+                                              "type": "boolean",
+                                              "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of manual sync (default: true)"
                                             }
                                           },
                                           "additionalProperties": false
@@ -37107,6 +37623,29 @@
                                           },
                                           "additionalProperties": false
                                         },
+                                        "manualDefaults": {
+                                          "type": "object",
+                                          "title": "SyncPolicyManualDefaults controls the default behavior of a manual sync",
+                                          "properties": {
+                                            "applyOnly": {
+                                              "type": "boolean",
+                                              "title": "ApplyOnly specifies whether manual syncs should use apply-only strategy by default (default: false)"
+                                            },
+                                            "dryRun": {
+                                              "type": "boolean",
+                                              "title": "DryRun specifies whether manual syncs should be performed as a dry run by default (default: false)"
+                                            },
+                                            "force": {
+                                              "type": "boolean",
+                                              "title": "Force specifies whether manual syncs should supply --force to kubectl by default (default: false)"
+                                            },
+                                            "prune": {
+                                              "type": "boolean",
+                                              "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of manual sync (default: true)"
+                                            }
+                                          },
+                                          "additionalProperties": false
+                                        },
                                         "retry": {
                                           "type": "object",
                                           "title": "RetryStrategy contains information about the strategy to apply when a sync failed",
@@ -38812,6 +39351,29 @@
                                 },
                                 "additionalProperties": false
                               },
+                              "manualDefaults": {
+                                "type": "object",
+                                "title": "SyncPolicyManualDefaults controls the default behavior of a manual sync",
+                                "properties": {
+                                  "applyOnly": {
+                                    "type": "boolean",
+                                    "title": "ApplyOnly specifies whether manual syncs should use apply-only strategy by default (default: false)"
+                                  },
+                                  "dryRun": {
+                                    "type": "boolean",
+                                    "title": "DryRun specifies whether manual syncs should be performed as a dry run by default (default: false)"
+                                  },
+                                  "force": {
+                                    "type": "boolean",
+                                    "title": "Force specifies whether manual syncs should supply --force to kubectl by default (default: false)"
+                                  },
+                                  "prune": {
+                                    "type": "boolean",
+                                    "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of manual sync (default: true)"
+                                  }
+                                },
+                                "additionalProperties": false
+                              },
                               "retry": {
                                 "type": "object",
                                 "title": "RetryStrategy contains information about the strategy to apply when a sync failed",
@@ -40502,6 +41064,29 @@
                                     "additionalProperties": {
                                       "type": "string"
                                     }
+                                  }
+                                },
+                                "additionalProperties": false
+                              },
+                              "manualDefaults": {
+                                "type": "object",
+                                "title": "SyncPolicyManualDefaults controls the default behavior of a manual sync",
+                                "properties": {
+                                  "applyOnly": {
+                                    "type": "boolean",
+                                    "title": "ApplyOnly specifies whether manual syncs should use apply-only strategy by default (default: false)"
+                                  },
+                                  "dryRun": {
+                                    "type": "boolean",
+                                    "title": "DryRun specifies whether manual syncs should be performed as a dry run by default (default: false)"
+                                  },
+                                  "force": {
+                                    "type": "boolean",
+                                    "title": "Force specifies whether manual syncs should supply --force to kubectl by default (default: false)"
+                                  },
+                                  "prune": {
+                                    "type": "boolean",
+                                    "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of manual sync (default: true)"
                                   }
                                 },
                                 "additionalProperties": false
@@ -42201,6 +42786,29 @@
                                 },
                                 "additionalProperties": false
                               },
+                              "manualDefaults": {
+                                "type": "object",
+                                "title": "SyncPolicyManualDefaults controls the default behavior of a manual sync",
+                                "properties": {
+                                  "applyOnly": {
+                                    "type": "boolean",
+                                    "title": "ApplyOnly specifies whether manual syncs should use apply-only strategy by default (default: false)"
+                                  },
+                                  "dryRun": {
+                                    "type": "boolean",
+                                    "title": "DryRun specifies whether manual syncs should be performed as a dry run by default (default: false)"
+                                  },
+                                  "force": {
+                                    "type": "boolean",
+                                    "title": "Force specifies whether manual syncs should supply --force to kubectl by default (default: false)"
+                                  },
+                                  "prune": {
+                                    "type": "boolean",
+                                    "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of manual sync (default: true)"
+                                  }
+                                },
+                                "additionalProperties": false
+                              },
                               "retry": {
                                 "type": "object",
                                 "title": "RetryStrategy contains information about the strategy to apply when a sync failed",
@@ -42274,6 +42882,13 @@
                       "api": {
                         "description": "The Azure DevOps API URL to talk to. If blank, use https://dev.azure.com/.",
                         "type": "string"
+                      },
+                      "excludedLabels": {
+                        "type": "array",
+                        "title": "ExcludedLabels is used to exclude PRs with these labels",
+                        "items": {
+                          "type": "string"
+                        }
                       },
                       "labels": {
                         "type": "array",
@@ -42485,6 +43100,13 @@
                         "type": "string",
                         "title": "The Gitea API URL to talk to. Required"
                       },
+                      "excludedLabels": {
+                        "type": "array",
+                        "title": "ExcludedLabels is used to exclude PRs with these labels",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
                       "insecure": {
                         "description": "Allow insecure tls, for self-signed certificates; default: false.",
                         "type": "boolean"
@@ -42531,6 +43153,13 @@
                       "appSecretName": {
                         "description": "AppSecretName is a reference to a GitHub App repo-creds secret with permission to access pull requests.",
                         "type": "string"
+                      },
+                      "excludedLabels": {
+                        "type": "array",
+                        "title": "ExcludedLabels is used to exclude PRs with these labels",
+                        "items": {
+                          "type": "string"
+                        }
                       },
                       "labels": {
                         "type": "array",
@@ -42583,6 +43212,13 @@
                           }
                         },
                         "additionalProperties": false
+                      },
+                      "excludedLabels": {
+                        "type": "array",
+                        "title": "ExcludedLabels is used to exclude MRs with these labels",
+                        "items": {
+                          "type": "string"
+                        }
                       },
                       "insecure": {
                         "type": "boolean",
@@ -44213,6 +44849,29 @@
                                     "additionalProperties": {
                                       "type": "string"
                                     }
+                                  }
+                                },
+                                "additionalProperties": false
+                              },
+                              "manualDefaults": {
+                                "type": "object",
+                                "title": "SyncPolicyManualDefaults controls the default behavior of a manual sync",
+                                "properties": {
+                                  "applyOnly": {
+                                    "type": "boolean",
+                                    "title": "ApplyOnly specifies whether manual syncs should use apply-only strategy by default (default: false)"
+                                  },
+                                  "dryRun": {
+                                    "type": "boolean",
+                                    "title": "DryRun specifies whether manual syncs should be performed as a dry run by default (default: false)"
+                                  },
+                                  "force": {
+                                    "type": "boolean",
+                                    "title": "Force specifies whether manual syncs should supply --force to kubectl by default (default: false)"
+                                  },
+                                  "prune": {
+                                    "type": "boolean",
+                                    "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of manual sync (default: true)"
                                   }
                                 },
                                 "additionalProperties": false
@@ -46250,6 +46909,29 @@
                                 },
                                 "additionalProperties": false
                               },
+                              "manualDefaults": {
+                                "type": "object",
+                                "title": "SyncPolicyManualDefaults controls the default behavior of a manual sync",
+                                "properties": {
+                                  "applyOnly": {
+                                    "type": "boolean",
+                                    "title": "ApplyOnly specifies whether manual syncs should use apply-only strategy by default (default: false)"
+                                  },
+                                  "dryRun": {
+                                    "type": "boolean",
+                                    "title": "DryRun specifies whether manual syncs should be performed as a dry run by default (default: false)"
+                                  },
+                                  "force": {
+                                    "type": "boolean",
+                                    "title": "Force specifies whether manual syncs should supply --force to kubectl by default (default: false)"
+                                  },
+                                  "prune": {
+                                    "type": "boolean",
+                                    "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of manual sync (default: true)"
+                                  }
+                                },
+                                "additionalProperties": false
+                              },
                               "retry": {
                                 "type": "object",
                                 "title": "RetryStrategy contains information about the strategy to apply when a sync failed",
@@ -48084,6 +48766,29 @@
                           "additionalProperties": {
                             "type": "string"
                           }
+                        }
+                      },
+                      "additionalProperties": false
+                    },
+                    "manualDefaults": {
+                      "type": "object",
+                      "title": "SyncPolicyManualDefaults controls the default behavior of a manual sync",
+                      "properties": {
+                        "applyOnly": {
+                          "type": "boolean",
+                          "title": "ApplyOnly specifies whether manual syncs should use apply-only strategy by default (default: false)"
+                        },
+                        "dryRun": {
+                          "type": "boolean",
+                          "title": "DryRun specifies whether manual syncs should be performed as a dry run by default (default: false)"
+                        },
+                        "force": {
+                          "type": "boolean",
+                          "title": "Force specifies whether manual syncs should supply --force to kubectl by default (default: false)"
+                        },
+                        "prune": {
+                          "type": "boolean",
+                          "title": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of manual sync (default: true)"
                         }
                       },
                       "additionalProperties": false

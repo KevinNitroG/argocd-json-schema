@@ -796,6 +796,9 @@
       "$ref": "_definitions.json#/definitions/v1alpha1SyncPolicyAutomated"
     },
     {
+      "$ref": "_definitions.json#/definitions/v1alpha1SyncPolicyManualDefaults"
+    },
+    {
       "$ref": "_definitions.json#/definitions/v1alpha1SyncSource"
     },
     {
