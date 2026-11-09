@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "title": "OCIMetadata contains metadata for a specific revision in an OCI repository",
+  "properties": {
+    "authors": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "docsUrl": {
+      "type": "string"
+    },
+    "imageUrl": {
+      "type": "string"
+    },
+    "sourceUrl": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}

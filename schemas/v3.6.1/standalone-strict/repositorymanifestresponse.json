@@ -1,0 +1,65 @@
+{
+  "type": "object",
+  "properties": {
+    "commands": {
+      "type": "array",
+      "title": "Commands is the list of commands used to hydrate the manifests",
+      "items": {
+        "type": "string"
+      }
+    },
+    "manifests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "namespace": {
+      "type": "string"
+    },
+    "revision": {
+      "type": "string",
+      "title": "resolved revision"
+    },
+    "server": {
+      "type": "string"
+    },
+    "sourceIntegrityResult": {
+      "description": "SourceIntegrityCheckResult represents a conclusion of the SourceIntegrity evaluation.\nEach check performed on a source(es), holds a check item representing all checks performed.",
+      "type": "object",
+      "properties": {
+        "checks": {
+          "description": "Checks holds a list of checks performed, with their eventual problems. If a check is not specified here,\nit means it was not performed.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "Name of the check that is human-understandable pointing out to the kind of verification performed.",
+                "type": "string"
+              },
+              "problems": {
+                "description": "Problems is a list of messages explaining why the check failed. Empty list means the check has succeeded.",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "sourceType": {
+      "type": "string"
+    },
+    "verifyResult": {
+      "description": "Deprecated: Use sourceIntegrityResult for more detailed information. verifyResult will be removed with the next major version.",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}

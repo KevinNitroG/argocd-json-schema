@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "title": "AppProjectStatus contains status information for AppProject CRs",
+  "properties": {
+    "jwtTokensByRole": {
+      "type": "object",
+      "title": "JWTTokensByRole contains a list of JWT tokens issued for a given role",
+      "additionalProperties": {
+        "type": "object",
+        "title": "JWTTokens represents a list of JWT tokens",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "title": "JWTToken holds the issuedAt and expiresAt values of a token",
+              "properties": {
+                "exp": {
+                  "type": "integer",
+                  "format": "int64"
+                },
+                "iat": {
+                  "type": "integer",
+                  "format": "int64"
+                },
+                "id": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

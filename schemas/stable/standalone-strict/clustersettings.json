@@ -79,6 +79,9 @@
           "items": {
             "type": "object",
             "properties": {
+              "id": {
+                "type": "string"
+              },
               "name": {
                 "type": "string"
               },
@@ -88,6 +91,10 @@
             },
             "additionalProperties": false
           }
+        },
+        "dexAuthConnectorID": {
+          "type": "string",
+          "title": "dexAuthConnectorID is the connector ID that the login screen should redirect to directly, bypassing the connector selection screen"
         }
       },
       "additionalProperties": false
@@ -345,6 +352,9 @@
         "additionalProperties": false
       }
     },
+    "resourceViewEnabled": {
+      "type": "boolean"
+    },
     "statusBadgeEnabled": {
       "type": "boolean"
     },
@@ -370,6 +380,9 @@
       "type": "string"
     },
     "uiCssURL": {
+      "type": "string"
+    },
+    "uiLoginButtonText": {
       "type": "string"
     },
     "url": {

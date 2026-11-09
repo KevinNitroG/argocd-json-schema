@@ -1,0 +1,74 @@
+{
+  "type": "object",
+  "title": "ApplicationSourceDirectory holds options for applications of type plain YAML or Jsonnet",
+  "properties": {
+    "exclude": {
+      "type": "string",
+      "title": "Exclude contains a glob pattern to match paths against that should be explicitly excluded from being used during manifest generation"
+    },
+    "include": {
+      "type": "string",
+      "title": "Include contains a glob pattern to match paths against that should be explicitly included during manifest generation"
+    },
+    "jsonnet": {
+      "type": "object",
+      "title": "ApplicationSourceJsonnet holds options specific to applications of type Jsonnet",
+      "properties": {
+        "extVars": {
+          "type": "array",
+          "title": "ExtVars is a list of Jsonnet External Variables",
+          "items": {
+            "type": "object",
+            "title": "JsonnetVar represents a variable to be passed to jsonnet during manifest generation",
+            "properties": {
+              "code": {
+                "type": "boolean"
+              },
+              "name": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "libs": {
+          "type": "array",
+          "title": "Additional library search dirs",
+          "items": {
+            "type": "string"
+          }
+        },
+        "tlas": {
+          "type": "array",
+          "title": "TLAS is a list of Jsonnet Top-level Arguments",
+          "items": {
+            "type": "object",
+            "title": "JsonnetVar represents a variable to be passed to jsonnet during manifest generation",
+            "properties": {
+              "code": {
+                "type": "boolean"
+              },
+              "name": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "recurse": {
+      "type": "boolean",
+      "title": "Recurse specifies whether to scan a directory recursively for manifests"
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/schema#"
+}
